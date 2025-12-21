@@ -1,3 +1,79 @@
+
+/* TEST */
+
 #hero {
     border: 2px solid blue;
+}
+
+/* ---- Main elements of hero page ---- */
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    width: 100%;
+}
+
+
+/* Aside main position */
+#daily-sidebar {
+   background-color: aqua;
+   width: 15%;
+   min-height: 100vh;
+}
+
+/*  */
+
+#main-footer-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+}
+
+/* Footer main position */
+ footer {
+  height: 80px;
+  background-color: blueviolet;
+}
+
+.social-links {
+    display: flex;
+    gap: 5rem;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+    border: 2px solid black;
+    margin: 0;
+}
+
+.footer-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-info2 {
+    font-size: 0.75rem;
+    padding: 3px;
+}
+
+
+
+
+
+/* === Media - mobile: sidebar under main elements */
+@media (max-width: 850px) {
+ body {
+    grid-template-columns: 1fr;
+    height: auto;
+    border-right: none;
+    border-top: 1px solid;
+ }
 }
