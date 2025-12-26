@@ -24,7 +24,7 @@ body {
    min-height: 100vh;
 }
 
-/*  */
+/* Main and footer container */
 
 #main-footer-container {
     flex: 1;
@@ -75,5 +75,11 @@ main {
     height: auto;
     border-right: none;
     border-top: 1px solid;
+ }
+
+ #sidebar-button {
+    position: fixed;
+    top: 0;
+    left: 0;
  }
 }
