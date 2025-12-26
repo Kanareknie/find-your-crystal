@@ -94,19 +94,19 @@ footer {
         left: 0;
         height: 100vh;
         width: min(85vw, 320px);
-        /* Open the sidebar */
+        /* Open the sidebar - W3Schools “Sidebar” / “Off-canvas menu”*/
         transform: translateX(-110%);
         transition: transform 0.25s ease;
         z-index: 4;
         overflow-y: auto;
     }
 
-    /* When open */
+    /* When open - W3Schools “Sidebar” / “Off-canvas menu”*/
     #daily-sidebar.is-open {
         transform: translateX(0);
     }
 
-     /* Additional layer to prevent open button on bigger screens */
+     /* Additional layer to prevent open button on bigger screens - W3Schools “Sidebar” / “Off-canvas menu” */
   .sidebar-backdrop {
     position: fixed;
     inset: 0;
