@@ -1,6 +1,6 @@
 /* W3Schools “Sidebar” / “Off-canvas menu” */
 
-  const button = document.querySelector(".sidebar-button");
+  const button = document.getElementById("sidebar-button");
   const sidebar = document.getElementById("daily-sidebar");
   const backdrop = document.querySelector(".sidebar-backdrop");
 
