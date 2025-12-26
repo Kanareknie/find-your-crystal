@@ -64,22 +64,17 @@ main {
     padding: 3px;
 }
 
+#sidebar-button {
+    display: none;
+}
 
 
 
+/* === Media - mobile  */
+@media (max-width: 480px) {
 
-/* === Media - mobile: sidebar under main elements */
-@media (max-width: 850px) {
- body {
-    grid-template-columns: 1fr;
-    height: auto;
-    border-right: none;
-    border-top: 1px solid;
- }
-
- #sidebar-button {
-    position: fixed;
-    top: 0;
-    left: 0;
- }
+    /* Show sidebar button */
+    #sidebar-button {
+        display: block;
+    }
 }
