@@ -1,4 +1,3 @@
-
 /* TEST */
 
 #hero {
@@ -6,7 +5,8 @@
 }
 
 /* ---- Main elements of hero page ---- */
-html, body {
+html,
+body {
     margin: 0;
     height: 100%;
 }
@@ -19,9 +19,9 @@ body {
 
 /* Aside main position */
 #daily-sidebar {
-   background-color: aqua;
-   width: 15%;
-   min-height: 100vh;
+    background-color: aqua;
+    width: 15%;
+    min-height: 100vh;
 }
 
 /* Main and footer container */
@@ -38,9 +38,9 @@ main {
 }
 
 /* Footer main position */
- footer {
-  height: 80px;
-  background-color: blueviolet;
+footer {
+    height: 80px;
+    background-color: blueviolet;
 }
 
 .social-links {
@@ -75,6 +75,50 @@ main {
 
     /* Show sidebar button */
     #sidebar-button {
-        display: block;
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 1rem;
+        z-index: 3;
     }
+
+    /* Stack main elements vertically */
+    body {
+        flex-direction: column;
+    }
+
+
+    #daily-sidebar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+        width: min(85vw, 320px);
+        /* Open the sidebar */
+        transform: translateX(-110%);
+        transition: transform 0.25s ease;
+        z-index: 4;
+        overflow-y: auto;
+    }
+
+    /* When open */
+    #daily-sidebar.is-open {
+        transform: translateX(0);
+    }
+
+     /* Additional layer to prevent open button on bigger screens */
+  .sidebar-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+    z-index: 3;
+  }
+
+  .sidebar-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
 }
