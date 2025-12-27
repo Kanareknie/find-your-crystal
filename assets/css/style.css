@@ -90,6 +90,10 @@ main {
     border: 2px solid red;
 }
 
+#footer-container {
+    color: #ffffff;
+}
+
 /* === Media - mobile  */
 @media (max-width: 480px) {
 
