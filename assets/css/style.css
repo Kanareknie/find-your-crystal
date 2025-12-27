@@ -15,12 +15,15 @@ body {
 body {
     display: flex;
     width: 100%;
-}
+    background-image: url('../images/index-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    }
 
 
 /* Aside main position */
 #daily-sidebar {
-    background-color: aqua;
     width: 15%;
     min-height: 100vh;
 }
@@ -41,7 +44,6 @@ main {
 /* Footer main position */
 footer {
     height: 80px;
-    background-color: blueviolet;
 }
 
 .social-links {
