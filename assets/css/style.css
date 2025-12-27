@@ -1,3 +1,33 @@
+/* Fonts tyle and colors */
+
+:root {
+  /* Base */
+  --color-bg: #1b2c3b;     
+  --color-text: #ffffff;      
+  --color-text-dark: #000000; 
+
+  /* Brand / UI */
+  --color-primary: #b7b1af;  
+  --color-accent: #633a5d;   
+  --color-muted: #565c6a;    
+}
+
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+}
+
+h1, h2, h3 {
+  font-family: "Cinzel", serif;
+  font-weight: 400;
+}
+
+#footer-container {
+    color: var(--color-text);
+
+}
+
 /* ---- Main elements of hero page ---- */
 html,
 body {
@@ -91,21 +121,7 @@ main {
 }
 
 
-/* Fonts tyle and colors */
 
-body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-}
-
-h1, h2, h3 {
-  font-family: "Cinzel", serif;
-  font-weight: 400;
-}
-
-#footer-container {
-    color: #ffffff;
-}
 
 /* === Media - mobile  */
 @media (max-width: 480px) {
