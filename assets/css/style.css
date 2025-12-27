@@ -5,6 +5,10 @@
     border: 2px solid blue;
 }
 
+#filters {
+    border: 2px solid red;
+}
+
 /* ---- Main elements of hero page ---- */
 html,
 body {
