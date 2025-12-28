@@ -74,6 +74,8 @@ body {
 }
 
 
+
+
 /* Main and footer container */
 
 #main-footer-container {
@@ -111,6 +113,15 @@ footer {
 
 }
 
+#logo {
+        display: block;
+        width: 60%;
+        max-width:80px;
+        height: auto;
+        margin: 0 auto 1rem;
+        margin-top: 10px;
+    }
+
 /* ----- Main styles for the page ----- */
 
 main {
@@ -131,10 +142,10 @@ aside h3 {
     opacity: 0.9;
 }
 
-#sidebar-content {
+.sidebar-content {
     display: flex;
     flex-direction: column;
-   
+
 }
 
 #daily-sidebar {
@@ -142,6 +153,15 @@ aside h3 {
     font-size: 0.7rem;
     opacity: 0.9;
 
+}
+
+.sidebar-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+    
 }
 
 #hero {
@@ -255,4 +275,5 @@ footer ul li a {
         opacity: 1;
         pointer-events: auto;
     }
+
 }
