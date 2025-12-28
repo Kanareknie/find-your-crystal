@@ -92,6 +92,7 @@ footer {
 
 #sidebar-button {
     display: none;
+
 }
 
 /* ----- Main styles for the page ----- */
@@ -171,16 +172,28 @@ footer ul li a {
 
     /* Show sidebar button */
     #sidebar-button {
-        display: inline-flex;
-        align-items: center;
+        display: flex;
+        position: fixed;
         gap: 0.5rem;
         margin: 1rem;
         z-index: 3;
+        top: 5px;
+        left: 5px;
+        background-color: transparent;
+        border: none;
+        color: rgb(var(--color-text));
+        font-family: "Montserrat", sans-serif;
+        font-weight: 400;
+    
     }
 
     /* Stack main elements vertically */
     body {
         flex-direction: column;
+    }
+
+    main {
+        margin-top: 40px;
     }
 
 
