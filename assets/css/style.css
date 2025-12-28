@@ -90,9 +90,6 @@ footer {
     margin: 2px;
 }
 
-
-
-
 #sidebar-button {
     display: none;
 }
@@ -106,6 +103,23 @@ main {
     align-items: center;
     text-align: center;
     padding: 1rem;
+}
+
+main h2 {
+    font-size: 1.6rem;
+}
+
+aside h3 {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+
+#daily-sidebar {
+    color: rgb(var(--color-text));
+    font-size: 0.7rem;
+    opacity: 0.9;
+
 }
 
 #hero {
@@ -142,7 +156,9 @@ footer ul li a {
     font-size: 0.7rem;
     padding: 3px;
 }
-/* === Media - mobile  */
+
+
+/* === Media - mobile === */
 @media (max-width: 480px) {
 
     /* Show sidebar button */
