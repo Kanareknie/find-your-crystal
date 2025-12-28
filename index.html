@@ -34,7 +34,7 @@
             crossorigin="anonymous"
         >
         <!-- Fontawesome link -->
-       <script src="https://kit.fontawesome.com/f981d07300.js" crossorigin="anonymous"></script>
+        <script src="https://kit.fontawesome.com/f981d07300.js" crossorigin="anonymous"></script>
         <!-- CSS link -->
         <link rel="stylesheet" href="assets/css/style.css">
         <!-- Google font links -->
@@ -45,6 +45,10 @@
     <body>
         <!-- Side bar for daily quote and moon phase -->
         <aside id="daily-sidebar">
+            <!-- Awesomeicons -->
+            <button id="sidebar-close" type="button" aria-label="Close daily insight panel">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
             <h3>
                 Daily insight
             </h3>
@@ -65,7 +69,9 @@
                     type="button"
                     aria-controls="daily-sidebar"
                     aria-expanded="false"
-                ><i class="fa-solid fa-hand-sparkles fa-beat-fade"></i>Daily Insight
+                >
+                    <i class="fa-solid fa-hand-sparkles fa-beat-fade"></i>
+                    Daily Insight
                 </button>
                 <!-- Title section -->
                 <section id="hero">
