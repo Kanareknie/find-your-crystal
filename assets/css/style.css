@@ -136,6 +136,14 @@ aside h3 {
     margin: 10px;
 }
 
+.filter-button {
+    padding: 0;
+    background-color: transparent;
+    border: none;
+    margin: 1rem;
+
+}
+
 footer {
     color: rgb(var(--color-text));
 }
