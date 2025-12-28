@@ -1,26 +1,28 @@
 /* Fonts tyle and colors */
 
 :root {
-  /* Base */
-  --color-bg: #1b2c3b;     
-  --color-text: #ffffff;      
-  --color-text-dark: #000000; 
+    /* Base */
+    --color-bg: 27 44 59;
+    --color-text: 255 255 255;
+    --color-text-dark: 0 0 0;
 
-  /* Brand / UI */
-  --color-primary: #b7b1af;  
-  --color-accent: #633a5d;   
-  --color-muted: #565c6a;    
+    /* Brand / UI */
+    --color-primary: 86 92 106;
+    --color-accent: 99 58 93;
+    --color-muted: 183 177 175;
 }
 
 
 body {
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
 }
 
-h1, h2, h3 {
-  font-family: "Cinzel", serif;
-  font-weight: 400;
+h1,
+h2,
+h3 {
+    font-family: "Cinzel", serif;
+    font-weight: 400;
 }
 
 #footer-container {
@@ -28,7 +30,8 @@ h1, h2, h3 {
 
 }
 
-/* ---- Main elements of hero page ---- */
+/* ---- Main elements of hero page positions ---- */
+
 html,
 body {
     margin: 0;
@@ -49,7 +52,7 @@ body {
 #daily-sidebar {
     width: 15%;
     min-height: 100vh;
-    background: linear-gradient(rgba(27, 44, 59, 3),
+    background: linear-gradient(rgba(27, 44, 59, 1),
             rgba(27, 44, 59, 0.8),
             rgba(27, 44, 59, 0.3),
             rgba(27, 44, 59, 0));
@@ -85,6 +88,12 @@ footer {
     margin: 0;
 }
 
+footer ul li a {
+    color: rgb(var(--color-text));
+    text-decoration: none;
+    font-size: 1.5rem;
+}
+
 .footer-info {
     display: flex;
     flex-direction: column;
@@ -113,13 +122,23 @@ main {
 }
 
 #hero {
-    border: 2px solid blue;
+    background-color: rgb(var(--color-bg) / 0.6);
+    color: rgb(var(--color-text));
+    padding: 2rem;
+    margin: 10px;
 }
 
 #filters {
-    border: 2px solid red;
+    background-color: rgb(var(--color-bg) / 0.6);
+    color: rgb(var(--color-text));
+    padding: 2rem;
+    margin: 10px;
 }
 
+footer {
+    background-color: rgb(var(--color-primary) / 0.8);
+    color: rgb(var(--color-text));
+}
 
 
 
