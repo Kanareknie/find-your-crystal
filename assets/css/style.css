@@ -131,6 +131,11 @@ aside h3 {
     opacity: 0.9;
 }
 
+#sidebar-content {
+    display: flex;
+    flex-direction: column;
+   
+}
 
 #daily-sidebar {
     color: rgb(var(--color-text));
