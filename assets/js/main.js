@@ -36,7 +36,7 @@ document.addEventListener("keydown", (e) => {
 const closeButton = document.getElementById("sidebar-close");
 closeButton.addEventListener("click", closeSidebar);
 
-//API Quote Fetch
+// API Quote Fetch
 
 //API URL
 const API_URL = "https://quoteslate.vercel.app/api/quotes/random";
@@ -44,6 +44,24 @@ const API_URL = "https://quoteslate.vercel.app/api/quotes/random";
 //Elements where the API will go
 const quoteEl = document.getElementById("daily-quote");
 const authorEl = document.getElementById("author-daily-quote");
+
+//Create today key
+function getTodayKey() {
+  return new Date().toISOString().slice(0, 10);
+}
+// Main today function
+async function localDailyQuote() {
+  const storageKey = "dailyQuote-" + getTodayKey();
+
+  // Check if todays key already exists
+const saved = localStorage.getItem(storageKey);
+if (saved) {
+  const data = JSON.parse(saved);
+  quoteEl.textContent = data.quote;
+  authorEl.textContent = data.author;
+  return;
+
+}
 
 
 
