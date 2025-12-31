@@ -38,6 +38,15 @@ closeButton.addEventListener("click", closeSidebar);
 
 //API Quote Fetch
 
+//API URL
+const API_URL = "https://quoteslate.vercel.app/api/quotes/random";
+
+//Elements where the API will go
+const quoteEl = document.getElementById("daily-quote");
+const authorEl = document.getElementById("author-daily-quote");
+
+
+
 fetch("https://quoteslate.vercel.app/api/quotes/random")
 .then(response => response.json())
 .then(data => {
