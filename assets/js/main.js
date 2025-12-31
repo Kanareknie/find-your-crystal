@@ -62,14 +62,35 @@ if (saved) {
   return;
 
 }
+// If not, fetch new quote from API
+try { 
+const response = await fetch(API_URL);
+if (!response.ok) {
+  throw new Error(`HTTP error! status: ${response.status}`);
+}
+// JSON response
+const data = await response.json();
 
+// Prepare daily quote object
+const daily = {
+  quote: data.quote,
+  author: data.author
+};
 
+// Save to localStorage
+localStorage.setItem(storageKey, JSON.stringify(daily));
 
-fetch("https://quoteslate.vercel.app/api/quotes/random")
-.then(response => response.json())
-.then(data => {
-  console.log("This is API:", data);
-})
-.catch(error => {
-  console.error("Error is:", error);
-})
+// Update DOM
+quoteEl.textContent = daily.quote;
+authorEl.textContent = daily.author;
+
+} catch (error) {
+  console.error("Error fetching the quote:", error);
+  quoteEl.textContent = "Could not load quote.";
+  authorEl.textContent = "";
+  return;
+}
+}
+
+// Call the function to load the quote
+localDailyQuote();
