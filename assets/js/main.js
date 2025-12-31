@@ -37,11 +37,14 @@ const closeButton = document.getElementById("sidebar-close");
 closeButton.addEventListener("click", closeSidebar);
 
 //API Quote Fetch
-fetch("https://api.quotable.io/random")
-  .then(response => response.json())
-  .then(data => {
-    console.log("Quote Data:", data);
-  })
-  .catch(error => {
-    console.error('Error fetching the Quote:', error);
-  });
+
+fetch("https://quoteslate.vercel.app/api/quotes/random")
+.then(response => {
+  console.log(response);
+})
+.then(data => {
+  console.log("This is API:", data);
+})
+.catch(error => {
+  console.error("Error is:", error);
+})
