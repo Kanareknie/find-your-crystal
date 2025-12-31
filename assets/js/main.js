@@ -39,9 +39,7 @@ closeButton.addEventListener("click", closeSidebar);
 //API Quote Fetch
 
 fetch("https://quoteslate.vercel.app/api/quotes/random")
-.then(response => {
-  console.log(response);
-})
+.then(response => response.json())
 .then(data => {
   console.log("This is API:", data);
 })
