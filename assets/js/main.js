@@ -125,7 +125,7 @@ async function moonPhaseDaily() {
   const savedMoon = localStorage.getItem(MoonStorageKey);
   if (savedMoon) {
     const data = JSON.parse(savedMoon);
-    moonPhase.textContent = data[0].Phase;
+    moonPhase.textContent = data.Phase;
     return;
   }
   // If not, fetch new moon phase from API
@@ -141,7 +141,7 @@ async function moonPhaseDaily() {
 
     const data = await response.json();
     const moonDaily = {
-      phase: data[0].Phase
+      phase: data.Phase
     };
 
     localStorage.setItem(MoonStorageKey, JSON.stringify(moonDaily));
