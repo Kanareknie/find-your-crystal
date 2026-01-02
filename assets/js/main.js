@@ -133,7 +133,7 @@ async function moonPhaseDaily() {
 
     // Replace UNIX_TIMESTAMP in URL
     const unix = getTodayMiddayUnix();
-    const url = "https://api.farmsense.net/v1/moonphases/?d=UNIX_TIMESTAMP".replace("UNIX_TIMESTAMP", unix);
+    const url = "http://api.farmsense.net/v1/moonphases/?d=59666674651";
     const response = await fetch(url);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
