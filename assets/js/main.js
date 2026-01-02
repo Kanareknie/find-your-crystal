@@ -91,7 +91,61 @@ async function localDailyQuote() {
     return;
   }
 }
-
 // Call the function to load the quote
 localDailyQuote();
+
+
+// API Daily Insight Fetch from JSON daily-insights.json file
+
+//Get elements
+const dailyPlantEl = document.getElementById("daily-plant");
+const dailyHintEl = document.getElementById("daily-hint");
+const appreciationEl = document.getElementById("appreciation");
+
+//Fetch daily insights from local JSON file
+async function fetchDailyInsights() {
+const storageKey = "dailyInsights-" + getTodayKey();
+
+// Check if todays key already exists
+  const saved = localStorage.getItem(storageKey);
+  if (saved) {
+    const daily = JSON.parse(saved);
+    dailyPlantEl.textContent = daily.plant;
+    dailyHintEl.textContent = daily.hint;
+    appreciationEl.textContent = daily.appreciation;
+    return;
+  }
+  // If not, fetch new insights from local JSON file
+  try {
+    const response = await fetch("./assets/data/daily-hints.json");
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    const insights = await response.json();
+    // Pick random insight per day
+    const daily = 
+    insights[Math.floor(Math.random() * insights.length)];
+
+    // Prepare daily insights object
+
+      dailyPlantEl = daily.plant;
+      dailyHintEl = daily.hint;
+      appreciationEl = daily.appreciation;
+
+    // Save to localStorage
+    localStorage.setItem(storageKey, JSON.stringify(daily));
+
+    // Update DOM
+    dailyPlantEl.textContent = daily.plant;
+    dailyHintEl.textContent = daily.hint;
+    appreciationEl.textContent = daily.appreciation;
+  }
+  catch (error) {
+    console.error("Error fetching daily insights:", error);
+  } 
+}
+
+// Call the function to fetch daily insights
+fetchDailyInsights();
+
 
