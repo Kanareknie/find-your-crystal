@@ -1,0 +1,602 @@
+[
+  {
+    "plant": "Lavender — traditionally associated with calm, rest, and clarity.",
+    "hint": "Amethyst may fade in strong sunlight over time; store it away from direct sun.",
+    "appreciation": "Rest is a necessary part of growth, not a pause from it."
+  },
+  {
+    "plant": "Rosemary — historically linked to memory, focus, and protection.",
+    "hint": "Many bright orange citrine stones are heat-treated amethyst rather than natural citrine.",
+    "appreciation": "Small, consistent efforts matter more than sudden change."
+  },
+  {
+    "plant": "Sage — traditionally used in cleansing rituals across many cultures.",
+    "hint": "Selenite is very soft and should not be cleaned with water.",
+    "appreciation": "You are allowed to move at your own pace."
+  },
+  {
+    "plant": "Mint — commonly associated with freshness, renewal, and clarity.",
+    "hint": "Quartz is durable, but sharp blows can still cause fractures.",
+    "appreciation": "Clarity often comes after patience."
+  },
+  {
+    "plant": "Chamomile — historically linked to relaxation and gentle comfort.",
+    "hint": "Turquoise can change color when exposed to oils, chemicals, or prolonged moisture.",
+    "appreciation": "Gentleness is a form of strength."
+  },
+  {
+    "plant": "Basil — associated with protection and positive intention in folklore.",
+    "hint": "Real obsidian is volcanic glass and will feel cool to the touch initially.",
+    "appreciation": "Calm moments create space for insight."
+  },
+  {
+    "plant": "Thyme — symbolically connected to courage in ancient traditions.",
+    "hint": "Fluorite can fade if left in strong sunlight for extended periods.",
+    "appreciation": "You do not need to rush understanding."
+  },
+  {
+    "plant": "Bay leaf — historically used as a symbol of achievement and wisdom.",
+    "hint": "Natural crystal inclusions are common and not necessarily flaws.",
+    "appreciation": "Progress is allowed to be quiet."
+  },
+  {
+    "plant": "Mugwort — traditionally associated with dreams and reflection.",
+    "hint": "Scratch tests can damage crystals and are not recommended for authenticity checks.",
+    "appreciation": "Listening can be more powerful than acting."
+  },
+  {
+    "plant": "Cedar — long associated with grounding and protection in many cultures.",
+    "hint": "Glass imitations often feel warmer than real stone when held.",
+    "appreciation": "Stability comes from steady foundations."
+  },
+  {
+    "plant": "Yarrow — symbolically linked to resilience in folklore.",
+    "hint": "Polished stones may hide natural surface features seen in raw crystals.",
+    "appreciation": "Resilience grows through experience."
+  },
+  {
+    "plant": "Jasmine — traditionally associated with intuition and calm.",
+    "hint": "Uniform color can indicate dye treatment in some stones.",
+    "appreciation": "Peace can exist alongside uncertainty."
+  },
+  {
+    "plant": "Frankincense — historically valued in ritual and reflection practices.",
+    "hint": "Many crystals are naturally cool but warm quickly in the hand.",
+    "appreciation": "Presence is enough for today."
+  },
+  {
+    "plant": "Myrrh — associated with grounding and contemplation in ancient texts.",
+    "hint": "Crystals sold without origin information should be approached thoughtfully.",
+    "appreciation": "Understanding unfolds over time."
+  },
+  {
+    "plant": "Pine — symbolically linked to endurance and renewal.",
+    "hint": "Natural stone often has slight irregularities in shape or texture.",
+    "appreciation": "Consistency builds confidence."
+  },
+  {
+    "plant": "Calendula — traditionally connected with warmth and protection.",
+    "hint": "Dyed stones may release color when wiped with acetone.",
+    "appreciation": "Care creates lasting balance."
+  },
+  {
+    "plant": "Hawthorn — symbolically associated with boundaries and protection.",
+    "hint": "Soft stones like calcite scratch easily and need gentle handling.",
+    "appreciation": "Boundaries support clarity."
+  },
+  {
+    "plant": "Eucalyptus — often linked with freshness and clearing spaces.",
+    "hint": "Weight alone is not a reliable indicator of authenticity.",
+    "appreciation": "Release makes room for growth."
+  },
+  {
+    "plant": "Valerian — historically associated with calm and rest.",
+    "hint": "Tumbled stones may lose sharp edges but retain internal structure.",
+    "appreciation": "Stillness has value."
+  },
+  {
+    "plant": "Elderflower — traditionally symbolizing transition and renewal.",
+    "hint": "Crystals with identical patterns may be manufactured rather than natural.",
+    "appreciation": "Change can be gentle."
+  },
+  {
+    "plant": "Fennel — historically linked to clarity.",
+    "hint": "Metallic coatings often indicate treatment.",
+    "appreciation": "Attention shapes experience."
+  },
+  {
+    "plant": "Nettle — symbolically connected to endurance.",
+    "hint": "Natural stones may show color zoning.",
+    "appreciation": "Growth requires resilience."
+  },
+  {
+    "plant": "Lemon balm — traditionally associated with uplift.",
+    "hint": "Heat-treated stones are common in the gem trade.",
+    "appreciation": "Lightness can be intentional."
+  },
+  {
+    "plant": "Oregano — historically linked to joy.",
+    "hint": "Crystals should be stored separately to avoid scratches.",
+    "appreciation": "Joy can be subtle."
+  },
+  {
+    "plant": "Marjoram — associated with harmony.",
+    "hint": "Stone hardness does not equal durability.",
+    "appreciation": "Harmony develops over time."
+  },
+  {
+    "plant": "Dandelion — symbolizing persistence.",
+    "hint": "Natural stone patterns are rarely identical.",
+    "appreciation": "Adaptability is strength."
+  },
+  {
+    "plant": "Juniper — traditionally linked to protection.",
+    "hint": "Polishing alters surface texture but not composition.",
+    "appreciation": "Security comes from awareness."
+  },
+  {
+    "plant": "Anise — associated with clarity in folklore.",
+    "hint": "Synthetic stones may appear flawless.",
+    "appreciation": "Clarity supports confidence."
+  },
+  {
+    "plant": "Clove — historically symbolizing warmth.",
+    "hint": "Hardness scales measure scratch resistance only.",
+    "appreciation": "Warmth can be steady."
+  },
+  {
+    "plant": "Cinnamon — symbolically linked to vitality.",
+    "hint": "Natural stones may include microscopic fractures.",
+    "appreciation": "Energy renews itself."
+  },
+  {
+    "plant": "Hyssop — historically associated with cleansing.",
+    "hint": "Crystals benefit from careful handling.",
+    "appreciation": "Care preserves integrity."
+  },
+  {
+    "plant": "Linden — symbolizing comfort.",
+    "hint": "Authenticity often includes imperfections.",
+    "appreciation": "Comfort is grounding."
+  },
+  {
+    "plant": "Angelica — traditionally linked to protection.",
+    "hint": "Over-polishing can remove surface details.",
+    "appreciation": "Protection begins with awareness."
+  },
+  {
+    "plant": "Meadowsweet — associated with balance.",
+    "hint": "Mineral hardness varies widely.",
+    "appreciation": "Balance emerges naturally."
+  },
+  {
+    "plant": "Lovage — historically linked to intention.",
+    "hint": "Natural stones may feel cooler initially.",
+    "appreciation": "Intent shapes direction."
+  },
+  {
+    "plant": "Rue — symbolizing reflection.",
+    "hint": "Surface shine does not guarantee authenticity.",
+    "appreciation": "Reflection brings insight."
+  },
+  {
+    "plant": "Tansy — associated with resilience.",
+    "hint": "Crystals grow over long geological timescales.",
+    "appreciation": "Time adds depth."
+  },
+  {
+    "plant": "Sweetgrass — traditionally linked to harmony.",
+    "hint": "Synthetic materials often lack natural variation.",
+    "appreciation": "Harmony can be cultivated."
+  },
+  {
+    "plant": "Verbena — associated with calm intention.",
+    "hint": "Natural stones may show uneven edges.",
+    "appreciation": "Intentional calm is powerful."
+  },
+  {
+    "plant": "Coriander — historically linked to renewal.",
+    "hint": "Light refraction varies between minerals.",
+    "appreciation": "Renewal is ongoing."
+  },
+  {
+    "plant": "Saffron — symbolically associated with value.",
+    "hint": "Rare stones are often imitated.",
+    "appreciation": "Value grows through care."
+  },
+  {
+    "plant": "Chicory — traditionally linked to clarity.",
+    "hint": "Authentic stones often feel dense.",
+    "appreciation": "Clarity simplifies choice."
+  },
+  {
+    "plant": "Hibiscus — symbolizing openness.",
+    "hint": "Natural minerals vary in transparency.",
+    "appreciation": "Openness allows connection."
+  },
+  {
+    "plant": "Artemisia — historically associated with reflection.",
+    "hint": "Crystals should be protected from impact.",
+    "appreciation": "Reflection strengthens awareness."
+  },
+  {
+    "plant": "Lemongrass — symbolizing freshness.",
+    "hint": "Color enhancement is common in gem trade.",
+    "appreciation": "Fresh starts are possible."
+  },
+  {
+    "plant": "Comfrey — symbolically linked to grounding.",
+    "hint": "Stone surfaces may dull over time.",
+    "appreciation": "Grounding restores balance."
+  },
+  {
+    "plant": "Horehound — associated with resilience.",
+    "hint": "Natural crystals may include visible seams.",
+    "appreciation": "Resilience grows quietly."
+  },
+  {
+    "plant": "Echinacea — symbolizing strength.",
+    "hint": "Stone clarity does not define value.",
+    "appreciation": "Strength adapts."
+  },
+  {
+    "plant": "Marigold — traditionally linked to warmth.",
+    "hint": "Natural stones respond differently to light.",
+    "appreciation": "Warmth invites calm."
+  },
+  {
+    "plant": "Blue lotus — symbolically associated with contemplation.",
+    "hint": "Minerals form under specific environmental conditions.",
+    "appreciation": "Contemplation deepens understanding."
+  },
+  {
+    "plant": "Rose — often linked in folklore with love, devotion, and heart-centered intention.",
+    "hint": "Keep softer stones (like calcite or selenite) away from keys/coins; they scratch easily.",
+    "appreciation": "Today’s step counts, even if it’s small."
+  },
+  {
+    "plant": "Sunflower — symbolically associated with optimism, steadiness, and turning toward light.",
+    "hint": "Porous stones (like turquoise or malachite) can absorb oils—handle with clean, dry hands.",
+    "appreciation": "Your pace is valid."
+  },
+  {
+    "plant": "Willow — traditionally linked to flexibility, intuition, and flowing change.",
+    "hint": "Opal prefers gentle care; avoid sudden heat changes and harsh chemicals.",
+    "appreciation": "Curiosity is progress."
+  },
+  {
+    "plant": "Oak — often associated with strength, endurance, and rooted wisdom.",
+    "hint": "Lapis lazuli can be sensitive to acids—clean with a soft dry cloth instead of cleaners.",
+    "appreciation": "Quiet effort still builds results."
+  },
+  {
+    "plant": "Birch — symbolically connected to new beginnings and fresh starts.",
+    "hint": "Malachite should not be soaked; wipe gently and avoid abrasives.",
+    "appreciation": "Give yourself credit for showing up."
+  },
+  {
+    "plant": "Apple blossom — traditionally linked to renewal and gentle hope.",
+    "hint": "Azurite is delicate and can fade; keep it out of strong sunlight.",
+    "appreciation": "One good choice is enough for today."
+  },
+  {
+    "plant": "Ivy — associated in folklore with loyalty, persistence, and protection.",
+    "hint": "Pearls (if you ever use them) dislike perfumes and hairspray—apply cosmetics first, then jewelry.",
+    "appreciation": "Balance is something you practice."
+  },
+  {
+    "plant": "Lotus — widely символic of renewal and rising through challenges.",
+    "hint": "Fluorite is brittle; dropping it can chip even if it looks hard.",
+    "appreciation": "Softness can be strong."
+  },
+  {
+    "plant": "Marshmallow root — traditionally linked to softness and comfort symbolism.",
+    "hint": "Clear quartz is tough, but thermal shock (hot to cold) can cause cracks—avoid extremes.",
+    "appreciation": "Clarity arrives in layers."
+  },
+  {
+    "plant": "Peppermint — often associated with clear thinking and refreshed energy.",
+    "hint": "Rose quartz may fade in sun; store it away from direct light.",
+    "appreciation": "Patience is also action."
+  },
+  {
+    "plant": "Spearmint — linked with gentle clarity and uplift in folklore.",
+    "hint": "Amethyst can fade with long sun exposure; display it in indirect light.",
+    "appreciation": "Your attention is powerful."
+  },
+  {
+    "plant": "Geranium — associated with balance and steady joy in traditions.",
+    "hint": "Smoky quartz may lighten over time in strong sunlight; indirect light is safer.",
+    "appreciation": "You can begin again at any moment."
+  },
+  {
+    "plant": "Patchouli — often linked with grounding and earthy presence in modern folklore.",
+    "hint": "Kunsite (spodumene) fades easily—keep it out of bright sun.",
+    "appreciation": "Small rituals can steady you."
+  },
+  {
+    "plant": "Sandalwood — traditionally associated with reflection and calm focus.",
+    "hint": "Celestite is fragile; keep it dry and handle gently.",
+    "appreciation": "Your boundaries deserve respect."
+  },
+  {
+    "plant": "Orange peel — symbolically linked to brightness and encouragement.",
+    "hint": "Pyrite can oxidize if repeatedly exposed to moisture; store it dry.",
+    "appreciation": "Rest supports your next move."
+  },
+  {
+    "plant": "Lemon peel — associated with freshness and clearing intentions.",
+    "hint": "Hematite can rust if left wet; dry it promptly after cleaning.",
+    "appreciation": "Consistency beats perfection."
+  },
+  {
+    "plant": "Ginger — symbolically connected to courage and forward motion.",
+    "hint": "Halite (rock salt) dissolves in water—keep it completely dry.",
+    "appreciation": "Let it be simple today."
+  },
+  {
+    "plant": "Turmeric — associated in traditions with warmth and auspiciousness.",
+    "hint": "Sodalite and lapis can scratch; store them in a soft pouch.",
+    "appreciation": "You’re allowed to learn as you go."
+  },
+  {
+    "plant": "Cardamom — linked with welcome, warmth, and open-heartedness in folklore.",
+    "hint": "Obsidian is glassy and can chip—avoid knocking edges on hard surfaces.",
+    "appreciation": "Your growth doesn’t need to be loud."
+  },
+  {
+    "plant": "Vanilla — associated with comfort and sweetness of routine.",
+    "hint": "Jade and nephrite are tough but can still chip on corners; avoid impacts.",
+    "appreciation": "Kindness counts—including to yourself."
+  },
+  {
+    "plant": "Peppercorn — symbolically linked to protection and alertness.",
+    "hint": "Agate is durable; a simple rinse and soft cloth is usually enough.",
+    "appreciation": "Choose what feels sustainable."
+  },
+  {
+    "plant": "Black tea — associated with steadiness and daily ritual.",
+    "hint": "Carnelian can fade slightly in long sunlight—indirect light is best.",
+    "appreciation": "Being present is a win."
+  },
+  {
+    "plant": "Green tea — linked with clarity and mindful pauses.",
+    "hint": "Moonstone can scratch; keep it separate from harder gems like quartz.",
+    "appreciation": "Trust builds with repetition."
+  },
+  {
+    "plant": "Cacao — associated with gratitude and heart-centered reflection.",
+    "hint": "Labradorite shows its flash best when kept clean—wipe with microfiber cloth.",
+    "appreciation": "Notice what’s already working."
+  },
+  {
+    "plant": "Coffee — symbolically linked to awakening and focus.",
+    "hint": "Tourmaline can have cleavage; avoid sharp knocks.",
+    "appreciation": "You don’t have to earn calm."
+  },
+  {
+    "plant": "Clary sage — associated with clarity and thoughtful decisions in folklore.",
+    "hint": "Aventurine is quartz-based; it’s fairly durable but can still chip if dropped.",
+    "appreciation": "Your effort matters."
+  },
+  {
+    "plant": "Violet — linked to humility, quiet strength, and intuition.",
+    "hint": "Tiger’s eye has a fibrous structure—avoid harsh chemicals and ultrasonic cleaners.",
+    "appreciation": "Make room for breath."
+  },
+  {
+    "plant": "Lilac — traditionally associated with remembrance and gentle transitions.",
+    "hint": "Malachite and chrysocolla may be stabilized; treat them gently and avoid soaking.",
+    "appreciation": "Progress can be gentle."
+  },
+  {
+    "plant": "Magnolia — linked with dignity and calm resilience.",
+    "hint": "Howlite and magnesite are often dyed; color rubbing off can be a clue.",
+    "appreciation": "Your focus shapes your day."
+  },
+  {
+    "plant": "Gardenia — associated with peace and sincerity in symbolism.",
+    "hint": "Dyed stones sometimes stain a cotton swab with rubbing alcohol—test carefully on an unseen spot.",
+    "appreciation": "Some answers take time."
+  },
+  {
+    "plant": "Peony — linked with good fortune and warmth in folklore.",
+    "hint": "Glass imitations often have round air bubbles; natural stones rarely do.",
+    "appreciation": "Steady is still forward."
+  },
+  {
+    "plant": "Lotus leaf — associated with calm surface and depth beneath.",
+    "hint": "Perfectly identical patterns across many stones can indicate manufacturing.",
+    "appreciation": "Let go of the rush."
+  },
+  {
+    "plant": "Fern — symbolically connected to hidden strength and quiet growth.",
+    "hint": "Natural inclusions (tiny lines, clouds) are common and can be a good sign.",
+    "appreciation": "Your best can change day to day."
+  },
+  {
+    "plant": "Aloe — associated with protection and soothing symbolism.",
+    "hint": "Very low prices for “rare” stones can be a red flag; compare across sellers.",
+    "appreciation": "Enough is a complete sentence."
+  },
+  {
+    "plant": "Sea buckthorn — linked to resilience and thriving in harsh places.",
+    "hint": "Ask for the mineral name (not just a trade name) when buying.",
+    "appreciation": "Peace can coexist with uncertainty."
+  },
+  {
+    "plant": "Olive branch — symbol of peace and reconciliation.",
+    "hint": "Use a soft brush for textured stones; avoid metal tools.",
+    "appreciation": "Keep what nourishes you."
+  },
+  {
+    "plant": "Laurel — traditionally associated with achievement and honor.",
+    "hint": "Salt-water “cleansing” can damage porous stones; dry methods are safer.",
+    "appreciation": "Alignment is a practice."
+  },
+  {
+    "plant": "Poplar — linked with courage and uprightness in symbolism.",
+    "hint": "Some stones are treated (heated, dyed, coated); treatment isn’t always bad—just good to know.",
+    "appreciation": "Your resilience is real."
+  },
+  {
+    "plant": "Maple — associated with balance and sweetness of life.",
+    "hint": "Store crystals separately to prevent harder stones scratching softer ones.",
+    "appreciation": "Take the next tiny step."
+  },
+  {
+    "plant": "Cherry blossom — linked with presence and appreciating impermanence.",
+    "hint": "Avoid leaving stones in a hot car; heat can cause fractures or color change.",
+    "appreciation": "Your voice matters."
+  },
+  {
+    "plant": "Lotus seed — associated with potential and patience.",
+    "hint": "Ultrasonic cleaners can crack stones with inclusions—use gentle cleaning instead.",
+    "appreciation": "Celebrate the small wins."
+  },
+  {
+    "plant": "Pomegranate — linked with abundance and renewal in symbolism.",
+    "hint": "Adhesive-backed display putty can leave residue; use inert stands when possible.",
+    "appreciation": "Your energy is worth protecting."
+  },
+  {
+    "plant": "Fig — associated with nourishment and quiet prosperity in folklore.",
+    "hint": "Stones with metallic coatings (aura quartz) are treated; handle to avoid scratching the coating.",
+    "appreciation": "Learning is a kind of courage."
+  },
+  {
+    "plant": "Date palm — symbolically linked to endurance and oasis-like calm.",
+    "hint": "Do not burn or heat unknown minerals—some can release irritating dust or fumes.",
+    "appreciation": "Let today be workable."
+  },
+  {
+    "plant": "Rice — linked with abundance and everyday blessings.",
+    "hint": "If a stone feels unusually light for its size, it may be resin or plastic.",
+    "appreciation": "You’re allowed to simplify."
+  },
+  {
+    "plant": "Wheat — associated with harvest, effort, and reward.",
+    "hint": "Magnet tests can help for some minerals, but most gems are not magnetic—don’t rely on it alone.",
+    "appreciation": "Trust your timing."
+  },
+  {
+    "plant": "Barley — linked with steadiness and grounded work.",
+    "hint": "Scratch tests can damage surfaces; prefer non-destructive checks (look, weight, provenance).",
+    "appreciation": "Care creates change."
+  },
+  {
+    "plant": "Flax — associated with craft, patience, and resilience.",
+    "hint": "Take photos in natural light; strong indoor lighting can hide treatments.",
+    "appreciation": "Your intuition is information."
+  },
+  {
+    "plant": "Cotton — linked with comfort and simplicity.",
+    "hint": "Keep crystals away from household cleaners; residue can dull shine.",
+    "appreciation": "Be gentle with your process."
+  },
+  {
+    "plant": "Lotus flower — associated with renewal and clarity.",
+    "hint": "Rinse only if you’re sure the stone is water-safe; otherwise, dry-cloth cleaning is safest.",
+    "appreciation": "Your presence is valuable."
+  },
+  {
+    "plant": "Acacia — associated with endurance and protection symbolism.",
+    "hint": "Soft polishing cloths are safer than paper towels, which can scratch delicate surfaces.",
+    "appreciation": "Start where you are."
+  },
+  {
+    "plant": "Bee balm — linked to courage and bright expression.",
+    "hint": "Label your stones; remembering names helps when you’re learning.",
+    "appreciation": "Calm is a skill you can build."
+  },
+  {
+    "plant": "Butterfly pea — associated with transformation and calm beauty.",
+    "hint": "Buying from sellers who disclose treatments and origin builds trust.",
+    "appreciation": "Choose clarity over noise."
+  },
+  {
+    "plant": "Calendula (pot marigold) — linked with warmth and steady care.",
+    "hint": "Some ‘turquoise’ is dyed howlite; check for overly uniform color and dark dye lines.",
+    "appreciation": "Your needs are not inconvenient."
+  },
+  {
+    "plant": "Nasturtium — associated with courage and vibrant spirit.",
+    "hint": "‘Citrine’ is often heated amethyst; look for seller disclosure rather than color alone.",
+    "appreciation": "Keep going—quietly or boldly."
+  },
+  {
+    "plant": "Poppy — linked with rest, dreams, and gentle boundaries in folklore.",
+    "hint": "‘Ruby in zoisite’ and other composites are natural mixes—names can be confusing; read descriptions.",
+    "appreciation": "Let your effort be enough."
+  },
+  {
+    "plant": "Snowdrop — associated with hope and returning light.",
+    "hint": "Crystals can be naturally imperfect; a little asymmetry is normal.",
+    "appreciation": "Make space for joy."
+  },
+  {
+    "plant": "Safflower — linked with brightness and creative energy.",
+    "hint": "Mineral hardness is not the same as toughness—some hard stones still chip easily.",
+    "appreciation": "You can do hard things slowly."
+  },
+  {
+    "plant": "Heliotrope — associated with devotion and turning toward light.",
+    "hint": "Cleavage means a mineral can split along planes; handle those stones carefully.",
+    "appreciation": "Your attention can soften everything."
+  },
+  {
+    "plant": "Ylang-ylang — linked with ease and soft confidence in modern symbolism.",
+    "hint": "Store in a cool, dry place to reduce oxidation and fading risks.",
+    "appreciation": "One breath can reset you."
+  },
+  {
+    "plant": "Lotus root — associated with grounding beneath the surface.",
+    "hint": "Avoid prolonged water contact for stones with iron content to prevent staining.",
+    "appreciation": "Today can be lighter."
+  },
+  {
+    "plant": "Raspberry leaf — linked with steadiness and nurturing symbolism.",
+    "hint": "Use simple soap and water only for truly water-safe stones; dry thoroughly.",
+    "appreciation": "Be proud of your persistence."
+  },
+  {
+    "plant": "Blackberry bramble — associated with protection and persistence symbolism.",
+    "hint": "Don’t use bleach or vinegar on stones; acids can etch many minerals.",
+    "appreciation": "You are more than one moment."
+  },
+  {
+    "plant": "Rosehip — linked with renewal and seasonal change symbolism.",
+    "hint": "Keep jewelry settings clean; dirt can hide sparkle more than you think.",
+    "appreciation": "Trust the small improvements."
+  },
+  {
+    "plant": "Spruce — associated with endurance and evergreen steadiness.",
+    "hint": "If you’re unsure about a stone, treat it as delicate until you learn more.",
+    "appreciation": "Your path is your own."
+  },
+  {
+    "plant": "Fir — linked with resilience and winter strength symbolism.",
+    "hint": "Document what you bought and from where—provenance helps later.",
+    "appreciation": "Keep what feels true."
+  },
+  {
+    "plant": "Sequoia — associated with patience and long-view wisdom.",
+    "hint": "Rose quartz and other pale stones can look different indoors; check color in daylight.",
+    "appreciation": "You deserve a steady foundation."
+  },
+  {
+    "plant": "Redwood — linked with grounded awe and stability.",
+    "hint": "If a stone’s ‘glitter’ looks like foil, it might be man-made (like goldstone).",
+    "appreciation": "Give yourself permission to pause."
+  },
+  {
+    "plant": "Cypress — associated with transition and remembrance.",
+    "hint": "Natural stones often vary between pieces; uniformity across a batch can signal imitation.",
+    "appreciation": "Let your day have edges."
+  },
+  {
+    "plant": "Rowan — linked with protection and courage in folklore.",
+    "hint": "Keep a small notebook of what each stone is and how you care for it—future you will love it.",
+    "appreciation": "You can be both strong and soft."
+  }
+]
