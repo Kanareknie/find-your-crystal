@@ -94,3 +94,4 @@ async function localDailyQuote() {
 
 // Call the function to load the quote
 localDailyQuote();
+
