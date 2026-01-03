@@ -175,8 +175,11 @@ aside h3 {
     
 }
 
-.solid {
+aside hr {
+    border: 0;
     border-top: 3px solid rgb(var(--color-text));
+    width: 80%;
+    opacity: 0.25;
 }
 
 #hero {
