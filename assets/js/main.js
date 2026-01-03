@@ -126,12 +126,6 @@ const storageKey = "dailyInsights-" + getTodayKey();
     const daily = 
     insights[Math.floor(Math.random() * insights.length)];
 
-    // Prepare daily insights object
-
-      dailyPlantEl = daily.plant;
-      dailyHintEl = daily.hint;
-      appreciationEl = daily.appreciation;
-
     // Save to localStorage
     localStorage.setItem(storageKey, JSON.stringify(daily));
 
