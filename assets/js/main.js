@@ -117,7 +117,7 @@ const storageKey = "dailyInsights-" + getTodayKey();
   }
   // If not, fetch new insights from local JSON file
   try {
-    const response = await fetch("assets/data/daily-hints.json");
+    const response = await fetch("find-your-crystal/assets/data/daily-hints.json");
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
