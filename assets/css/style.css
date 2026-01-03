@@ -108,6 +108,8 @@ footer {
     margin: 2px;
 }
 
+
+
 #sidebar-button {
     display: none;
 
@@ -145,6 +147,15 @@ aside h3 {
 .sidebar-content {
     display: flex;
     flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.sidebar-content p {
+    align-items: center;
+    justify-content: center;
 
 }
 
