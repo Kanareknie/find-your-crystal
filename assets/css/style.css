@@ -175,6 +175,10 @@ aside h3 {
     
 }
 
+.solid {
+    border-top: 3px solid rgb(var(--color-text));
+}
+
 #hero {
     background-color: rgb(var(--color-bg) / 0.6);
     color: rgb(var(--color-text));
