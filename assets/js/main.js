@@ -95,12 +95,12 @@ async function localDailyQuote() {
 localDailyQuote();
 
 
-// API Daily Insight Fetch from JSON daily-insights.json file
+// API Daily Insight Fetch from JSON daily-hints.json file
 
 //Get elements
 const dailyPlantEl = document.getElementById("daily-plant");
 const dailyHintEl = document.getElementById("daily-hint");
-const appreciationEl = document.getElementById("appreciation");
+const appreciationEl = document.getElementById("daily-appreciation");
 
 //Fetch daily insights from local JSON file
 async function fetchDailyInsights() {
