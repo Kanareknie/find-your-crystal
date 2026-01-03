@@ -177,7 +177,7 @@ aside h3 {
 
 aside hr {
     border: 0;
-    border-top: 3px solid rgb(var(--color-text));
+    border-top: 1px solid rgb(var(--color-text));
     width: 80%;
     opacity: 0.25;
 }
