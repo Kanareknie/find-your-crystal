@@ -37,7 +37,6 @@ body {
 body {
     display: flex;
     width: 100%;
-    background-image: url('../images/index-bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -45,6 +44,9 @@ body {
     height: auto;
 }
 
+.page-home {
+    background-image: url('../images/index-bg.jpg');
+}
 
 /* Aside main position */
 #daily-sidebar {
@@ -227,6 +229,13 @@ footer ul li a {
 
 /* -------------------------------FORM-ZODIAC PAGE ---------------------------------------- */
 
+/* Main styles for the form */
+
+.page-zodiac {
+    background-image: url("../images/zodiac-bg.jpg");
+}
+
+/* Question part */
 .form-container {
     display: flex;
     flex-direction: column;
@@ -284,6 +293,7 @@ footer ul li a {
     width: 15rem;
 }
 
+/* Answer part */
 
 .form-answer-container {
     background-color: rgb(var(--color-bg) / 0.7);
