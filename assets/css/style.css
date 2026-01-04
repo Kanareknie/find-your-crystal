@@ -231,6 +231,18 @@ footer ul li a {
 
 /* Main styles for the form */
 
+.home-link {
+    color: rgb(var(--color-text));
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 400;
+    position: fixed;
+    gap: 0.5rem;
+    top: 1.5rem;
+    right: 1.5rem;
+
+}
+
 .page-zodiac {
     background-image: url("../images/zodiac-bg.jpg");
 }
