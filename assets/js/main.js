@@ -149,9 +149,9 @@ fetchDailyInsights();
 const zodiacForm = document.getElementById("zodiac-form");
 const answerSection = document.querySelector(".form-answer-container");
 
-FormData.addEventListener("submit", (e) => {
+zodiacForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  if (!FormData.checkValidity()) {
+  if (!zodiacForm.checkValidity()) {
     return;
   }
   answerSection.style.display = "block";
