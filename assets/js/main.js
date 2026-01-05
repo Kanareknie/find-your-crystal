@@ -143,3 +143,18 @@ const storageKey = "dailyInsights-" + getTodayKey();
 fetchDailyInsights();
 
 
+// Form zodiac functionality
+
+//Unhide answer section when form is submitted
+const zodiacForm = document.getElementById("zodiac-form");
+const answerSection = document.querySelector(".form-answer-container");
+
+FormData.addEventListener("submit", (e) => {
+  e.preventDefault();
+  if (!FormData.checkValidity()) {
+    return;
+  }
+  answerSection.style.display = "block";
+});
+
+
