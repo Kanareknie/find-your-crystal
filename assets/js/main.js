@@ -166,3 +166,7 @@ const zodiacSelect = document.getElementById("zodiac-select");
 console.log(zodiacSelect);
 console.log(zodiacFormSelect);
 
+// Add event listener to form submit
+zodiacFormSelect.addEventListener("submit", function() {
+  console.log("Form submitted");
+});
