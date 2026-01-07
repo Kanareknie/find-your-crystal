@@ -170,5 +170,5 @@ console.log(zodiacFormSelect);
 zodiacFormSelect.addEventListener("submit", function(event) {
   event.preventDefault();
   const selectedZodiac = zodiacSelect.value;
-  console.log("Selected zodiac:", selectedZodiac );
+  console.log("Selected zodiac:", selectedZodiac);
 });
