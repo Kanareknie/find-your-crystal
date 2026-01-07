@@ -172,3 +172,15 @@ zodiacFormSelect.addEventListener("submit", function(event) {
   const selectedZodiac = zodiacSelect.value;
   console.log("Selected zodiac:", selectedZodiac);
 });
+
+// Fetch zodiac data from JSON file and display based on selection
+async function fetchZodiacCrystal() {
+  const response = await fetch("assets/data/crystals_master.json");
+  const zodiacCrystal = await response.json();
+  return zodiacCrystal;
+}
+fetchZodiacCrystal().then(zodiacCrystal => {
+  console.log("The crystal data is logged correctly:", zodiacCrystal);
+  console.log("The first crystal is:" , zodiacCrystal[0]);
+
+});
