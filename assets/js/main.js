@@ -169,5 +169,6 @@ console.log(zodiacFormSelect);
 // Add event listener to form submit
 zodiacFormSelect.addEventListener("submit", function(event) {
   event.preventDefault();
-  console.log("Form submitted without reloading the page.");
+  const selectedZodiac = zodiacSelect.value;
+  console.log("Selected zodiac:", selectedZodiac );
 });
