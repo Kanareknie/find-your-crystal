@@ -158,3 +158,11 @@ zodiacForm.addEventListener("submit", (e) => {
 });
 
 
+// ZODIAC FORM - main function to show zodiac sign based on date input
+
+// Select elements
+const zodiacFormSelect = document.getElementById("zodiac-form");
+const zodiacSelect = document.getElementById("zodiac-select");
+console.log(zodiacSelect);
+console.log(zodiacFormSelect);
+
