@@ -171,16 +171,24 @@ zodiacFormSelect.addEventListener("submit", function(event) {
   event.preventDefault();
   const selectedZodiac = zodiacSelect.value;
   console.log("Selected zodiac:", selectedZodiac);
+
+//fetch data from JSON file and match with zodiac sign
+const crystals = findZodiacCrystals();
+const matches = findCrystalsByZodiac(crystals, selectedZodiac);
+
+console.log("Matching crystals:", matches);
+console.log("First match:", matches[0]);
+
 });
 
-// Fetch zodiac data from JSON file and display based on selection
+// Function to fetch zodiac data from JSON file and display based on selection
 async function fetchZodiacCrystal() {
   const response = await fetch("assets/data/crystals_master.json");
   const zodiacCrystal = await response.json();
   return zodiacCrystal;
 }
-fetchZodiacCrystal().then(zodiacCrystal => {
-  console.log("The crystal data is logged correctly:", zodiacCrystal);
-  console.log("The first crystal is:" , zodiacCrystal[0]);
 
-});
+//Match zodiac with crystal function 
+function findCrystalsByZodiac(crystals, selectedZodiac) {
+  return crystals.filter(crystal => crystal.zodiac.includes(selectedZodiac));
+}
