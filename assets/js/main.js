@@ -167,6 +167,7 @@ console.log(zodiacSelect);
 console.log(zodiacFormSelect);
 
 // Add event listener to form submit
-zodiacFormSelect.addEventListener("submit", function() {
-  console.log("Form submitted");
+zodiacFormSelect.addEventListener("submit", function(event) {
+  event.preventDefault();
+  console.log("Form submitted without reloading the page.");
 });
