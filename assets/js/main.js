@@ -191,8 +191,8 @@ async function fetchZodiacCrystal() {
 
 //Match zodiac with crystal function 
 function findCrystalsByZodiac(crystals, selectedZodiac) {
-  
-  const target = selectedZodiac.toLowerCase;
+
+  const target = selectedZodiac.toLowerCase();
 
   return crystals.filter((crystal) => crystal.zodiac.some(
       // Normalization toLowerse() at comparison time
