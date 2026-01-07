@@ -167,13 +167,14 @@ console.log(zodiacSelect);
 console.log(zodiacFormSelect);
 
 // Add event listener to form submit
-zodiacFormSelect.addEventListener("submit", function(event) {
+zodiacFormSelect.addEventListener("submit", async function(event) {
   event.preventDefault();
+
   const selectedZodiac = zodiacSelect.value;
   console.log("Selected zodiac:", selectedZodiac);
 
 //fetch data from JSON file and match with zodiac sign
-const crystals = findZodiacCrystals();
+const crystals = await fetchZodiacCrystal();
 const matches = findCrystalsByZodiac(crystals, selectedZodiac);
 
 console.log("Matching crystals:", matches);
@@ -190,5 +191,5 @@ async function fetchZodiacCrystal() {
 
 //Match zodiac with crystal function 
 function findCrystalsByZodiac(crystals, selectedZodiac) {
-  return crystals.filter(crystal => crystal.zodiac.includes(selectedZodiac));
+  return crystals.filter((crystal) => crystal.zodiac.includes(selectedZodiac));
 }
