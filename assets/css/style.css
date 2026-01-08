@@ -396,6 +396,99 @@ footer ul li a {
 
 }
 
+/* Hidded list -- link -- https://www.w3schools.com/howto/howto_js_off-canvas.asp*/
+
+/* ============================= */
+/* More stones button */
+/* ============================= */
+
+.more-stones-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+
+  width: auto;
+  padding: 0.6rem 1rem;
+  margin-top: 1rem;
+
+  border-radius: 999px;
+  border: 1px solid rgb(var(--color-accent) / 0.7);
+  background: rgb(var(--color-bg) / 0.35);
+  color: rgb(var(--color-text));
+
+  cursor: pointer;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.more-stones-btn:hover {
+  box-shadow: 0 0 12px rgb(var(--color-accent) / 0.25);
+}
+
+/* ============================= */
+/* Panel (shared styles) */
+/* ============================= */
+
+.more-stones-panel {
+  background: rgb(var(--color-bg) / 0.85);
+  color: rgb(var(--color-text));
+  padding: 1rem;
+  border-left: 1px solid rgb(var(--color-accent) / 0.35);
+}
+
+.more-stones-close {
+  background: transparent;
+  border: none;
+  color: rgb(var(--color-text));
+  font-size: 1.25rem;
+  cursor: pointer;
+  margin-left: auto;
+  display: block;
+}
+
+/* ============================= */
+/* Mobile off-canvas behavior */
+/* ============================= */
+
+@media (max-width: 768px) {
+  .more-stones-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(85vw, 340px);
+    z-index: 50;
+
+    transform: translateX(110%);
+    transition: transform 0.25s ease;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+  }
+
+  .more-stones-panel.is-open {
+    transform: translateX(0);
+  }
+
+  .more-stones-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 40;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+  }
+
+  .more-stones-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+}
+
+
 /* -------------------------------MEDIA QUERY ---- ---------------------------------------- */
 
 /* === Media - mobile === */
