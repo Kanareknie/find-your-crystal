@@ -244,9 +244,19 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
     document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
     document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
     document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
-    document.querySelector('[data-field="subPowers"]').textContent = crystal.subPowers ?? "";
     document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
     document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
+
+    // Subpowers list of results
+    const subPowersEl = document.querySelector('[data-field="subPowers"]');
+
+    subPowersEl.innerHTML = "";
+    (crystal.subPowers ?? []).forEach((p) => {
+      const li = document.createElement("li");
+      li.textContent = p;
+      subPowersEl.appendChild(li);
+    });
+
   }
 
 }
