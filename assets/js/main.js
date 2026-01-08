@@ -263,7 +263,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
 const zodiacTitleEl = document.getElementById("selected-zodiac-title");
 
-if (zodiacTitleEl) {
+if (zodiacTitleEl && zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answerSection) {
   const formattedZodiac = selectedZodiac.charAt(0).toUpperCase() + selectedZodiac.slice(1);
 
   zodiacTitleEl.textContent = formattedZodiac;
