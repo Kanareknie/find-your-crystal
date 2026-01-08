@@ -145,8 +145,15 @@ fetchDailyInsights();
 
 // Form zodiac functionality
 
-//Unhide answer section when form is submitted
+//Add submitted zodiac to the title of result
 
+const zodiacTitleEl = document.getElementById("selected-zodiac-title");
+
+if (zodiacTitleEl) {
+  const formattedZodiac = selectedZodiac.charAt(0).toUpperCase() + selectedZodiac.slice(1);
+
+  zodiacTitleEl.textContent = formattedZodiac;
+}
 
 
 

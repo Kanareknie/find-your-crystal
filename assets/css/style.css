@@ -320,9 +320,9 @@ footer ul li a {
     /* border */
     border: 1px solid rgb(var(--color-accent));
     box-shadow: 
-    0 0 10px rgba(var(--color-accent, 0.35)),
-    0 0 25px rgba(var(--color-accent, 0.25)),
-    inset 0 0 12px rgba(var(--color-accent, 0.12));
+    0 0 10px rgb(var(--color-accent) / 0.35),
+    0 0 25px rgb(var(--color-accent) / 0.25),
+    inset 0 0 12px rgb(var(--color-accent) / 0.12);
    background: rgb(var(--color-bg) / 0.7);
 }
 
@@ -331,6 +331,15 @@ footer ul li a {
     flex-direction: row;
 }
 
+/* title on the border */
+
+#selected-zodiac-title {
+  margin-left: 0.25rem;
+  color: var(--color-accent);
+  text-shadow:
+    0 0 6px rgb(var(--color-accent) / 0.8),
+    0 0 14px rgb(var(--color-accent) / 0.6);
+}
 
 .details-left-container {
     
