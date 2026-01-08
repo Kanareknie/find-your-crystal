@@ -177,6 +177,11 @@ zodiacFormSelect.addEventListener("submit", async function(event) {
 const crystals = await fetchZodiacCrystal();
 const matches = findCrystalsByZodiac(crystals, selectedZodiac);
 
+if (matches.length === 0) {
+  crystalListEl.innerHTML = "<li>No matches found.</li>";
+  return;
+}
+
 console.log("Matching crystals:", matches);
 console.log("First match:", matches[0]);
 
