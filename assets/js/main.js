@@ -149,13 +149,17 @@ fetchDailyInsights();
 const zodiacForm = document.getElementById("zodiac-form");
 const answerSection = document.querySelector(".form-answer-container");
 
-zodiacForm.addEventListener("submit", (e) => {
+// Add a guard so index html will not crash
+if (zodiacForm && answerSection) {
+  zodiacForm.addEventListener("submit", (e) => {
   e.preventDefault();
   if (!zodiacForm.checkValidity()) {
     return;
   }
   answerSection.style.display = "block";
 });
+}
+
 
 
 // ZODIAC FORM - main function to show zodiac sign based on date input
@@ -163,8 +167,12 @@ zodiacForm.addEventListener("submit", (e) => {
 // Select elements
 const zodiacFormSelect = document.getElementById("zodiac-form");
 const zodiacSelect = document.getElementById("zodiac-select");
+const crystalListEl = document.getElementById("zodiac-crystal-list");
+
 console.log(zodiacSelect);
 console.log(zodiacFormSelect);
+console.log(answerSection);
+console.log(crystalListEl);
 
 // Add event listener to form submit - call the zodiac
 zodiacFormSelect.addEventListener("submit", async function(event) {
@@ -181,6 +189,9 @@ if (matches.length === 0) {
   crystalListEl.innerHTML = "<li>No matches found.</li>";
   return;
 }
+
+renderCrystalList(matches);
+renderCrystalDetails(matches[0]);
 
 console.log("Matching crystals:", matches);
 console.log("First match:", matches[0]);
@@ -206,6 +217,7 @@ function findCrystalsByZodiac(crystals, selectedZodiac) {
 }
 
 // Function to create a list of matches results
+
 function renderCrystalList(matches) {
   crystalListEl.innerHTML = "";
 
