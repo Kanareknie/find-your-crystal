@@ -166,7 +166,7 @@ const zodiacSelect = document.getElementById("zodiac-select");
 console.log(zodiacSelect);
 console.log(zodiacFormSelect);
 
-// Add event listener to form submit
+// Add event listener to form submit - call the zodiac
 zodiacFormSelect.addEventListener("submit", async function(event) {
   event.preventDefault();
 
@@ -199,3 +199,31 @@ function findCrystalsByZodiac(crystals, selectedZodiac) {
     (zodiac) => zodiac.toLowerCase() === target
     ));
 }
+
+// Function to create a list of matches results
+function renderCrystalList(matches) {
+  crystalListEl.innerHTML = "";
+
+  matches.forEach((crystal) => {
+    const li = document.createElement("li");
+
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.textContent = crystal.name;
+
+    btn.addEventListener("click", () => {
+      renderCrystalDetails(crystal);
+    });
+
+    li.appendChild(btn);
+    crystalListEl.appendChild(li);
+  });
+}
+
+// Details of each stone - test
+function renderCrystalDetails(crystal) {
+  document.querySelector('[data-field="name"]').textContent = crystal.name ?? "";
+  document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
+  document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
+}
+
