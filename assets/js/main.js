@@ -145,15 +145,6 @@ fetchDailyInsights();
 
 // Form zodiac functionality
 
-//Add submitted zodiac to the title of result
-
-const zodiacTitleEl = document.getElementById("selected-zodiac-title");
-
-if (zodiacTitleEl) {
-  const formattedZodiac = zodiacSelect.charAt(0).toUpperCase() + zodiacSelect.slice(1);
-
-  zodiacTitleEl.textContent = formattedZodiac;
-}
 
 
 
@@ -266,4 +257,14 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
   }
 
+}
+
+//Add submitted zodiac to the title of result
+
+const zodiacTitleEl = document.getElementById("selected-zodiac-title");
+
+if (zodiacTitleEl) {
+  const formattedZodiac = zodiacSelect.charAt(0).toUpperCase() + zodiacSelect.slice(1);
+
+  zodiacTitleEl.textContent = formattedZodiac;
 }
