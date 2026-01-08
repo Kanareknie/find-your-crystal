@@ -268,3 +268,48 @@ if (zodiacTitleEl && zodiacFormSelect && zodiacSelect && crystalListEl && questi
 
   zodiacTitleEl.textContent = formattedZodiac;
 }
+
+// Slide list on form-zodiac - more crystals list -- W3Schools tutorial
+
+// Select elements
+const openMoreStonesBtn = document.querySelector(".more-stones-btn");
+const closeMoreStonesBtn = document.querySelector(".more-stones-close");
+const moreStonesPanel = document.getElementById("more-stones-panel");
+const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
+
+// OPEN panel
+function openMoreStones() {
+  moreStonesPanel.classList.add("is-open");
+  moreStonesBackdrop.classList.add("is-open");
+
+  moreStonesPanel.hidden = false;
+  moreStonesBackdrop.hidden = false;
+
+  openMoreStonesBtn.setAttribute("aria-expanded", "true");
+}
+
+// CLOSE panel
+function closeMoreStones() {
+  moreStonesPanel.classList.remove("is-open");
+  moreStonesBackdrop.classList.remove("is-open");
+
+  openMoreStonesBtn.setAttribute("aria-expanded", "false");
+
+  // wait for slide-out animation to finish
+  setTimeout(() => {
+    moreStonesPanel.hidden = true;
+    moreStonesBackdrop.hidden = true;
+  }, 250);
+}
+
+// Event listeners
+if (
+  openMoreStonesBtn &&
+  closeMoreStonesBtn &&
+  moreStonesPanel &&
+  moreStonesBackdrop
+) {
+  openMoreStonesBtn.addEventListener("click", openMoreStones);
+  closeMoreStonesBtn.addEventListener("click", closeMoreStones);
+  moreStonesBackdrop.addEventListener("click", closeMoreStones);
+}
