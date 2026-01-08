@@ -150,7 +150,7 @@ fetchDailyInsights();
 const zodiacTitleEl = document.getElementById("selected-zodiac-title");
 
 if (zodiacTitleEl) {
-  const formattedZodiac = selectedZodiac.charAt(0).toUpperCase() + selectedZodiac.slice(1);
+  const formattedZodiac = zodiacSelect.charAt(0).toUpperCase() + zodiacSelect.slice(1);
 
   zodiacTitleEl.textContent = formattedZodiac;
 }
