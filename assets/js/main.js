@@ -174,6 +174,10 @@ console.log(zodiacFormSelect);
 console.log(answerSection);
 console.log(crystalListEl);
 
+//Add a guard around the zodiac block
+
+if (zodiacFormSelect && zodiacSelect && crystalListEl) {
+
 // Add event listener to form submit - call the zodiac
 zodiacFormSelect.addEventListener("submit", async function(event) {
   event.preventDefault();
@@ -197,6 +201,7 @@ console.log("Matching crystals:", matches);
 console.log("First match:", matches[0]);
 
 });
+
 
 // Function to fetch zodiac data from JSON file and display based on selection
 async function fetchZodiacCrystal() {
@@ -244,3 +249,4 @@ function renderCrystalDetails(crystal) {
   document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
 }
 
+}
