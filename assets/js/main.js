@@ -104,9 +104,9 @@ const appreciationEl = document.getElementById("daily-appreciation");
 
 //Fetch daily insights from local JSON file
 async function fetchDailyInsights() {
-const storageKey = "dailyInsights-" + getTodayKey();
+  const storageKey = "dailyInsights-" + getTodayKey();
 
-// Check if todays key already exists
+  // Check if todays key already exists
   const saved = localStorage.getItem(storageKey);
   if (saved) {
     const daily = JSON.parse(saved);
@@ -123,8 +123,8 @@ const storageKey = "dailyInsights-" + getTodayKey();
     }
     const insights = await response.json();
     // Pick random insight per day
-    const daily = 
-    insights[Math.floor(Math.random() * insights.length)];
+    const daily =
+      insights[Math.floor(Math.random() * insights.length)];
 
     // Save to localStorage
     localStorage.setItem(storageKey, JSON.stringify(daily));
@@ -136,7 +136,7 @@ const storageKey = "dailyInsights-" + getTodayKey();
   }
   catch (error) {
     console.error("Error fetching daily insights:", error);
-  } 
+  }
 }
 
 // Call the function to fetch daily insights
@@ -146,19 +146,7 @@ fetchDailyInsights();
 // Form zodiac functionality
 
 //Unhide answer section when form is submitted
-const zodiacForm = document.getElementById("zodiac-form");
-const answerSection = document.querySelector(".form-answer-container");
 
-// Add a guard so index html will not crash
-if (zodiacForm && answerSection) {
-  zodiacForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  if (!zodiacForm.checkValidity()) {
-    return;
-  }
-  answerSection.style.display = "block";
-});
-}
 
 
 
@@ -168,6 +156,10 @@ if (zodiacForm && answerSection) {
 const zodiacFormSelect = document.getElementById("zodiac-form");
 const zodiacSelect = document.getElementById("zodiac-select");
 const crystalListEl = document.getElementById("zodiac-crystal-list");
+const questionSection = document.querySelector(".form-question-container");
+const answerSection = document.querySelector(".form-answer-container");
+
+
 
 console.log(zodiacSelect);
 console.log(zodiacFormSelect);
@@ -176,81 +168,85 @@ console.log(crystalListEl);
 
 //Add a guard around the zodiac block
 
-if (zodiacFormSelect && zodiacSelect && crystalListEl) {
+if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answerSection) {
 
-// Add event listener to form submit - call the zodiac
-zodiacFormSelect.addEventListener("submit", async function(event) {
-  event.preventDefault();
+  // Add event listener to form submit - call the zodiac
+  zodiacFormSelect.addEventListener("submit", async function (event) {
+    event.preventDefault();
 
-  const selectedZodiac = zodiacSelect.value;
-  console.log("Selected zodiac:", selectedZodiac);
+    const selectedZodiac = zodiacSelect.value;
+    console.log("Selected zodiac:", selectedZodiac);
 
-//fetch data from JSON file and match with zodiac sign
-const crystals = await fetchZodiacCrystal();
-const matches = findCrystalsByZodiac(crystals, selectedZodiac);
+    //fetch data from JSON file and match with zodiac sign
+    const crystals = await fetchZodiacCrystal();
+    const matches = findCrystalsByZodiac(crystals, selectedZodiac);
 
-if (matches.length === 0) {
-  crystalListEl.innerHTML = "<li>No matches found.</li>";
-  return;
-}
+    if (matches.length === 0) {
+      crystalListEl.innerHTML = "<li>No matches found.</li>";
+      return;
+    }
 
-renderCrystalList(matches);
-renderCrystalDetails(matches[0]);
+    renderCrystalList(matches);
+    renderCrystalDetails(matches[0]);
 
-console.log("Matching crystals:", matches);
-console.log("First match:", matches[0]);
+    console.log("Matching crystals:", matches);
+    console.log("First match:", matches[0]);
 
-});
+    // UI switching
+    questionSection.style.display = "none";
+    answerSection.style.display = "block";
 
-
-// Function to fetch zodiac data from JSON file and display based on selection
-async function fetchZodiacCrystal() {
-  const response = await fetch("assets/data/crystals_master.json");
-  const zodiacCrystal = await response.json();
-  return zodiacCrystal;
-}
-
-//Match zodiac with crystal function 
-function findCrystalsByZodiac(crystals, selectedZodiac) {
-
-  const target = selectedZodiac.toLowerCase();
-
-  return crystals.filter((crystal) => crystal.zodiac.some(
-      // Normalization toLowerse() at comparison time
-    (zodiac) => zodiac.toLowerCase() === target
-    ));
-}
-
-// Function to create a list of matches results
-
-function renderCrystalList(matches) {
-  crystalListEl.innerHTML = "";
-
-  matches.forEach((crystal) => {
-    const li = document.createElement("li");
-
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.textContent = crystal.name;
-
-    btn.addEventListener("click", () => {
-      renderCrystalDetails(crystal);
-    });
-
-    li.appendChild(btn);
-    crystalListEl.appendChild(li);
   });
-}
 
-// Details of each stone - test
-function renderCrystalDetails(crystal) {
-  document.querySelector('[data-field="name"]').textContent = crystal.name ?? "";
-  document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
-  document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
-  document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
-  document.querySelector('[data-field="subPowers"]').textContent = crystal.subPowers ?? "";
-  document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
-  document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
-}
+
+  // Function to fetch zodiac data from JSON file and display based on selection
+  async function fetchZodiacCrystal() {
+    const response = await fetch("assets/data/crystals_master.json");
+    const zodiacCrystal = await response.json();
+    return zodiacCrystal;
+  }
+
+  //Match zodiac with crystal function 
+  function findCrystalsByZodiac(crystals, selectedZodiac) {
+
+    const target = selectedZodiac.toLowerCase();
+
+    return crystals.filter((crystal) => crystal.zodiac.some(
+      // Normalization toLowerse() at comparison time
+      (zodiac) => zodiac.toLowerCase() === target
+    ));
+  }
+
+  // Function to create a list of matches results
+
+  function renderCrystalList(matches) {
+    crystalListEl.innerHTML = "";
+
+    matches.forEach((crystal) => {
+      const li = document.createElement("li");
+
+      const btn = document.createElement("button");
+      btn.type = "button";
+      btn.textContent = crystal.name;
+
+      btn.addEventListener("click", () => {
+        renderCrystalDetails(crystal);
+      });
+
+      li.appendChild(btn);
+      crystalListEl.appendChild(li);
+    });
+  }
+
+  // Details of each stone - test
+  function renderCrystalDetails(crystal) {
+    document.querySelector('[data-field="name"]').textContent = crystal.name ?? "";
+    document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
+    document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
+    document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
+    document.querySelector('[data-field="subPowers"]').textContent = crystal.subPowers ?? "";
+    document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
+    document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
+  }
 
 }
