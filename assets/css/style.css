@@ -319,11 +319,11 @@ footer ul li a {
 
     /* border */
     border: 1px solid rgb(var(--color-accent));
-    box-shadow: 
-    0 0 10px rgb(var(--color-accent) / 0.55),
-    0 0 25px rgb(var(--color-accent) / 0.35),
-    inset 0 0 12px rgb(var(--color-accent) / 0.12);
-   background: rgb(var(--color-bg) / 0.7);
+    box-shadow:
+        0 0 10px rgb(var(--color-accent) / 0.55),
+        0 0 25px rgb(var(--color-accent) / 0.35),
+        inset 0 0 12px rgb(var(--color-accent) / 0.12);
+    background: rgb(var(--color-bg) / 0.7);
 }
 
 .form-answer-content {
@@ -333,16 +333,15 @@ footer ul li a {
 
 /* title on the border */
 
-#selected-zodiac-title {
-  margin-left: 0.25rem;
-  color: var(--color-text);
-  text-shadow:
-    0 0 6px rgb(var(--color-accent) / 0.8),
-    0 0 14px rgb(var(--color-accent) / 0.6);
+.neon-board-title {
+    padding: 0 1rem;
+    font-family: var(--color-text);
+    font-size: 1.3rem;
+    color: rgb(var(--color-text));
 }
 
 .details-left-container {
-    
+
     color: rgb(var(--color-text));
     padding: 2rem;
     border-radius: 8px;
@@ -370,14 +369,32 @@ footer ul li a {
     padding: 5px;
     margin: 2px;
 
-    
+
 }
 
 .crystal-card-title {
     font-weight: 100;
 }
 
+/* Button */
 
+.more-stone-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: auto;
+    padding: 0.5rem 1rem;
+    background-color: rgb(var(--color-accent));
+    color: rgb(var(--color-text));
+    border: none;
+    border-radius: 4px;
+    font-family: var(--color-text);
+    font-weight: 400;
+    width: 15em;
+    height: min-content;
+
+}
 
 /* -------------------------------MEDIA QUERY ---- ---------------------------------------- */
 

@@ -123,8 +123,10 @@
                         </div>
                     </section>
                     <!-- Title on the border -->
-                     <fieldset class="neon-board form-answer-container">
-                        <legend class="neon-board-title">Your Crystal Match For <span id="selected-zodiac-title"></span></legend>
+                    <fieldset class="neon-board form-answer-container">
+                        <legend class="neon-board-title">Your Crystal Match For
+                            <span id="selected-zodiac-title"></span>
+                        </legend>
                         <!-- Results container for both list and details -->
                         <div class="form-answer-content">
                             <!-- Details left side -->
@@ -166,70 +168,79 @@
                                         <h3 class="crystal-card-title">Ancient Wisdom</h3>
                                         <p data-field="ancientBelief"></p>
                                     </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Chakra Connection</h3>
-                                    <p data-field="chakra"></p>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Chakra Connection</h3>
+                                        <p data-field="chakra"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Chakra Symbol</h3>
+                                        <img data-field="chakraImage" alt="">
+                                    </div>
                                 </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Chakra Symbol</h3>
-                                    <img data-field="chakraImage" alt="">
+                                <!-- Button to open the list -->
+                                <button
+                                    class="more-stone-btn"
+                                    type="button"
+                                    aria-controls="more-stones-panel"
+                                    aria-expanded="false"
+                                >More crystals to explore</button>
+                                <div id="more-stone-panel" class="list-left-container" hidden>
+                                    <button class="more-stones-panel-close" type="button" aria-label="Close daily insight panel">
+                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                    </button>
+                                    <ul id="zodiac-crystal-list"></ul>
                                 </div>
+                                <div class="more-stones-backdrop" hidden></div>
                             </div>
-                            <!-- Button to open the list -->
-                             <button class="more-stone-btn" type="button" aria-controls="more-stones-panel" aria-expanded="false">More crystal to explore</button>
-                            <div id="more-stone-panel" class="list-left-container">
-                                <ul id="zodiac-crystal-list"></ul>
+                        </fieldset>
+                    </div>
+                </main>
+                <!-- Footer-nav -->
+                <footer>
+                    <div id="footer-container">
+                        <nav aria-label="Social media links">
+                            <ul class="social-links">
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Facebook"
+                                    >
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.instagram.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Instagram"
+                                    >
+                                        <i class="fa-brands fa-square-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.twitter.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Twitter"
+                                    >
+                                        <i class="fa-brands fa-square-x-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- License details -->
+                            <div class="footer-info">
+                                <div class="footer-info2">All rights reserved. This website is a student project created for educational purposes only.</div>
+                                <div class="footer-info2">@2025 Katarzyna Gawronska</div>
                             </div>
-                        </div>
-                    </fieldset>
-                </div>
-            </main>
-            <!-- Footer-nav -->
-            <footer>
-                <div id="footer-container">
-                    <nav aria-label="Social media links">
-                        <ul class="social-links">
-                            <li>
-                                <a
-                                    href="https://www.facebook.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Visit us on Facebook"
-                                >
-                                    <i class="fa-brands fa-square-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.instagram.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Visit us on Instagram"
-                                >
-                                    <i class="fa-brands fa-square-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.twitter.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Visit us on Twitter"
-                                >
-                                    <i class="fa-brands fa-square-x-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- License details -->
-                        <div class="footer-info">
-                            <div class="footer-info2">All rights reserved. This website is a student project created for educational purposes only.</div>
-                            <div class="footer-info2">@2025 Katarzyna Gawronska</div>
-                        </div>
-                    </nav>
-                </div>
-            </footer>
-        </div>
-        <!-- Link to JavaScript file -->
-        <script src="assets/js/main.js"></script>
-    </body>
-</html>
+                        </nav>
+                    </div>
+                </footer>
+            </div>
+            <!-- Link to JavaScript file -->
+            <script src="assets/js/main.js"></script>
+        </body>
+    </html>
