@@ -342,7 +342,10 @@ footer ul li a {
     margin: 1 rem;
 }
 
-
+.form-main-column {
+    display: flex;
+    flex-direction: column;
+}
 
 /* -------------------------------MEDIA QUERY ---- ---------------------------------------- */
 
