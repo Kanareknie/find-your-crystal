@@ -175,6 +175,16 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
     const selectedZodiac = zodiacSelect.value;
     console.log("Selected zodiac:", selectedZodiac);
 
+    //Add submitted zodiac to the title of result
+
+    const zodiacTitleEl = document.getElementById("selected-zodiac-title");
+
+    if (zodiacTitleEl) {
+      const formattedZodiac = selectedZodiac.charAt(0).toUpperCase() + selectedZodiac.slice(1);
+
+      zodiacTitleEl.textContent = formattedZodiac;
+    }
+
     //fetch data from JSON file and match with zodiac sign
     const crystals = await fetchZodiacCrystal();
     const matches = findCrystalsByZodiac(crystals, selectedZodiac);
@@ -259,15 +269,6 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
 }
 
-//Add submitted zodiac to the title of result
-
-const zodiacTitleEl = document.getElementById("selected-zodiac-title");
-
-if (zodiacTitleEl && zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answerSection) {
-  const formattedZodiac = selectedZodiac.charAt(0).toUpperCase() + selectedZodiac.slice(1);
-
-  zodiacTitleEl.textContent = formattedZodiac;
-}
 
 // Slide list on form-zodiac - more crystals list -- W3Schools tutorial
 
