@@ -123,59 +123,67 @@
                         </div>
                     </section>
                     <section class="form-answer-container">
-                        <div class="form-answer-content">
+                        <!-- Main title container - tp of the page -->
+                        <div class="main-answer-container">
                             <div class="form-answer-title">
                                 <h2>Your Crystal Match</h2>
                                 <p>Based on your zodiac sign, here is the crystal that aligns with your energy.</p>
                             </div>
-                            <div class="form-main-column">
+                        </div>
+                        <!-- Results container for both list and details -->
+                        <div class="form-answer-content">
+                            <!-- Details left side -->
+                            <div class="details-left-container">
+                                <div class="form-main-row">
+                                    <div class="form-main-column">
+                                        <div class="crystal-card">
+                                            <h3 class="crystal-card-title">Core Energy</h3>
+                                            <p data-field="mainPower"></p>
+                                        </div>
+                                        <div class="crystal-card">
+                                            <h3 class="crystal-card-title">Supporting Energies</h3>
+                                            <ul data-field="subPowers"></ul>
+                                        </div>
+                                    </div>
+                                    <div class="form-main-column">
+                                        <div class="crystal-card">
+                                            <h3 class="crystal-card-title">Crystal Name</h3>
+                                            <p data-field="name"></p>
+                                        </div>
+                                        <div class="crystal-card">
+                                            <h3 class="crystal-card-title">Meaning & Intention</h3>
+                                            <p data-field="meaning"></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="crystal-card">
+                                    <h3 class="crystal-card-title">Visual Essence</h3>
+                                    <img data-field="image" alt="">
+                                </div>
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">How to Use</h3>
+                                        <p data-field="bodyPlacement"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Ancient Wisdom</h3>
+                                        <p data-field="ancientBelief"></p>
+                                    </div>
+                                </div>
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Chakra Connection</h3>
+                                        <p data-field="chakra"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Chakra Symbol</h3>
+                                        <img data-field="chakraImage" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- List - right side -->
+                            <div class="list-left-container">
                                 <ul id="zodiac-crystal-list"></ul>
-                            </div>
-                            <div class="form-main-row">
-                                <div class="form-main-column">
-                                    <div class="crystal-card">
-                                        <h3 class="crystal-card-title">Core Energy</h3>
-                                        <p data-field="mainPower"></p>
-                                    </div>
-                                    <div class="crystal-card">
-                                        <h3 class="crystal-card-title">Supporting Energies</h3>
-                                        <ul data-field="subPowers"></ul>
-                                    </div>
-                                </div>
-                                <div class="form-main-column">
-                                    <div class="crystal-card">
-                                        <h3 class="crystal-card-title">Crystal Name</h3>
-                                        <p data-field="name"></p>
-                                    </div>
-                                    <div class="crystal-card">
-                                        <h3 class="crystal-card-title">Meaning & Intention</h3>
-                                        <p data-field="meaning"></p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="crystal-card">
-                                <h3 class="crystal-card-title">Visual Essence</h3>
-                                <img data-field="image" alt="">
-                            </div>
-                            <div class="form-main-column">
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">How to Use</h3>
-                                    <p data-field="bodyPlacement"></p>
-                                </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Ancient Wisdom</h3>
-                                    <p data-field="ancientBelief"></p>
-                                </div>
-                            </div>
-                            <div class="form-main-column">
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Chakra Connection</h3>
-                                    <p data-field="chakra"></p>
-                                </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Chakra Symbol</h3>
-                                    <img data-field="chakraImage" alt="">
-                                </div>
                             </div>
                         </div>
                     </section>
