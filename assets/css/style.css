@@ -335,7 +335,7 @@ footer ul li a {
 
 #selected-zodiac-title {
   margin-left: 0.25rem;
-  color: var(--color-accent);
+  color: var(--color-text);
   text-shadow:
     0 0 6px rgb(var(--color-accent) / 0.8),
     0 0 14px rgb(var(--color-accent) / 0.6);
