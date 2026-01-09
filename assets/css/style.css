@@ -335,7 +335,8 @@ footer ul li a {
 
 .neon-board-title {
     padding: 0 1rem;
-    font-family: var(--color-text);
+    font-family: "Cinzel", serif;
+    font-weight: 400;
     font-size: 1.3rem;
     color: rgb(var(--color-text));
 }
@@ -398,9 +399,7 @@ footer ul li a {
 
 /* Hidded list -- link -- https://www.w3schools.com/howto/howto_js_off-canvas.asp*/
 
-/* ============================= */
 /* More stones button */
-/* ============================= */
 
 .more-stones-btn {
   display: inline-flex;
@@ -426,9 +425,7 @@ footer ul li a {
   box-shadow: 0 0 12px rgb(var(--color-accent) / 0.25);
 }
 
-/* ============================= */
-/* Panel (shared styles) */
-/* ============================= */
+/* Panel with list */
 
 .more-stones-panel {
   background: rgb(var(--color-bg) / 0.85);
