@@ -273,9 +273,9 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 // Slide list on form-zodiac - more crystals list -- W3Schools tutorial
 
 // Select elements
-const openMoreStonesBtn = document.querySelector(".more-stones-btn");
-const closeMoreStonesBtn = document.querySelector(".more-stones-close");
-const moreStonesPanel = document.getElementById("more-stones-panel");
+const openMoreStonesBtn = document.querySelector(".more-stone-btn");
+const closeMoreStonesBtn = document.querySelector(".more-stones-panel-close");
+const moreStonesPanel = document.getElementById("more-stone-panel");
 const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
 
 // OPEN panel
