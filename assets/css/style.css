@@ -309,6 +309,7 @@ footer ul li a {
 
 /*------- Answer part ------ */
 
+
 .form-answer-container {
     display: none;
     max-width: 1200px;
@@ -316,6 +317,8 @@ footer ul li a {
     margin: 2rem auto;
     padding: 1.5rem;
     border-radius: 14px;
+    position: relative;
+    padding-top: 3.5rem;
 
     /* border */
     border: 1px solid rgb(var(--color-accent));
@@ -330,6 +333,8 @@ footer ul li a {
     display: flex;
     flex-direction: row;
 }
+
+
 
 /* title on the border */
 
@@ -378,64 +383,47 @@ footer ul li a {
     font-weight: 100;
 }
 
-/* Button */
+
+/* Hidded list -- link -- https://www.w3schools.com/howto/howto_js_off-canvas.asp*/
+
+/* More stones button */
 
 .more-stone-btn {
     display: inline-flex;
     align-items: center;
     justify-content: center;
     gap: 0.5rem;
-    width: auto;
     padding: 0.5rem 1rem;
-    background-color: rgb(var(--color-accent));
-    color: rgb(var(--color-text));
-    border: none;
-    border-radius: 4px;
-    font-family: var(--color-text);
-    font-weight: 400;
-    width: 15em;
-    height: min-content;
-
-}
-
-/* Hidded list -- link -- https://www.w3schools.com/howto/howto_js_off-canvas.asp*/
-
-/* More stones button */
-
-.more-stones-btn {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
 
     width: auto;
     padding: 0.6rem 1rem;
     margin-top: 1rem;
 
-    border-radius: 999px;
-    border: 1px solid rgb(var(--color-accent) / 0.7);
-    background: rgb(var(--color-bg) / 0.35);
+    border: none;
+    background-color: rgb(var(--color-accent));
     color: rgb(var(--color-text));
 
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
     font-weight: 400;
+
+
 }
 
-.more-stones-btn:hover {
+.more-stone-btn:hover {
     box-shadow: 0 0 12px rgb(var(--color-accent) / 0.25);
 }
 
 /* Panel with list */
 
-.more-stones-panel {
+.more-stone-panel {
     background: rgb(var(--color-bg) / 0.85);
     color: rgb(var(--color-text));
     padding: 1rem;
     border-left: 1px solid rgb(var(--color-accent) / 0.35);
 }
 
-.more-stones-close {
+.more-stones-panel-close {
     background: transparent;
     border: none;
     color: rgb(var(--color-text));
@@ -450,7 +438,7 @@ footer ul li a {
 
 
 @media (max-width: 768px) {
-    .more-stones-panel {
+    .more-stone-panel {
         position: fixed;
         top: 0;
         right: 0;
@@ -465,7 +453,7 @@ footer ul li a {
         -webkit-backdrop-filter: blur(8px);
     }
 
-    .more-stones-panel.is-open {
+    .more-stone-panel.is-open {
         transform: translateX(0);
     }
 

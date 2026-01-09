@@ -179,21 +179,21 @@
                                         <h3 class="crystal-card-title">Chakra Symbol</h3>
                                         <img data-field="chakraImage" alt="">
                                     </div>
+                                    <!-- Button to open the list -->
+                                    <button
+                                        class="more-stone-btn"
+                                        type="button"
+                                        aria-controls="more-stones-panel"
+                                        aria-expanded="false"
+                                    >More crystals to explore</button>
+                                    <div id="more-stone-panel" class="list-left-container" hidden>
+                                        <button class="more-stones-panel-close" type="button" aria-label="Close daily insight panel">
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        </button>
+                                        <ul id="zodiac-crystal-list"></ul>
+                                    </div>
+                                    <div class="more-stones-backdrop" hidden></div>
                                 </div>
-                                <!-- Button to open the list -->
-                                <button
-                                    class="more-stone-btn"
-                                    type="button"
-                                    aria-controls="more-stones-panel"
-                                    aria-expanded="false"
-                                >More crystals to explore</button>
-                                <div id="more-stone-panel" class="list-left-container" hidden>
-                                    <button class="more-stones-panel-close" type="button" aria-label="Close daily insight panel">
-                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                                    </button>
-                                    <ul id="zodiac-crystal-list"></ul>
-                                </div>
-                                <div class="more-stones-backdrop" hidden></div>
                             </div>
                         </fieldset>
                     </div>
