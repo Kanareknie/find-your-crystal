@@ -309,6 +309,9 @@ footer ul li a {
 
 /*------- Answer part ------ */
 
+.form-main-column {
+    position: relative;
+}
 
 .form-answer-container {
     display: none;
@@ -364,7 +367,7 @@ footer ul li a {
     color: rgb(var(--color-text));
     padding: 2rem;
     border-radius: 8px;
-    margin: 1 rem;
+    margin: 1rem;
 }
 
 
@@ -416,11 +419,29 @@ footer ul li a {
 
 /* Panel with list */
 
-.more-stone-panel {
+#more-stone-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: min(85vw, 340px);
+    z-index: 50;
+
+    transform: translateX(110%);
+    transition: transform 0.6s ease;
+
+
     background: rgb(var(--color-bg) / 0.85);
     color: rgb(var(--color-text));
     padding: 1rem;
     border-left: 1px solid rgb(var(--color-accent) / 0.35);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+}
+
+#more-stone-panel.is-open {
+    transform: translateX(0);
 }
 
 .more-stones-panel-close {
@@ -433,45 +454,45 @@ footer ul li a {
     display: block;
 }
 
+.more-stones-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 40;
+
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.25s ease;
+}
+
+.more-stones-backdrop.is-open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 
 /* Mobile off-canvas behavior */
 
 
 @media (max-width: 768px) {
-    .more-stone-panel {
+    #more-stone-panel {
         position: fixed;
         top: 0;
         right: 0;
-        height: 100vh;
         width: min(85vw, 340px);
         z-index: 50;
 
         transform: translateX(110%);
-        transition: transform 0.25s ease;
+        transition: transform 0.6s ease;
 
         backdrop-filter: blur(8px);
         -webkit-backdrop-filter: blur(8px);
     }
 
-    .more-stone-panel.is-open {
+    #more-stone-panel.is-open {
         transform: translateX(0);
     }
 
-    .more-stones-backdrop {
-        position: fixed;
-        inset: 0;
-        background: rgba(0, 0, 0, 0.55);
-        z-index: 40;
-
-        opacity: 0;
-        pointer-events: none;
-        transition: opacity 0.25s ease;
-    }
-
-    .more-stones-backdrop.is-open {
-        opacity: 1;
-        pointer-events: auto;
-    }
 }
 
 

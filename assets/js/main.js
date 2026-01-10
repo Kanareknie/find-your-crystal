@@ -280,13 +280,15 @@ const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
 
 // OPEN panel
 function openMoreStones() {
-  moreStonesPanel.classList.add("is-open");
-  moreStonesBackdrop.classList.add("is-open");
-
   moreStonesPanel.hidden = false;
   moreStonesBackdrop.hidden = false;
 
-  openMoreStonesBtn.setAttribute("aria-expanded", "true");
+  // allow browser to paint the CLOSED state first - the element is hidden
+  requestAnimationFrame(() => {
+    moreStonesPanel.classList.add("is-open");
+    moreStonesBackdrop.classList.add("is-open");
+    openMoreStonesBtn.setAttribute("aria-expanded", "true");
+  });
 }
 
 // CLOSE panel
@@ -300,7 +302,7 @@ function closeMoreStones() {
   setTimeout(() => {
     moreStonesPanel.hidden = true;
     moreStonesBackdrop.hidden = true;
-  }, 250);
+  }, 600);
 }
 
 // Event listeners
