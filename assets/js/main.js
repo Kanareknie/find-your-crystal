@@ -239,6 +239,14 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
       btn.addEventListener("click", () => {
         renderCrystalDetails(crystal);
+        closeMoreStones();
+
+// Link: “How To Create an Off-Canvas Menu” on W3Schools
+
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
       });
 
       li.appendChild(btn);
