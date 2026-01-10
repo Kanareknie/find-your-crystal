@@ -206,6 +206,13 @@ aside hr {
 
 }
 
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
 footer {
     color: rgb(var(--color-text));
 }
