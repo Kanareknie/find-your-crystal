@@ -100,7 +100,7 @@ localDailyQuote();
 //Get elements
 const dailyPlantEl = document.getElementById("daily-plant");
 const dailyHintEl = document.getElementById("daily-hint");
-const appreciationEl = document.getElementById("daily-appreciation");
+
 
 //Fetch daily insights from local JSON file
 async function fetchDailyInsights() {
@@ -112,7 +112,7 @@ async function fetchDailyInsights() {
     const daily = JSON.parse(saved);
     dailyPlantEl.textContent = daily.plant;
     dailyHintEl.textContent = daily.hint;
-    appreciationEl.textContent = daily.appreciation;
+    
     return;
   }
   // If not, fetch new insights from local JSON file
@@ -132,7 +132,7 @@ async function fetchDailyInsights() {
     // Update DOM
     dailyPlantEl.textContent = daily.plant;
     dailyHintEl.textContent = daily.hint;
-    appreciationEl.textContent = daily.appreciation;
+    
   }
   catch (error) {
     console.error("Error fetching daily insights:", error);
