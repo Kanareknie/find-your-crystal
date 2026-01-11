@@ -124,9 +124,18 @@ footer {
     height: auto;
     margin: 0 auto 1rem;
     margin-top: 10px;
+     border-radius: 8px;
 }
 
 /* ----- Main styles for the page ----- */
+
+.page-home #hero,
+.page-home #filters {
+  border-radius: 14px;
+
+}
+
+
 
 main {
     display: flex;
@@ -135,6 +144,7 @@ main {
     align-items: center;
     text-align: center;
     padding: 1rem;
+     border-radius: 8px;
 }
 
 main h2 {
@@ -204,6 +214,11 @@ aside hr {
     border: none;
     margin: 1rem;
 
+}
+
+.filter-button img{
+  border-radius: 14px;
+  display: block;
 }
 
 .filter-container {
@@ -440,7 +455,7 @@ footer ul li a {
 }
 
 .page-zodiac img[data-field="chakraImage"]{
-  width: 60%;
+  width: 50%;
   max-width: 260px;   /* optional safety cap */
   height: auto;
   margin: 0 auto;
