@@ -2,6 +2,7 @@
     {
         "name": "Amazonite",
         "color": "Blue-Green",
+	"image": "assets/images/crystals/amazonite.jpg",
         "chakra": "Heart, Throat",
         "zodiac": [
             "Virgo",
@@ -30,6 +31,7 @@
     {
         "name": "Amazonite (Green Variant)",
         "color": "Green",
+	"image": "assets/images/crystals/amazonite-green.png",
         "chakra": "Heart, Throat",
         "zodiac": [
             "Virgo",
@@ -58,6 +60,7 @@
     {
         "name": "Amber",
         "color": "Golden, Honey",
+	"image": "assets/images/crystals/amber.jpg",
         "chakra": "Solar Plexus",
         "zodiac": [
             "Leo",
@@ -86,6 +89,7 @@
     {
         "name": "Amethyst",
         "color": "Purple",
+	"image": "assets/images/crystals/amethyst.jpg",
         "chakra": "Third Eye, Crown",
         "zodiac": [
             "Pisces",
@@ -119,6 +123,7 @@
     {
         "name": "Angelite",
         "color": "Soft Blue",
+	"image": "assets/images/crystals/angelite.png",
         "chakra": "Throat, Crown",
         "zodiac": [
             "Aquarius"
@@ -148,6 +153,7 @@
     {
         "name": "Apatite",
         "color": "Blue, Green",
+	"image": "assets/images/crystals/apatite.jpg",
         "chakra": "Throat, Third Eye",
         "zodiac": [
             "Gemini",
@@ -176,6 +182,7 @@
     {
         "name": "Aqua Aura Quartz",
         "color": "Iridescent Blue",
+	"image": "assets/images/crystals/aqua-aura-quartz.png",
         "chakra": "Throat",
         "zodiac": [
             "Aquarius",
@@ -204,6 +211,7 @@
     {
         "name": "Aragonite",
         "color": "Orange, Brown",
+	"image": "assets/images/crystals/aragonite.png",
         "chakra": "Root, Sacral",
         "zodiac": [
             "Capricorn"
@@ -231,6 +239,7 @@
     {
         "name": "Auralite 23",
         "color": "Purple with Red/Gold Inclusions",
+	"image": "assets/images/crystals/auralite-23.png",
         "chakra": "Crown, Third Eye",
         "zodiac": [
             "Pisces"
@@ -259,6 +268,7 @@
     {
         "name": "Aventurine",
         "color": "Green",
+	"image": "assets/images/crystals/aventurine.jpg",
         "chakra": "Heart",
         "zodiac": [
             "Taurus",
@@ -287,6 +297,7 @@
     {
         "name": "Aventurine (Red)",
         "color": "Red",
+	"image": "assets/images/crystals/aventurine-red.png",
         "chakra": "Root",
         "zodiac": [
             "Aries"
@@ -314,6 +325,7 @@
     {
         "name": "Azurite",
         "color": "Deep Blue",
+	"image": "assets/images/crystals/azurite.png",
         "chakra": "Third Eye",
         "zodiac": [
             "Sagittarius"
@@ -342,6 +354,7 @@
     {
         "name": "Barite",
         "color": "White, Blue",
+	"image": "assets/images/crystals/barite.jpg",
         "chakra": "Crown, Throat",
         "zodiac": [
             "Aquarius"
@@ -369,6 +382,7 @@
     {
         "name": "Beryl",
         "color": "Yellow, Green, Blue",
+	"image": "assets/images/crystals/beryl.jpg",
         "chakra": "Varies by color",
         "zodiac": [
             "Scorpio",
@@ -397,6 +411,7 @@
     {
         "name": "Black Obsidian",
         "color": "Black",
+	"image": "assets/images/crystals/black-obsydian.png",
         "chakra": "Root",
         "zodiac": [
             "Scorpio",
@@ -426,6 +441,7 @@
     {
         "name": "Bloodstone",
         "color": "Dark Green with Red",
+	"image": "assets/images/crystals/bloodstone.jpg",
         "chakra": "Root, Heart",
         "zodiac": [
             "Aries",
@@ -455,6 +471,7 @@
     {
         "name": "Blue Apatite",
         "color": "Deep Blue",
+	"image": "assets/images/crystals/blue-apatite.png",
         "chakra": "Throat, Third Eye",
         "zodiac": [
             "Gemini"
@@ -482,6 +499,7 @@
     {
         "name": "Blue Calcite",
         "color": "Light Blue",
+	"image": "assets/images/crystals/blue-calcite.png",
         "chakra": "Throat",
         "zodiac": [
             "Cancer"
@@ -509,6 +527,7 @@
     {
         "name": "Blue Kyanite",
         "color": "Blue",
+	"image": "assets/images/crystals/blue-kyanite.png",
         "chakra": "Throat",
         "zodiac": [
             "Aries",
@@ -537,6 +556,7 @@
     {
         "name": "Blue Lace Agate",
         "color": "Light Blue",
+	"image": "assets/images/crystals/blue-lace-agate.png",
         "chakra": "Throat",
         "zodiac": [
             "Pisces",
@@ -565,6 +585,7 @@
     {
         "name": "Botswana Agate",
         "color": "Grey, Pink, White Banded",
+	"image": "assets/images/crystals/botswana-agate.png",
         "chakra": "Root, Sacral",
         "zodiac": [
             "Scorpio",
@@ -593,6 +614,7 @@
     {
         "name": "Bronzite",
         "color": "Brown, Bronze",
+	"image": "assets/images/crystals/bronzite.png",
         "chakra": "Root",
         "zodiac": [
             "Leo"
@@ -620,6 +642,7 @@
     {
         "name": "Carnelian",
         "color": "Orange",
+	"image": "assets/images/crystals/carnelian.jpg",
         "chakra": "Sacral",
         "zodiac": [
             "Virgo",
@@ -649,6 +672,7 @@
     {
         "name": "Celestite",
         "color": "Pale Blue",
+	"image": "assets/images/crystals/celestite.jpg",
         "chakra": "Crown, Throat",
         "zodiac": [
             "Gemini"
@@ -676,6 +700,7 @@
     {
         "name": "Chalcedony",
         "color": "Blue, White, or Pink",
+	"image": "assets/images/crystals/chalcedony.jpg",
         "chakra": "Throat",
         "zodiac": [
             "Cancer",
@@ -704,6 +729,7 @@
     {
         "name": "Charoite",
         "color": "Purple, Swirled",
+	"image": "assets/images/crystals/charoite.png",
         "chakra": "Crown, Third Eye",
         "zodiac": [
             "Scorpio",
@@ -732,6 +758,7 @@
     {
         "name": "Chrysocolla",
         "color": "Teal Blue-Green",
+	"image": "assets/images/crystals/chrysocolla.png",
         "chakra": "Heart, Throat",
         "zodiac": [
             "Gemini",
@@ -761,6 +788,7 @@
     {
         "name": "Chrysoprase",
         "color": "Green",
+	"image": "assets/images/crystals/chrysoprase.png",
         "chakra": "Heart",
         "zodiac": [
             "Gemini",
@@ -789,6 +817,7 @@
     {
         "name": "Cinnabar",
         "color": "Red",
+	"image": "assets/images/crystals/cinnabar.png",
         "chakra": "Root",
         "zodiac": [
             "Leo"
@@ -816,6 +845,7 @@
     {
         "name": "Citrine",
         "color": "Yellow",
+	"image": "assets/images/crystals/citrine.png",
         "chakra": "Solar Plexus",
         "zodiac": [
             "Gemini",
@@ -845,6 +875,7 @@
     {
         "name": "Clear Quartz",
         "color": "Clear",
+	"image": "assets/images/crystals/clear-quartz.jpg",
         "chakra": "All Chakras",
         "zodiac": [
             "All"
@@ -873,6 +904,7 @@
     {
         "name": "Desert Rose",
         "color": "Beige, Sandy",
+	"image": "assets/images/crystals/desert-rose.png",
         "chakra": "Root, Crown",
         "zodiac": [
             "Taurus",
@@ -901,6 +933,7 @@
     {
         "name": "Dolomite",
         "color": "Pink, White",
+	"image": "assets/images/crystals/dolomite.png",
         "chakra": "Heart",
         "zodiac": [
             "Aries"
@@ -928,6 +961,7 @@
     {
         "name": "Dragon Blood Jasper",
         "color": "Green with Red",
+	"image": "assets/images/crystals/dragon-blood-jasper.png",
         "chakra": "Heart, Root",
         "zodiac": [
             "Leo",
@@ -957,6 +991,7 @@
     {
         "name": "Dumortierite",
         "color": "Deep Blue",
+	"image": "assets/images/crystals/dumortierite.png",
         "chakra": "Third Eye, Throat",
         "zodiac": [
             "Leo"
@@ -984,6 +1019,7 @@
     {
         "name": "Epidote",
         "color": "Green",
+	"image": "assets/images/crystals/epidote.png",
         "chakra": "Heart",
         "zodiac": [
             "Gemini",
@@ -1012,6 +1048,7 @@
     {
         "name": "Fire Agate",
         "color": "Brown with Iridescent Fire",
+	"image": "assets/images/crystals/fire-agate.jpg",
         "chakra": "Root, Sacral",
         "zodiac": [
             "Aries",
@@ -1040,6 +1077,7 @@
     {
         "name": "Fluorite",
         "color": "Purple, Green, Blue",
+	"image": "assets/images/crystals/fluorite.jpg",
         "chakra": "Third Eye",
         "zodiac": [
             "Pisces",
@@ -1068,6 +1106,7 @@
     {
         "name": "Fuchsite",
         "color": "Green",
+	"image": "assets/images/crystals/fuchsite.png",
         "chakra": "Heart",
         "zodiac": [
             "Aquarius"
@@ -1095,6 +1134,7 @@
     {
         "name": "Gaia Stone",
         "color": "Green",
+	"image": "assets/images/crystals/gaia-stone.png",
         "chakra": "Heart",
         "zodiac": [
             "Cancer"
@@ -1122,6 +1162,7 @@
     {
         "name": "Garnet",
         "color": "Red",
+	"image": "assets/images/crystals/garnet.png",
         "chakra": "Root",
         "zodiac": [
             "Capricorn",
@@ -1154,6 +1195,7 @@
     {
         "name": "Garnet (Green - Tsavorite)",
         "color": "Green",
+	"image": "assets/images/crystals/garnet-green.png",
         "chakra": "Heart",
         "zodiac": [
             "Virgo"
@@ -1181,6 +1223,7 @@
     {
         "name": "Girasol",
         "color": "Milky White",
+	"image": "assets/images/crystals/girasol.png",
         "chakra": "Crown, Heart",
         "zodiac": [
             "Libra"
@@ -1208,6 +1251,7 @@
     {
         "name": "Golden Healer Quartz",
         "color": "Gold-Tinted Clear",
+	"image": "assets/images/crystals/golden-healer-quartz.png",
         "chakra": "Crown, Solar Plexus",
         "zodiac": [
             "Leo",
@@ -1237,6 +1281,7 @@
     {
         "name": "Green Calcite",
         "color": "Green",
+	"image": "assets/images/crystals/green-calcite.png",
         "chakra": "Heart",
         "zodiac": [
             "Cancer"
@@ -1265,6 +1310,7 @@
     {
         "name": "Heliodor",
         "color": "Golden Yellow",
+	"image": "assets/images/crystals/heliodor.png",
         "chakra": "Solar Plexus",
         "zodiac": [
             "Leo"
@@ -1292,6 +1338,7 @@
     {
         "name": "Hematite",
         "color": "Silver, Dark Grey",
+	"image": "assets/images/crystals/hematite.jpg",
         "chakra": "Root",
         "zodiac": [
             "Aries",
@@ -1321,6 +1368,7 @@
     {
         "name": "Hematite Quartz",
         "color": "Clear with Red Inclusions",
+	"image": "assets/images/crystals/hematite-quartz.png",
         "chakra": "Root",
         "zodiac": [
             "Aries"
@@ -1348,6 +1396,7 @@
     {
         "name": "Herkimer Diamond",
         "color": "Clear",
+	"image": "assets/images/crystals/herkimer-diamond.png",
         "chakra": "Crown",
         "zodiac": [
             "Aries",
@@ -1376,6 +1425,7 @@
     {
         "name": "Howlite",
         "color": "White with Grey",
+	"image": "assets/images/crystals/howlite.png",
         "chakra": "Crown",
         "zodiac": [
             "Gemini",
@@ -1404,6 +1454,7 @@
     {
         "name": "Iolite",
         "color": "Violet-Blue",
+	"image": "assets/images/crystals/iolite.png",
         "chakra": "Third Eye",
         "zodiac": [
             "Sagittarius",
@@ -1432,6 +1483,7 @@
     {
         "name": "Jade",
         "color": "Green",
+	"image": "assets/images/crystals/jade.jpg",
         "chakra": "Heart",
         "zodiac": [
             "Pisces",
@@ -1460,6 +1512,7 @@
     {
         "name": "Jasper (Bumblebee)",
         "color": "Yellow, Black, Orange",
+	"image": "assets/images/crystals/jasper-bumblebee.png",
         "chakra": "Solar Plexus, Sacral",
         "zodiac": [
             "Leo"
@@ -1487,6 +1540,7 @@
     {
         "name": "Kambaba Jasper",
         "color": "Green with Black Swirls",
+	"image": "assets/images/crystals/kambaba-jasper.png",
         "chakra": "Heart",
         "zodiac": [
             "Cancer",
@@ -1515,6 +1569,7 @@
     {
         "name": "Kunzite",
         "color": "Pink, Lilac",
+	"image": "assets/images/crystals/kunzite.png",
         "chakra": "Heart",
         "zodiac": [
             "Taurus",
@@ -1544,6 +1599,7 @@
     {
         "name": "Kyanite",
         "color": "Blue",
+	"image": "assets/images/crystals/kyanite.png",
         "chakra": "Throat, Third Eye",
         "zodiac": [
             "Aries",
@@ -1572,6 +1628,7 @@
     {
         "name": "Labradorite",
         "color": "Iridescent Blue",
+	"image": "assets/images/crystals/labradorite.jpg",
         "chakra": "Third Eye",
         "zodiac": [
             "Scorpio",
@@ -1603,6 +1660,7 @@
     {
         "name": "Lapis Lazuli",
         "color": "Deep Blue",
+	"image": "assets/images/crystals/lapis-lazuri.jpg",
         "chakra": "Throat, Third Eye",
         "zodiac": [
             "Sagittarius",
@@ -1631,6 +1689,7 @@
     {
         "name": "Larimar",
         "color": "Light Blue",
+	"image": "assets/images/crystals/larimar.png",
         "chakra": "Throat",
         "zodiac": [
             "Leo",
@@ -1659,6 +1718,7 @@
     {
         "name": "Larvikite",
         "color": "Dark Grey with Blue Flashes",
+	"image": "assets/images/crystals/larvikite.png",
         "chakra": "Root, Third Eye",
         "zodiac": [
             "Cancer",
@@ -1688,6 +1748,7 @@
     {
         "name": "Lepidolite",
         "color": "Purple, Lavender",
+	"image": "assets/images/crystals/lepidolite.png",
         "chakra": "Heart, Crown",
         "zodiac": [
             "Libra",
@@ -1716,6 +1777,7 @@
     {
         "name": "Mahogany Obsidian",
         "color": "Brown and Black",
+	"image": "assets/images/crystals/mahogany-obsidian.png",
         "chakra": "Root",
         "zodiac": [
             "Scorpio",
@@ -1745,6 +1807,7 @@
     {
         "name": "Malachite",
         "color": "Green",
+	"image": "assets/images/crystals/malachite.jpg",
         "chakra": "Heart",
         "zodiac": [
             "Scorpio",
@@ -1774,6 +1837,7 @@
     {
         "name": "Moldavite",
         "color": "Green",
+	"image": "assets/images/crystals/moldavite.png",
         "chakra": "Heart, Third Eye",
         "zodiac": [
             "Scorpio"
@@ -1801,6 +1865,7 @@
     {
         "name": "Mookaite Jasper",
         "color": "Red, Yellow, Cream",
+	"image": "assets/images/crystals/mokaite-jasper.png",
         "chakra": "Root, Solar Plexus",
         "zodiac": [
             "Scorpio",
@@ -1829,6 +1894,7 @@
     {
         "name": "Moonstone",
         "color": "White, Iridescent",
+	"image": "assets/images/crystals/moonstone.jpg",
         "chakra": "Crown, Sacral",
         "zodiac": [
             "Cancer",
@@ -1860,6 +1926,7 @@
     {
         "name": "Morganite",
         "color": "Peach Pink",
+	"image": "assets/images/crystals/morganite.jpg",
         "chakra": "Heart",
         "zodiac": [
             "Libra",
@@ -1889,6 +1956,7 @@
     {
         "name": "Nuumite",
         "color": "Black with Gold Flashes",
+	"image": "assets/images/crystals/nuumite.png",
         "chakra": "Root, Solar Plexus",
         "zodiac": [
             "Scorpio"
@@ -1917,6 +1985,7 @@
     {
         "name": "Ocean Jasper",
         "color": "Multicolored",
+	"image": "assets/images/crystals/ocean-jasper.png",
         "chakra": "Heart, Solar Plexus",
         "zodiac": [
             "Cancer",
@@ -1946,6 +2015,7 @@
     {
         "name": "Onyx",
         "color": "Black",
+	"image": "assets/images/crystals/onyx.png",
         "chakra": "Root",
         "zodiac": [
             "Leo",
@@ -1976,6 +2046,7 @@
     {
         "name": "Opalite",
         "color": "Milky Blue-White",
+	"image": "assets/images/crystals/opalite.png",
         "chakra": "Third Eye",
         "zodiac": [
             "Cancer"
@@ -2003,6 +2074,7 @@
     {
         "name": "Orange Calcite",
         "color": "Orange",
+	"image": "assets/images/crystals/orange-calcite.png",
         "chakra": "Sacral",
         "zodiac": [
             "Cancer",
@@ -2031,6 +2103,7 @@
     {
         "name": "Peridot",
         "color": "Lime Green",
+	"image": "assets/images/crystals/peridot.jpg",
         "chakra": "Heart, Solar Plexus",
         "zodiac": [
             "Leo",
@@ -2059,6 +2132,7 @@
     {
         "name": "Pietersite",
         "color": "Blue, Gold, Brown",
+	"image": "assets/images/crystals/pietersite.png",
         "chakra": "Solar Plexus, Third Eye",
         "zodiac": [
             "Leo"
@@ -2086,6 +2160,7 @@
     {
         "name": "Pink Opal",
         "color": "Soft Pink",
+	"image": "assets/images/crystals/pink-opal.png",
         "chakra": "Heart",
         "zodiac": [
             "Libra",
@@ -2115,6 +2190,7 @@
     {
         "name": "Prehnite",
         "color": "Green",
+	"image": "assets/images/crystals/prehnite.png",
         "chakra": "Heart",
         "zodiac": [
             "Libra",
@@ -2143,6 +2219,7 @@
     {
         "name": "Pyrite",
         "color": "Gold",
+	"image": "assets/images/crystals/pyrite.png",
         "chakra": "Solar Plexus",
         "zodiac": [
             "Leo",
@@ -2171,6 +2248,7 @@
     {
         "name": "Red Jasper",
         "color": "Red",
+	"image": "assets/images/crystals/red-jasper.jpg",
         "chakra": "Root",
         "zodiac": [
             "Aries",
@@ -2199,6 +2277,7 @@
     {
         "name": "Rhodochrosite",
         "color": "Pink",
+	"image": "assets/images/crystals/rhodochrosite.jpg",
         "chakra": "Heart",
         "zodiac": [
             "Leo",
@@ -2227,6 +2306,7 @@
     {
         "name": "Rhodonite",
         "color": "Pink with Black",
+	"image": "assets/images/crystals/rhodonite.png",
         "chakra": "Heart",
         "zodiac": [
             "Taurus",
@@ -2255,6 +2335,7 @@
     {
         "name": "Rose Quartz",
         "color": "Pink",
+	"image": "assets/images/crystals/rose-quartz.jpg",
         "chakra": "Heart",
         "zodiac": [
             "Taurus",
@@ -2285,6 +2366,7 @@
     {
         "name": "Ruby",
         "color": "Red",
+	"image": "assets/images/crystals/ruby.png",
         "chakra": "Root, Heart",
         "zodiac": [
             "Cancer",
@@ -2313,6 +2395,7 @@
     {
         "name": "Rutilated Quartz",
         "color": "Clear with Gold Threads",
+	"image": "assets/images/crystals/rutilated-quartz.png",
         "chakra": "All Chakras, Especially Solar Plexus",
         "zodiac": [
             "Leo",
@@ -2342,6 +2425,7 @@
     {
         "name": "Selenite",
         "color": "White",
+	"image": "assets/images/crystals/selenite.png",
         "chakra": "Crown",
         "zodiac": [
             "Cancer",
@@ -2371,6 +2455,7 @@
     {
         "name": "Serpentine",
         "color": "Green",
+	"image": "assets/images/crystals/serpentine.png",
         "chakra": "Heart",
         "zodiac": [
             "Gemini"
@@ -2398,6 +2483,7 @@
     {
         "name": "Shungite",
         "color": "Black",
+	"image": "assets/images/crystals/shungite.png",
         "chakra": "Root",
         "zodiac": [
             "Scorpio",
@@ -2426,6 +2512,7 @@
     {
         "name": "Smoky Citrine",
         "color": "Golden Brown",
+	"image": "assets/images/crystals/smoky-citrine.png",
         "chakra": "Solar Plexus",
         "zodiac": [
             "Leo",
@@ -2454,6 +2541,7 @@
     {
         "name": "Smoky Quartz",
         "color": "Brown, Grey",
+	"image": "assets/images/crystals/smoky-quartz.jpg",
         "chakra": "Root",
         "zodiac": [
             "Scorpio",
@@ -2483,6 +2571,7 @@
     {
         "name": "Snowflake Obsidian",
         "color": "Black with White Spots",
+	"image": "assets/images/crystals/snowflake-obsidian.jpg",
         "chakra": "Root",
         "zodiac": [
             "Virgo",
@@ -2511,6 +2600,7 @@
     {
         "name": "Sodalite",
         "color": "Blue with White",
+	"image": "assets/images/crystals/sodalite.jpg",
         "chakra": "Throat, Third Eye",
         "zodiac": [
             "Sagittarius",
@@ -2539,6 +2629,7 @@
     {
         "name": "Spirit Quartz",
         "color": "Lavender, Amethyst-like",
+	"image": "assets/images/crystals/spirit-quartz.png",
         "chakra": "Crown",
         "zodiac": [
             "Pisces"
@@ -2566,6 +2657,7 @@
     {
         "name": "Sugilite",
         "color": "Purple",
+	"image": "assets/images/crystals/sugilite.png",
         "chakra": "Crown, Third Eye",
         "zodiac": [
             "Pisces"
@@ -2593,6 +2685,7 @@
     {
         "name": "Sunset Sodalite",
         "color": "Blue with Orange",
+	"image": "assets/images/crystals/sunset-sodalite.png",
         "chakra": "Throat, Third Eye",
         "zodiac": [
             "Sagittarius",
@@ -2621,6 +2714,7 @@
     {
         "name": "Sunstone",
         "color": "Orange-Gold",
+	"image": "assets/images/crystals/sunstone.png",
         "chakra": "Solar Plexus, Sacral",
         "zodiac": [
             "Leo",
@@ -2649,6 +2743,7 @@
     {
         "name": "Tiger's Eye",
         "color": "Golden Brown",
+	"image": "assets/images/crystals/tiger-eye.jpg",
         "chakra": "Solar Plexus",
         "zodiac": [
             "Leo",
@@ -2679,6 +2774,7 @@
     {
         "name": "Tigers Iron",
         "color": "Brown, Gold, Red",
+	"image": "assets/images/crystals/tiger-iron.png",
         "chakra": "Root, Solar Plexus",
         "zodiac": [
             "Leo",
@@ -2708,6 +2804,7 @@
     {
         "name": "Tourmaline (Black)",
         "color": "Black",
+	"image": "assets/images/crystals/tourmalite.jpg",
         "chakra": "Root",
         "zodiac": [
             "Capricorn",
@@ -2737,6 +2834,7 @@
     {
         "name": "Turquoise",
         "color": "Blue-Green",
+	"image": "assets/images/crystals/turquoise.jpg",
         "chakra": "Throat",
         "zodiac": [
             "Sagittarius",
@@ -2765,6 +2863,7 @@
     {
         "name": "Yellow Jasper",
         "color": "Yellow",
+	"image": "assets/images/crystals/yellow-jasper.png",
         "chakra": "Solar Plexus",
         "zodiac": [
             "Leo"
@@ -2792,6 +2891,7 @@
     {
         "name": "Zebra Jasper",
         "color": "Black and White",
+	"image": "assets/images/crystals/zebra-jasper.png"
         "chakra": "Root",
         "zodiac": [
             "Virgo"
@@ -2819,6 +2919,7 @@
     {
         "name": "Clear Quartz",
         "color": "Clear",
+	"image": "assets/images/crystals/clear-quartz.jpg",
         "chakra": "All Chakras",
         "zodiac": [
             "All"
@@ -2847,6 +2948,7 @@
     {
         "name": "Smoky Quartz",
         "color": "Brown",
+	"image": "assets/images/crystals/smoky-quartz.jpg",
         "chakra": "Root",
         "zodiac": [
             "All"
@@ -2875,6 +2977,7 @@
     {
         "name": "Selenite",
         "color": "White",
+	"image": "assets/images/crystals/selenite.png",
         "chakra": "Crown",
         "zodiac": [
             "All"
@@ -2902,6 +3005,7 @@
     {
         "name": "Carnelian",
         "color": "Orange",
+	"image": "assets/images/crystals/carnelian.jpg",
         "chakra": "Sacral",
         "zodiac": [
             "All"
@@ -2929,6 +3033,7 @@
     {
         "name": "Blue Lace Agate",
         "color": "Blue",
+	"image": "assets/images/crystals/blue-lace-agate.png",
         "chakra": "Throat",
         "zodiac": [
             "All"
@@ -2956,6 +3061,7 @@
     {
         "name": "Rose Quartz",
         "color": "Pink",
+	"image": "assets/images/crystals/rose-quartz.jpg",
         "chakra": "Heart",
         "zodiac": [
             "All"
