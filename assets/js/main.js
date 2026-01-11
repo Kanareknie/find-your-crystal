@@ -281,6 +281,37 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       subPowersEl.appendChild(li);
     });
 
+    // Chakra pictures mapping
+    const CHAKRA_IMAGE_MAP = {
+      "Root": "assets/images/chakras/chakra-red.png",
+      "Sacral": "assets/images/chakras/chakra-orange.png",
+      "Solar Plexus": "assets/images/chakras/chakra-yellow.png",
+      "Heart": "assets/images/chakras/chakra-heart.png",
+      "Throat": "assets/images/chakras/chakra-lightblue.png",
+      "Third Eye": "assets/images/chakras/chakra-darkblue.png",
+      "Crown": "assets/images/chakras/chakra-purple.png",
+      "All Chakras": "assets/images/chakras/all-chakras.jpg",
+      "Varies by color": "assets/images/chakras/all-chakras.jpg"
+    };
+
+    const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
+
+    const chakraName = (stone.chakra || "").trim();
+    const chakraSrc = CHAKRA_IMAGE_MAP[chakraName];
+
+    if (chakraImgEl) {
+      if (chakraSrc) {
+        chakraImgEl.src = chakraSrc;
+        chakraImgEl.alt = `${chakraName} chakra symbol`;
+        chakraImgEl.style.display = "";
+      } else {
+        // If chakra name is missing or unexpected, hide the image
+        chakraImgEl.removeAttribute("src");
+        chakraImgEl.alt = "";
+        chakraImgEl.style.display = "none";
+      }
+    }
+
   }
 
 }
