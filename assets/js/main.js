@@ -296,7 +296,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
     const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
 
-    const chakraName = (stone.chakra || "").trim();
+    const chakraName = (crystal.chakra || "").trim();
     const chakraSrc = CHAKRA_IMAGE_MAP[chakraName];
 
     if (chakraImgEl) {
