@@ -344,6 +344,23 @@ footer ul li a {
     flex-direction: row;
 }
 
+/* cards */
+
+.crystal-card img {
+  display: block;
+  width: 100%;        /* fill the card width */
+  max-width: 100%;    /* never exceed column */
+  height: auto;       /* keep aspect ratio */
+}
+
+.crystal-card {
+  max-width: 100%;
+  overflow: hidden;
+}
+
+.crystal-card img {
+  border-radius: 12px;
+}
 
 
 /* title on the border */
