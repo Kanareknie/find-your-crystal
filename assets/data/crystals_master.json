@@ -2891,7 +2891,7 @@
     {
         "name": "Zebra Jasper",
         "color": "Black and White",
-	"image": "assets/images/crystals/zebra-jasper.png"
+	"image": "assets/images/crystals/zebra-jasper.png",
         "chakra": "Root",
         "zodiac": [
             "Virgo"
