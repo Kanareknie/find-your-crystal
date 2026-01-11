@@ -286,30 +286,51 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       "Root": "assets/images/chakras/chakra-red.png",
       "Sacral": "assets/images/chakras/chakra-orange.png",
       "Solar Plexus": "assets/images/chakras/chakra-yellow.png",
-      "Heart": "assets/images/chakras/chakra-heart.png",
+      "Heart": "assets/images/chakras/chakra-green.png",
       "Throat": "assets/images/chakras/chakra-lightblue.png",
       "Third Eye": "assets/images/chakras/chakra-darkblue.png",
       "Crown": "assets/images/chakras/chakra-purple.png",
-      "All Chakras": "assets/images/chakras/all-chakras.jpg",
-      "Varies by color": "assets/images/chakras/all-chakras.jpg",
+      "All Chakras": "assets/images/chakras/chakras.png",
+      "Varies by color": "assets/images/chakras/chakras.png",
     };
+
+
+    const ALL_CHAKRAS_IMAGE = "assets/images/chakras/chakras.png";
 
     const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
 
-    const chakraName = (crystal.chakra || "").trim();
-    const chakraSrc = CHAKRA_IMAGE_MAP[chakraName];
+    const chakraRaw = (crystal.chakra || "").trim();
 
-    if (chakraImgEl) {
-      if (chakraSrc) {
-        chakraImgEl.src = chakraSrc;
-        chakraImgEl.alt = `${chakraName} chakra symbol`;
-        chakraImgEl.style.display = "";
-      } else {
-        // If chakra name is missing or unexpected, hide the image
-        chakraImgEl.removeAttribute("src");
-        chakraImgEl.alt = "";
-        chakraImgEl.style.display = "none";
-      }
+    // Split "Heart, Throat" -> ["Heart", "Throat"]
+    const chakraList = chakraRaw
+      .split(",")
+      .map(s => s.trim())
+      .filter(Boolean);
+
+    const isMulti = chakraList.length > 1;
+    const isAll = chakraRaw === "All Chakras";
+    const isVaries = chakraRaw === "Varies by color";
+
+    let imgSrc = "";
+    let altText = "";
+
+    if (isAll || isVaries || isMulti) {
+      imgSrc = ALL_CHAKRAS_IMAGE;
+      altText = isMulti ? `Multiple chakras: ${chakraList.join(", ")}` : chakraRaw;
+    } else {
+      const single = chakraList[0];
+      imgSrc = CHAKRA_IMAGE_MAP[single] || "";
+      altText = single ? `${single} chakra symbol` : "";
+    }
+
+    if (chakraImgEl && imgSrc) {
+      chakraImgEl.src = imgSrc;
+      chakraImgEl.alt = altText;
+      chakraImgEl.style.display = "block";
+    } else if (chakraImgEl) {
+      chakraImgEl.removeAttribute("src");
+      chakraImgEl.alt = "";
+      chakraImgEl.style.display = "none";
     }
 
   }
