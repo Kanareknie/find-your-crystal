@@ -145,12 +145,7 @@ fetchDailyInsights();
 
 // Form zodiac functionality
 
-
-
-
 // ZODIAC FORM - main function to show zodiac sign based on date input
-
-
 
 // Select elements
 const zodiacFormSelect = document.getElementById("zodiac-form");
@@ -243,7 +238,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
         renderCrystalDetails(crystal);
         closeMoreStones();
 
-// Link: “How To Create an Off-Canvas Menu” on W3Schools
+        // Link: “How To Create an Off-Canvas Menu” on W3Schools
 
         window.scrollTo({
           top: 0,
@@ -264,6 +259,17 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
     document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
     document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
     document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
+
+    //Picture of the crystal
+    const imageEl = document.querySelector('[data-field="image"]');
+
+    if (crystal.image) {
+      imageEl.src = crystal.image;
+      imageEl.alt = crystal.name;
+      imageEl.style.display = "block";
+    } else {
+      imageEl.style.display = "none";
+    }
 
     // Subpowers list of results
     const subPowersEl = document.querySelector('[data-field="subPowers"]');
