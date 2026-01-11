@@ -291,7 +291,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       "Third Eye": "assets/images/chakras/chakra-darkblue.png",
       "Crown": "assets/images/chakras/chakra-purple.png",
       "All Chakras": "assets/images/chakras/all-chakras.jpg",
-      "Varies by color": "assets/images/chakras/all-chakras.jpg"
+      "Varies by color": "assets/images/chakras/all-chakras.jpg",
     };
 
     const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
