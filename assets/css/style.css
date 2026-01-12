@@ -10,7 +10,7 @@
     --color-primary: 86 92 106;
     --color-accent: 99 58 93;
     --color-muted: 183 177 175;
-    --color-green: 52, 89, 52;
+    --color-green: 52 89 52;
 }
 
 
@@ -567,22 +567,87 @@ footer ul li a {
 
 /* -------------------------------- NUMEROLOGY PAGE -------------------------------------- */
 
+/* Main background */
+
 .page-num {
     background-image: url("../images/numerology-bg.jpg");
 }
 
+/* Zodiac form page: keep content pinned to the top */
+.page-num main {
+    justify-content: center;
+    align-items: stretch;
+    padding-top: 5.25rem;
+    /* space for fixed Home + Daily Insight button */
+
+}
+
+.page-num .form-container {
+    width: 100%;
+    max-width: 1100px;
+    /* same as index */
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+
+.form-answer-container.form-answer-container-numerology {
+    
+    /* border */
+    border: 1px solid rgb(var(--color-green));
+    box-shadow:
+        0 0 10px rgb(var(--color-green) / 0.55),
+        0 0 25px rgb(var(--color-green) / 0.35),
+        inset 0 0 12px rgb(var(--color-green) / 0.12);
+    background: rgb(var(--color-bg) / 0.7);
+}
+
+/* Chakra picture display */
 
 .page-num img[data-field="chakraImage"]{
   width: 50%;
-  max-width: 260px;   /* optional safety cap */
+  max-width: 260px;
   height: auto;
   margin: 0 auto;
   display: block;
 }
 
+/* Buttons changed colours only */
+
+.submit-button-num {
+    padding: 0.5rem 1rem;
+    background-color: rgb(var(--color-green));
+    color: rgb(var(--color-text));
+    border: none;
+    border-radius: 4px;
+    font-family: var(--color-text);
+    font-weight: 400;
+    width: 15em;
+}
 
 
+.more-stone-btn-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
 
+    width: auto;
+    padding: 0.6rem 1rem;
+    margin-top: 1rem;
+
+    border: none;
+    background-color: rgb(var(--color-green));
+    color: rgb(var(--color-text));
+
+    cursor: pointer;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+
+
+}
 
 /* -------------------------------MEDIA QUERY ---- ---------------------------------------- */
 

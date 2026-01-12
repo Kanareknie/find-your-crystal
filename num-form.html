@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Head meta basic information -->
+        <title>Find Your Unique Crystal | Personalised Crystal Finder</title>
+        <meta name="description" content="Find Your Unique Crystal is an interactive crystal finder that uses numerology, zodiac signs, and personal intention to recommend a crystal aligned with your energy.">
+        <meta name="keywords" content="crystal finder, numerology, zodiac, crystals, spiritual app, daily affirmation, moon phases">
+        <meta name="author" content="Katarzyna Gawronska">
+        <meta name="theme-color" content="#2b144f">
+        <!-- Open Graph (social media) -->
+        <meta property="og:title" content="Find Your Unique Crystal">
+        <meta property="og:description" content="Discover the crystal aligned with your energy using numerology, zodiac signs, and intention.">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Find Your Unique Crystal">
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="assets/favicon/favicon-96x96.png"
+            sizes="96x96"
+        >
+        <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+        <meta name="apple-mobile-web-app-title" content="Find Your Crystal">
+        <link rel="manifest" href="assets/favicon/site.webmanifest">
+        <!-- Bootstrap CSS link -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        >
+        <!-- Fontawesome link -->
+        <script src="https://kit.fontawesome.com/f981d07300.js" crossorigin="anonymous"></script>
+        <!-- CSS link -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Google font links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    </head>
+    <body class="page-num">
+        <!-- Side bar for daily quote and moon phase -->
+        <aside id="daily-sidebar">
+            <!-- Awesomeicons -->
+            <button id="sidebar-close" type="button" aria-label="Close daily insight panel">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="sidebar-content">
+                <img id="logo" src="assets/images/logo-no-bg.png" alt="logo crystal finder">
+                <h3>
+                    Daily insight
+                </h3>
+                <p id="daily-quote" aria-live="polite">Your daily quote</p>
+                <P id="author-daily-quote" aria-live="polite">Author</P>
+                <hr class="solid">
+                <h3>
+                    Plant Insight
+                </h3>
+                <p id="daily-plant" aria-live="polite"></p>
+                <hr class="solid">
+                <h3>
+                    Crystal Note
+                </h3>
+                <p id="daily-hint" aria-live="polite"></p>
+                <hr class="solid">
+            </div>
+        </aside>
+        <!-- Additional layer to prevent open button on bigger screens -->
+        <div class="sidebar-backdrop" hidden></div>
+        <!-- Main and footer sections in one container to pull footer down as a row -->
+        <div id="main-footer-container">
+            <main>
+                <!-- Button to open sidebar only for small screens -->
+                <button
+                    id="sidebar-button"
+                    type="button"
+                    aria-controls="daily-sidebar"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-hand-sparkles fa-beat-fade"></i>
+                    Daily Insight
+                </button>
+                <!-- Home link  -->
+                <a href="index.html" class="home-link" aria-label="Go to home page">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+                <div class="form-container">
+                    <section class="form-question-container">
+                        <div class="form-question-title">
+                            <h1>Find Your Crystal Based on Your Zodiac Sign</h1>
+                            <p>Select your zodiac sign to discover the crystal that resonates with your energy.</p>
+                        </div>
+                        <hr class="solid">
+                        <div class="form-question-form">
+                            <form id="zodiac-form">
+                                <label for="zodiac-select">Choose your zodiac sign:</label>
+                                <select id="zodiac-select" name="zodiac-select" required>
+                                    <option value="" disabled selected>Select your sign</option>
+                                    <option value="aries">Aries</option>
+                                    <option value="taurus">Taurus</option>
+                                    <option value="gemini">Gemini</option>
+                                    <option value="cancer">Cancer</option>
+                                    <option value="leo">Leo</option>
+                                    <option value="virgo">Virgo</option>
+                                    <option value="libra">Libra</option>
+                                    <option value="scorpio">Scorpio</option>
+                                    <option value="sagittarius">Sagittarius</option>
+                                    <option value="capricorn">Capricorn</option>
+                                    <option value="aquarius">Aquarius</option>
+                                    <option value="pisces">Pisces</option>
+                                </select>
+                                <button class="submit-button-num" type="submit">Find My Crystal</button>
+                            </form>
+                        </div>
+                    </section>
+                    <!-- Title on the border -->
+                    <fieldset class="neon-board form-answer-container form-answer-container-numerology">
+                        <legend class="neon-board-title">
+                            <span class="neon-board-title-container">
+                                Your Crystal Match For
+                                <span id="selected-zodiac-title"></span>
+                            </span>
+                        </legend>
+                        <!-- Results container for both list and details -->
+                        <div class="form-answer-content">
+                            <!-- Details left side -->
+                            <div class="details-left-container">
+                                <!-- Left column index 1 on small screen-->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Meaning & Intention</h3>
+                                        <p data-field="meaning"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Supporting Energies</h3>
+                                        <ul data-field="subPowers"></ul>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">How to Use</h3>
+                                        <p data-field="bodyPlacement"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Ancient Wisdom</h3>
+                                        <p data-field="ancientBelief"></p>
+                                    </div>
+                                </div>
+                                <!-- Middle column index 0 on small screen-->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Crystal Name</h3>
+                                        <p data-field="name"></p>
+                                    </div>
+                                    <!-- Picture of crystal-->
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Visual Essence</h3>
+                                        <img data-field="image" alt="crystal picture">
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Core Energy</h3>
+                                        <p data-field="mainPower"></p>
+                                    </div>
+                                </div>
+                                <!-- Right column index 2 on small screen -->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Chakra Connection</h3>
+                                        <p data-field="chakra"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <img data-field="chakraImage" alt="chakra picture">
+                                    </div>
+                                    <!-- Button to open the list -->
+                                    <button
+                                        class="more-stone-btn-num"
+                                        type="button"
+                                        aria-controls="more-stones-panel"
+                                        aria-expanded="false"
+                                    >More crystals to explore</button>
+                                    <div id="more-stone-panel" class="list-left-container" hidden>
+                                        <button class="more-stones-panel-close" type="button" aria-label="Close daily insight panel">
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        </button>
+                                        <ul id="zodiac-crystal-list"></ul>
+                                    </div>
+                                    <div class="more-stones-backdrop" hidden></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </main>
+                <!-- Footer-nav -->
+                <footer>
+                    <div id="footer-container">
+                        <nav aria-label="Social media links">
+                            <ul class="social-links">
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Facebook"
+                                    >
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.instagram.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Instagram"
+                                    >
+                                        <i class="fa-brands fa-square-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.twitter.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Twitter"
+                                    >
+                                        <i class="fa-brands fa-square-x-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- License details -->
+                            <div class="footer-info">
+                                <div class="footer-info2">All rights reserved. This website is a student project created for educational purposes only.</div>
+                                <div class="footer-info2">@2025 Katarzyna Gawronska</div>
+                            </div>
+                        </nav>
+                    </div>
+                </footer>
+            </div>
+            <!-- Link to JavaScript file -->
+            <script src="assets/js/main.js"></script>
+        </body>
+    </html>
