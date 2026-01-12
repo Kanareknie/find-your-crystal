@@ -563,58 +563,23 @@ footer ul li a {
     cursor: pointer;
 }
 
-/* Mobile off-canvas behavior */
 
+/* -------------------------------- NUMEROLOGY PAGE -------------------------------------- */
 
-@media (max-width: 768px) {
-    #more-stone-panel {
-        position: fixed;
-        top: 0;
-        right: 0;
-        width: min(85vw, 340px);
-        z-index: 50;
-
-        transform: translateX(110%);
-        transition: transform 0.6s ease;
-
-        backdrop-filter: blur(8px);
-        -webkit-backdrop-filter: blur(8px);
-    }
-
-    #more-stone-panel.is-open {
-        transform: translateX(0);
-    }
-
+.page-num {
+    background-image: url("../images/numerology-bg.jpg");
 }
 
-/* Form answer - media query - Reference (Mozilla / MDN) — Ordering flex items */
 
-@media (max-width: 768px) {
-
-    /* Stack columns vertically */
-    .details-left-container {
-        flex-direction: column;
-        margin-right: 0;
-        padding: 1rem;
-    }
-
-    /* Reorder the 3 columns */
-    .details-left-container .form-main-column:nth-child(1) {
-        order: 2;
-    }
-
-    /* column 1 becomes second */
-    .details-left-container .form-main-column:nth-child(2) {
-        order: 1;
-    }
-
-    /* column 2 becomes first */
-    .details-left-container .form-main-column:nth-child(3) {
-        order: 3;
-    }
-
-    /* column 3 stays last */
+.page-num img[data-field="chakraImage"]{
+  width: 50%;
+  max-width: 260px;   /* optional safety cap */
+  height: auto;
+  margin: 0 auto;
+  display: block;
 }
+
+
 
 
 
@@ -691,7 +656,66 @@ footer ul li a {
         max-width: 100%;
     }
 
+ /* Hide chakra picture */
   .page-zodiac img[data-field="chakraImage"]{
     display: none !important;
   }
+ 
+  .page-num img[data-field="chakraImage"]{
+    display: none !important;
+  }
+}
+
+
+/* Mobile off-canvas behavior */
+
+
+@media (max-width: 768px) {
+    #more-stone-panel {
+        position: fixed;
+        top: 0;
+        right: 0;
+        width: min(85vw, 340px);
+        z-index: 50;
+
+        transform: translateX(110%);
+        transition: transform 0.6s ease;
+
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+    }
+
+    #more-stone-panel.is-open {
+        transform: translateX(0);
+    }
+
+}
+
+/* Form answer - media query - Reference (Mozilla / MDN) — Ordering flex items */
+
+@media (max-width: 768px) {
+
+    /* Stack columns vertically */
+    .details-left-container {
+        flex-direction: column;
+        margin-right: 0;
+        padding: 1rem;
+    }
+
+    /* Reorder the 3 columns */
+    .details-left-container .form-main-column:nth-child(1) {
+        order: 2;
+    }
+
+    /* column 1 becomes second */
+    .details-left-container .form-main-column:nth-child(2) {
+        order: 1;
+    }
+
+    /* column 2 becomes first */
+    .details-left-container .form-main-column:nth-child(3) {
+        order: 3;
+    }
+
+    /* column 3 stays last */
 }
