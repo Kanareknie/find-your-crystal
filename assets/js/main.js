@@ -341,7 +341,8 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 // Slide list on form-zodiac - more crystals list -- W3Schools tutorial
 
 // Select elements
-const openMoreStonesBtn = document.querySelector(".more-stone-btn");
+const openMoreStonesBtn =
+  document.querySelector(".more-stone-btn, .more-stone-btn-num");
 const closeMoreStonesBtn = document.querySelector(".more-stones-panel-close");
 const moreStonesPanel = document.getElementById("more-stone-panel");
 const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
@@ -386,55 +387,163 @@ if (
 }
 
 
-// Numerology page 
+// --------------------------------------Numerology page -------------------------------
 
-// 1) Get elements from the page
-const form = document.getElementById("numerology-form");
-const dobInput = document.getElementById("dob");
+// Select numerology elements 
+const numerologyFormEl = document.getElementById("numerology-form");
+const numerologyDobEl = document.getElementById("dob");
 
-// 2) Only run this code if we are on the numerology page
-if (form && dobInput) {
+const numerologyListEl = document.getElementById("zodiac-crystal-list");
+const numerologyQuestionSection = document.querySelector(".form-question-container");
+const numerologyAnswerSection =
+  document.querySelector(".form-answer-container-numerology") ||
+  document.querySelector(".form-answer-container");
 
-  // 3) Listen for the form submission
-  form.addEventListener("submit", function (e) {
-    e.preventDefault(); // stop the page from reloading
 
-    // 4) Read the date from the input (example: "1994-07-12")
-    const dobValue = dobInput.value;
+const VALID_NUMEROLOGY_NUMBERS = [1,2,3,4,5,6,7,8,9,11,22,33,44];
 
-    // 5) Validate: user must type/select a date
+// Guard: only run on numerology page
+if (
+  numerologyFormEl &&
+  numerologyDobEl &&
+  numerologyListEl &&
+  numerologyQuestionSection &&
+  numerologyAnswerSection
+) {
+  numerologyFormEl.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    // 1) Read input
+    const dobValue = numerologyDobEl.value;
+
+    // 2) Validate
     if (!dobValue) {
       alert("Please select your date of birth.");
-      return; // stop here if empty
+      return;
     }
 
-    // 6) Convert DOB -> numerology number
-    const numerologyNumber = calculateNumerologyFromDate(dobValue);
+    // 3) Calculate numerology number
+    const numerologyNumber = calculateNumerologyFromDate_NUM(dobValue);
 
-    // 7) Use the result (for now we just print it)
-    console.log("Numerology number:", numerologyNumber);
+    // Optional validation 
+    if (!VALID_NUMEROLOGY_NUMBERS.includes(numerologyNumber)) {
+      alert("Your date of birth does not resolve to a supported numerology number.");
+      return;
+    }
+
+    // 4) Set title 
+    const numerologyTitleEl =
+      document.getElementById("selected-numerology-title") ||
+      document.getElementById("selected-zodiac-title");
+
+    if (numerologyTitleEl) {
+      numerologyTitleEl.textContent = numerologyNumber;
+    }
+
+    // 5) Fetch crystals
+    const crystals = await fetchCrystals_NUM();
+
+    // 6) Match by numerology
+    const matches = findCrystalsByNumerology_NUM(crystals, numerologyNumber);
+
+    if (matches.length === 0) {
+      numerologyListEl.innerHTML = "<li>No matches found.</li>";
+      return;
+    }
+
+    // 7) Render list + first result
+    renderCrystalList_NUM(matches);
+    renderCrystalDetails_NUM(matches[0]);
+
+    // 8) UI switching
+    numerologyQuestionSection.style.display = "none";
+    numerologyAnswerSection.style.display = "block";
   });
 }
 
-// 8) Pure function: takes a date string and returns a numerology number - https://developer.mozilla.org/
-function calculateNumerologyFromDate(dateString) {
-  // Remove non-digits: "1994-07-12" -> "19940712"
+
+// ---------- NUMEROLOGY HELPERS ----------
+
+function calculateNumerologyFromDate_NUM(dateString) {
   const digits = dateString.replace(/\D/g, "");
 
-  // Sum all digits: "19940712" -> 1+9+9+4+0+7+1+2 = 33
-  let sum = digits
-    .split("")                 // ["1","9","9","4","0","7","1","2"]
-    .reduce((acc, d) => acc + Number(d), 0);
+  let sum = digits.split("").reduce((acc, d) => acc + Number(d), 0);
 
-  // Reduce until it's 1–9, unless it's a master number (11/22/33/44)
   while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33 && sum !== 44) {
-    sum = sum
-      .toString()            
-      .split("")              
-      .reduce((acc, d) => acc + Number(d), 0); 
+    sum = sum.toString().split("").reduce((acc, d) => acc + Number(d), 0);
   }
 
   return sum;
 }
 
+async function fetchCrystals_NUM() {
+  const response = await fetch("assets/data/crystals_master.json");
+  if (!response.ok) throw new Error("Failed to load crystals_master.json");
+  return await response.json();
+}
 
+function findCrystalsByNumerology_NUM(crystals, numerologyNumber) {
+  return crystals.filter((crystal) =>
+    Array.isArray(crystal.numerology) &&
+    crystal.numerology.includes(numerologyNumber)
+  );
+}
+
+
+// ---------- RENDERING (unique names, same layout) ----------
+
+function renderCrystalList_NUM(matches) {
+  numerologyListEl.innerHTML = "";
+
+  matches.forEach((crystal) => {
+    const li = document.createElement("li");
+    const btn = document.createElement("button");
+
+    btn.type = "button";
+    btn.textContent = crystal.name;
+
+    btn.addEventListener("click", () => {
+      renderCrystalDetails_NUM(crystal);
+
+      // close panel if it exists
+      if (typeof closeMoreStones === "function") closeMoreStones();
+
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    li.appendChild(btn);
+    numerologyListEl.appendChild(li);
+  });
+}
+
+function renderCrystalDetails_NUM(crystal) {
+  document.querySelector('[data-field="name"]').textContent = crystal.name ?? "";
+  document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
+  document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
+  document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
+  document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
+  document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
+
+  // Crystal image
+  const imageEl = document.querySelector('[data-field="image"]');
+  if (imageEl) {
+    if (crystal.image) {
+      imageEl.src = crystal.image;
+      imageEl.alt = crystal.name ?? "Crystal image";
+      imageEl.style.display = "block";
+    } else {
+      imageEl.style.display = "none";
+    }
+  }
+
+  // Subpowers list
+  const subPowersEl = document.querySelector('[data-field="subPowers"]');
+  if (subPowersEl) {
+    subPowersEl.innerHTML = "";
+    (crystal.subPowers ?? []).forEach((p) => {
+      const li = document.createElement("li");
+      li.textContent = p;
+      subPowersEl.appendChild(li);
+    });
+  }
+}
