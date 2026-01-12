@@ -93,29 +93,26 @@
                     <section class="form-question-container">
                         <div class="form-question-title">
                             <h1>Find Your Crystal Through Numerology</h1>
-                            <p>Enter your birth date or personal number to reveal the crystal aligned with your numerological energy.
-Each number carries a unique vibration that reflects your inner strengths, challenges, and life path.
-Your result highlights a crystal chosen to support balance, clarity, and personal growth.</p>
+                            <p>
+                                Enter your birth date or personal number to reveal the crystal aligned with your numerological energy.
+                                Each number carries a unique vibration that reflects your inner strengths, challenges, and life path.
+                                Your result highlights a crystal chosen to support balance, clarity, and personal growth.
+                            </p>
                         </div>
                         <hr class="solid">
                         <div class="form-question-form">
-                            <form id="zodiac-form">
-                                <label for="zodiac-select">Choose your zodiac sign:</label>
-                                <select id="zodiac-select" name="zodiac-select" required>
-                                    <option value="" disabled selected>Select your sign</option>
-                                    <option value="aries">Aries</option>
-                                    <option value="taurus">Taurus</option>
-                                    <option value="gemini">Gemini</option>
-                                    <option value="cancer">Cancer</option>
-                                    <option value="leo">Leo</option>
-                                    <option value="virgo">Virgo</option>
-                                    <option value="libra">Libra</option>
-                                    <option value="scorpio">Scorpio</option>
-                                    <option value="sagittarius">Sagittarius</option>
-                                    <option value="capricorn">Capricorn</option>
-                                    <option value="aquarius">Aquarius</option>
-                                    <option value="pisces">Pisces</option>
-                                </select>
+                            <form id="numerology-form">
+                                <label for="dob"><strong>Date of birth:</strong></label>
+                                <input id="dob" type="date">
+                                <p style="margin: 0.75rem 0; opacity: 0.85;">— or —</p>
+                                <label for="numerology-number"><strong>Numerology number: </strong>(including master numbers 11, 22, 33 and 44):</label>
+                                <input
+                                    id="numerology-number"
+                                    type="number"
+                                    min="1"
+                                    max="44"
+                                    placeholder="e.g. 7 or 11"
+                                >
                                 <button class="submit-button-num" type="submit">Find My Crystal</button>
                             </form>
                         </div>
