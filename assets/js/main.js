@@ -384,3 +384,57 @@ if (
   closeMoreStonesBtn.addEventListener("click", closeMoreStones);
   moreStonesBackdrop.addEventListener("click", closeMoreStones);
 }
+
+
+// Numerology page 
+
+// 1) Get elements from the page
+const form = document.getElementById("numerology-form");
+const dobInput = document.getElementById("dob");
+
+// 2) Only run this code if we are on the numerology page
+if (form && dobInput) {
+
+  // 3) Listen for the form submission
+  form.addEventListener("submit", function (e) {
+    e.preventDefault(); // stop the page from reloading
+
+    // 4) Read the date from the input (example: "1994-07-12")
+    const dobValue = dobInput.value;
+
+    // 5) Validate: user must type/select a date
+    if (!dobValue) {
+      alert("Please select your date of birth.");
+      return; // stop here if empty
+    }
+
+    // 6) Convert DOB -> numerology number
+    const numerologyNumber = calculateNumerologyFromDate(dobValue);
+
+    // 7) Use the result (for now we just print it)
+    console.log("Numerology number:", numerologyNumber);
+  });
+}
+
+// 8) Pure function: takes a date string and returns a numerology number - https://developer.mozilla.org/
+function calculateNumerologyFromDate(dateString) {
+  // Remove non-digits: "1994-07-12" -> "19940712"
+  const digits = dateString.replace(/\D/g, "");
+
+  // Sum all digits: "19940712" -> 1+9+9+4+0+7+1+2 = 33
+  let sum = digits
+    .split("")                 // ["1","9","9","4","0","7","1","2"]
+    .reduce((acc, d) => acc + Number(d), 0);
+
+  // Reduce until it's 1–9, unless it's a master number (11/22/33/44)
+  while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33 && sum !== 44) {
+    sum = sum
+      .toString()            
+      .split("")              
+      .reduce((acc, d) => acc + Number(d), 0); 
+  }
+
+  return sum;
+}
+
+
