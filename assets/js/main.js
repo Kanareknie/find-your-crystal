@@ -602,13 +602,47 @@ function renderCrystalDetails_NUM(crystal) {
 
 // -------------------------------------- Day page -------------------------------
 
-// Select numerology elements 
+// -------------------------------------- Day page -------------------------------
+
+// Select DAY elements (unique names)
 const dayFormEl = document.getElementById("daily-stone-form");
+const dayEmotionEl = document.getElementById("emotion-select");       // your dropdown
+const dayZodiacEl = document.getElementById("daily-zodiac-select");   // optional zodiac
 
-const listEl = document.getElementById("zodiac-crystal-list");
+const dayListEl = document.getElementById("zodiac-crystal-list");     // you reuse this id
+const dayQuestionSection = document.querySelector(".form-question-container");
+const dayAnswerSection =
+  document.querySelector(".form-answer-container-day") ||  // on day page you likely use this class
+  document.querySelector(".form-answer-container");
 
-  console.log(dayFormEl, "dayFormEl printed");
-  console.log(listEl, "listEl - printed");
-  console.log(questionSection, "questionSection - printed");
-  console.log(answerSection, "answerSelection - printed");
+// Debug prints - text
+console.log("DAY init:", {
+  dayFormEl,
+  dayEmotionEl,
+  dayZodiacEl,
+  dayListEl,
+  dayQuestionSection,
+  dayAnswerSection
+});
 
+// Guard: only run on day page
+if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSection) {
+  dayFormEl.addEventListener("submit", async function (event) {
+    event.preventDefault();
+
+    const selectedEmotion = dayEmotionEl.value;
+    const selectedZodiac = dayZodiacEl ? dayZodiacEl.value : "";
+
+    if (!selectedEmotion) {
+      alert("Please choose an intention / emotion.");
+      return;
+    }
+
+    console.log("Selected emotion:", selectedEmotion);
+    console.log("Selected zodiac:", selectedZodiac);
+
+    // For now: just show result section to prove it works
+    dayQuestionSection.style.display = "none";
+    dayAnswerSection.style.display = "block";
+  });
+}
