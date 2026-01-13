@@ -455,6 +455,7 @@ if (
     renderCrystalList_NUM(matches);
     renderCrystalDetails_NUM(matches[0]);
 
+
     // 8) UI switching
     numerologyQuestionSection.style.display = "none";
     numerologyAnswerSection.style.display = "block";
@@ -546,6 +547,56 @@ function renderCrystalDetails_NUM(crystal) {
       subPowersEl.appendChild(li);
     });
   }
+
+  
+      // Chakra pictures mapping (same logic as zodiac)
+  const CHAKRA_IMAGE_MAP = {
+    "Root": "assets/images/chakras/chakra-red.png",
+    "Sacral": "assets/images/chakras/chakra-orange.png",
+    "Solar Plexus": "assets/images/chakras/chakra-yellow.png",
+    "Heart": "assets/images/chakras/chakra-green.png",
+    "Throat": "assets/images/chakras/chakra-lightblue.png",
+    "Third Eye": "assets/images/chakras/chakra-darkblue.png",
+    "Crown": "assets/images/chakras/chakra-purple.png",
+    "All Chakras": "assets/images/chakras/chakras.png",
+    "Varies by color": "assets/images/chakras/chakras.png",
+  };
+
+  const ALL_CHAKRAS_IMAGE = "assets/images/chakras/chakras.png";
+  const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
+  const chakraRaw = (crystal.chakra || "").trim();
+
+  const chakraList = chakraRaw
+    .split(",")
+    .map(s => s.trim())
+    .filter(Boolean);
+
+  const isMulti = chakraList.length > 1;
+  const isAll = chakraRaw === "All Chakras";
+  const isVaries = chakraRaw === "Varies by color";
+
+  let imgSrc = "";
+  let altText = "";
+
+  if (isAll || isVaries || isMulti) {
+    imgSrc = ALL_CHAKRAS_IMAGE;
+    altText = isMulti ? `Multiple chakras: ${chakraList.join(", ")}` : chakraRaw;
+  } else {
+    const single = chakraList[0];
+    imgSrc = CHAKRA_IMAGE_MAP[single] || "";
+    altText = single ? `${single} chakra symbol` : "";
+  }
+
+  if (chakraImgEl && imgSrc) {
+    chakraImgEl.src = imgSrc;
+    chakraImgEl.alt = altText;
+    chakraImgEl.style.display = "block";
+  } else if (chakraImgEl) {
+    chakraImgEl.removeAttribute("src");
+    chakraImgEl.alt = "";
+    chakraImgEl.style.display = "none";
+  }
+
 }
 
 
@@ -560,144 +611,4 @@ const listEl = document.getElementById("zodiac-crystal-list");
   console.log(listEl, "listEl - printed");
   console.log(questionSection, "questionSection - printed");
   console.log(answerSection, "answerSelection - printed");
-
-
-
-// Guard: only run on numerology page
-if (
-  dayFormEl &&
-  listEl &&
-  questionSection &&
-  answerSection
-) {
-  dayFormEl.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    // 1) Read input
-    //const dobValue = numerologyDobEl.value;
-
-    // 2) Validate
-    //  if (!dobValue) {
-    //     alert("Please select your date of birth.");
-    //     return;
-    //     }
-
-
-
-    // 4) Set title 
-    const TitleEl =
-      document.getElementById("selected-zodiac-title");
-
-    if (numerologyTitleEl) {
-      numerologyTitleEl.textContent = numerologyNumber;
-    }
-
-    // 5) Fetch crystals
-    const crystals = await fetchCrystals_NUM();
-
-    // 6) Match by numerology
-    const matches = findCrystalsByNumerology_NUM(crystals, numerologyNumber);
-
-    if (matches.length === 0) {
-      numerologyListEl.innerHTML = "<li>No matches found.</li>";
-      return;
-    }
-
-    // 7) Render list + first result
-    renderCrystalList_NUM(matches);
-    renderCrystalDetails_NUM(matches[0]);
-
-    // 8) UI switching
-    numerologyQuestionSection.style.display = "none";
-    numerologyAnswerSection.style.display = "block";
-  });
-}
-
-
-// ---------- NUMEROLOGY HELPERS ----------
-
-function calculateNumerologyFromDate_NUM(dateString) {
-  const digits = dateString.replace(/\D/g, "");
-
-  let sum = digits.split("").reduce((acc, d) => acc + Number(d), 0);
-
-  while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33 && sum !== 44) {
-    sum = sum.toString().split("").reduce((acc, d) => acc + Number(d), 0);
-  }
-
-  return sum;
-}
-
-async function fetchCrystals_NUM() {
-  const response = await fetch("assets/data/crystals_master.json");
-  if (!response.ok) throw new Error("Failed to load crystals_master.json");
-  return await response.json();
-}
-
-function findCrystalsByNumerology_NUM(crystals, numerologyNumber) {
-  return crystals.filter((crystal) =>
-    Array.isArray(crystal.numerology) &&
-    crystal.numerology.includes(numerologyNumber)
-  );
-}
-
-
-// ---------- RENDERING (unique names, same layout) ----------
-
-function renderCrystalList_NUM(matches) {
-  numerologyListEl.innerHTML = "";
-
-  matches.forEach((crystal) => {
-    const li = document.createElement("li");
-    const btn = document.createElement("button");
-
-    btn.type = "button";
-    btn.textContent = crystal.name;
-
-    btn.addEventListener("click", () => {
-      renderCrystalDetails_NUM(crystal);
-
-      // close panel if it exists
-      if (typeof closeMoreStones === "function") closeMoreStones();
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    li.appendChild(btn);
-    numerologyListEl.appendChild(li);
-  });
-}
-
-function renderCrystalDetails_NUM(crystal) {
-  document.querySelector('[data-field="name"]').textContent = crystal.name ?? "";
-  document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
-  document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
-  document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
-  document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
-  document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
-
-  // Crystal image
-  const imageEl = document.querySelector('[data-field="image"]');
-  if (imageEl) {
-    if (crystal.image) {
-      imageEl.src = crystal.image;
-      imageEl.alt = crystal.name ?? "Crystal image";
-      imageEl.style.display = "block";
-    } else {
-      imageEl.style.display = "none";
-    }
-  }
-
-  // Subpowers list
-  const subPowersEl = document.querySelector('[data-field="subPowers"]');
-  if (subPowersEl) {
-    subPowersEl.innerHTML = "";
-    (crystal.subPowers ?? []).forEach((p) => {
-      const li = document.createElement("li");
-      li.textContent = p;
-      subPowersEl.appendChild(li);
-    });
-  }
-}
-
 
