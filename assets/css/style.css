@@ -11,7 +11,7 @@
     --color-accent: 99 58 93;
     --color-muted: 183 177 175;
     --color-green: 52 89 52;
-    --color-blue: 58 74 99;
+    --color-blue: 119 161 173;
 }
 
 
@@ -677,6 +677,15 @@ footer ul li a {
     width: 100%;
 }
 
+#daily-stone-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+
+
+}
 
  .form-answer-container-day {
     
@@ -704,10 +713,10 @@ footer ul li a {
 .submit-button-day {
     padding: 0.5rem 1rem;
     background-color: rgb(var(--color-blue));
-    color: rgb(var(--color-text));
+    color: rgb(var(--color-text-dark));
     border: none;
     border-radius: 4px;
-    font-family: var(--color-text);
+    font-family: var(--color-text-dark);
     font-weight: 400;
     width: 15em;
 }
@@ -726,7 +735,7 @@ footer ul li a {
 
     border: none;
     background-color: rgb(var(--color-blue));
-    color: rgb(var(--color-text));
+    color: rgb(var(--color-text-dark));
 
     cursor: pointer;
     font-family: "Montserrat", sans-serif;
