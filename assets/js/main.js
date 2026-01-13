@@ -112,7 +112,7 @@ async function fetchDailyInsights() {
     const daily = JSON.parse(saved);
     dailyPlantEl.textContent = daily.plant;
     dailyHintEl.textContent = daily.hint;
-    
+
     return;
   }
   // If not, fetch new insights from local JSON file
@@ -132,7 +132,7 @@ async function fetchDailyInsights() {
     // Update DOM
     dailyPlantEl.textContent = daily.plant;
     dailyHintEl.textContent = daily.hint;
-    
+
   }
   catch (error) {
     console.error("Error fetching daily insights:", error);
@@ -342,7 +342,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
 // Select elements
 const openMoreStonesBtn =
-  document.querySelector(".more-stone-btn, .more-stone-btn-num");
+  document.querySelector(".more-stone-btn, .more-stone-btn-num, .more-stone-btn-day");
 const closeMoreStonesBtn = document.querySelector(".more-stones-panel-close");
 const moreStonesPanel = document.getElementById("more-stone-panel");
 const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
@@ -400,7 +400,7 @@ const numerologyAnswerSection =
   document.querySelector(".form-answer-container");
 
 
-const VALID_NUMEROLOGY_NUMBERS = [1,2,3,4,5,6,7,8,9,11,22,33,44];
+const VALID_NUMEROLOGY_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44];
 
 // Guard: only run on numerology page
 if (
@@ -441,7 +441,7 @@ if (
     }
 
     // 5) Fetch crystals
-    const crystals = await fetchCrystals_NUM();
+    const crystals = await fetchCrystalsMaster();
 
     // 6) Match by numerology
     const matches = findCrystalsByNumerology_NUM(crystals, numerologyNumber);
@@ -452,7 +452,7 @@ if (
     }
 
     // 7) Render list + first result
-    renderCrystalList_NUM(matches);
+    renderCrystalList_NUM(matches, numerologyListEl);
     renderCrystalDetails_NUM(matches[0]);
 
 
@@ -477,7 +477,7 @@ function calculateNumerologyFromDate_NUM(dateString) {
   return sum;
 }
 
-async function fetchCrystals_NUM() {
+async function fetchCrystalsMaster() {
   const response = await fetch("assets/data/crystals_master.json");
   if (!response.ok) throw new Error("Failed to load crystals_master.json");
   return await response.json();
@@ -493,8 +493,8 @@ function findCrystalsByNumerology_NUM(crystals, numerologyNumber) {
 
 // ---------- RENDERING (unique names, same layout) ----------
 
-function renderCrystalList_NUM(matches) {
-  numerologyListEl.innerHTML = "";
+function renderCrystalList_NUM(matches, listEl) {
+  listEl.innerHTML = "";
 
   matches.forEach((crystal) => {
     const li = document.createElement("li");
@@ -513,7 +513,7 @@ function renderCrystalList_NUM(matches) {
     });
 
     li.appendChild(btn);
-    numerologyListEl.appendChild(li);
+    listEl.appendChild(li);
   });
 }
 
@@ -548,8 +548,8 @@ function renderCrystalDetails_NUM(crystal) {
     });
   }
 
-  
-      // Chakra pictures mapping (same logic as zodiac)
+
+  // Chakra pictures mapping (same logic as zodiac)
   const CHAKRA_IMAGE_MAP = {
     "Root": "assets/images/chakras/chakra-red.png",
     "Sacral": "assets/images/chakras/chakra-orange.png",
@@ -602,7 +602,6 @@ function renderCrystalDetails_NUM(crystal) {
 
 // -------------------------------------- Day page -------------------------------
 
-// -------------------------------------- Day page -------------------------------
 
 // Select DAY elements (unique names)
 const dayFormEl = document.getElementById("daily-stone-form");
@@ -641,8 +640,79 @@ if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSec
     console.log("Selected emotion:", selectedEmotion);
     console.log("Selected zodiac:", selectedZodiac);
 
-    // For now: just show result section to prove it works
+    // Compute today's season
+    const todaySeason = getSeasonToday();
+    console.log("Today season:", todaySeason);
+
+
+    // 2) Fetch crystals
+    const crystals = await fetchCrystalsMaster(); // you already have this function
+    console.log("First crystal keys:", Object.keys(crystals[0]));
+    console.log("First crystal reasons:", crystals[0].reasons);
+
+    // 3) Emotion is REQUIRED: filter to only crystals that match emotion
+    const emotionMatches = crystals.filter(c =>
+      Array.isArray(c.reasons) && c.reasons.includes(selectedEmotion)
+    );
+
+    if (emotionMatches.length === 0) {
+      dayListEl.innerHTML = "<li>No matches found.</li>";
+      return;
+    }
+
+    // 4) Score each crystal
+    const scored = emotionMatches.map(crystal => {
+      let score = 0;
+
+      // Emotion match (guaranteed true because of filter)
+      score += 5;
+
+      // Season match
+      if (crystal.season === "All" || crystal.season === todaySeason) {
+        score += 3;
+      }
+
+      // Zodiac match (only if user selected one)
+      if (selectedZodiac) {
+        const zods = Array.isArray(crystal.zodiac) ? crystal.zodiac : [];
+        const zodsLower = zods.map(z => (z || "").toLowerCase());
+
+        if (zodsLower.includes("all") || zodsLower.includes(selectedZodiac.toLowerCase())) {
+          score += 2;
+        }
+      }
+
+      return { crystal, score };
+    });
+
+    // 5) Sort best first
+    scored.sort((a, b) => b.score - a.score);
+
+    // 6) Extract ordered crystals
+    const matches = scored.map(s => s.crystal);
+
+    console.log("Top result score:", scored[0].score, "Crystal:", scored[0].crystal.name);
+
+    renderCrystalList_NUM(matches, dayListEl);
+    renderCrystalDetails_NUM(matches[0]);
+
+    // 8) UI switching
     dayQuestionSection.style.display = "none";
     dayAnswerSection.style.display = "block";
   });
+
 }
+
+//Helpers
+
+// Function to get season based on todays day
+function getSeasonToday() {
+  const now = new Date();
+  const m = now.getMonth() + 1; // 1..12
+
+  if (m === 12 || m === 1 || m === 2) return "Winter";
+  if (m >= 3 && m <= 5) return "Spring";
+  if (m >= 6 && m <= 8) return "Summer";
+  return "Autumn";
+}
+
