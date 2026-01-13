@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Head meta basic information -->
+        <title>Find Your Unique Crystal | Personalised Crystal Finder</title>
+        <meta name="description" content="Find Your Unique Crystal is an interactive crystal finder that uses numerology, zodiac signs, and personal intention to recommend a crystal aligned with your energy.">
+        <meta name="keywords" content="crystal finder, numerology, zodiac, crystals, spiritual app, daily affirmation, moon phases">
+        <meta name="author" content="Katarzyna Gawronska">
+        <meta name="theme-color" content="#2b144f">
+        <!-- Open Graph (social media) -->
+        <meta property="og:title" content="Find Your Unique Crystal">
+        <meta property="og:description" content="Discover the crystal aligned with your energy using numerology, zodiac signs, and intention.">
+        <meta property="og:type" content="website">
+        <meta property="og:site_name" content="Find Your Unique Crystal">
+        <!-- Favicon -->
+        <link
+            rel="icon"
+            type="image/png"
+            href="assets/favicon/favicon-96x96.png"
+            sizes="96x96"
+        >
+        <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg">
+        <link rel="shortcut icon" href="assets/favicon/favicon.ico">
+        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+        <meta name="apple-mobile-web-app-title" content="Find Your Crystal">
+        <link rel="manifest" href="assets/favicon/site.webmanifest">
+        <!-- Bootstrap CSS link -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous"
+        >
+        <!-- Fontawesome link -->
+        <script src="https://kit.fontawesome.com/f981d07300.js" crossorigin="anonymous"></script>
+        <!-- CSS link -->
+        <link rel="stylesheet" href="assets/css/style.css">
+        <!-- Google font links -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400&family=Montserrat:wght@100;200;300;400&display=swap" rel="stylesheet">
+    </head>
+    <body class="page-num">
+        <!-- Side bar for daily quote and moon phase -->
+        <aside id="daily-sidebar">
+            <!-- Awesomeicons -->
+            <button id="sidebar-close" type="button" aria-label="Close daily insight panel">
+                <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+            </button>
+            <div class="sidebar-content">
+                <img id="logo" src="assets/images/logo-no-bg.png" alt="logo crystal finder">
+                <h3>
+                    Daily insight
+                </h3>
+                <p id="daily-quote" aria-live="polite">Your daily quote</p>
+                <P id="author-daily-quote" aria-live="polite">Author</P>
+                <hr class="solid">
+                <h3>
+                    Plant Insight
+                </h3>
+                <p id="daily-plant" aria-live="polite"></p>
+                <hr class="solid">
+                <h3>
+                    Crystal Note
+                </h3>
+                <p id="daily-hint" aria-live="polite"></p>
+                <hr class="solid">
+            </div>
+        </aside>
+        <!-- Additional layer to prevent open button on bigger screens -->
+        <div class="sidebar-backdrop" hidden></div>
+        <!-- Main and footer sections in one container to pull footer down as a row -->
+        <div id="main-footer-container">
+            <main>
+                <!-- Button to open sidebar only for small screens -->
+                <button
+                    id="sidebar-button"
+                    type="button"
+                    aria-controls="daily-sidebar"
+                    aria-expanded="false"
+                >
+                    <i class="fa-solid fa-hand-sparkles fa-beat-fade"></i>
+                    Daily Insight
+                </button>
+                <!-- Home link  -->
+                <a href="index.html" class="home-link" aria-label="Go to home page">
+                    <i class="fa-solid fa-house"></i>
+                    Home
+                </a>
+                <div class="form-container">
+                    <section class="form-question-container">
+                        <div class="form-question-title">
+                            <h1>Your Daily Crystal</h1>
+                            <p>
+                                Select the emotion that best reflects how you feel today.
+                                We’ll align it with the current season and, if you choose,
+                                your zodiac sign to reveal a crystal that supports your energy.
+                            </p>
+                        </div>
+                        <hr class="solid">
+                        <div class="form-question-form">
+                            <form id="daily-stone-form">
+                                <!-- Emotion (required) -->
+                                <label for="emotion-select">
+                                    How are you feeling today?
+                                </label>
+                                <select id="emotion-select" name="emotion" required>
+                                    <option value="" disabled selected>Select an emotion</option>
+                                    <div id="emotion-radio-group">
+                                        <label class="emotion-option" for="emotion-anxiety">
+                                            <input
+                                                type="radio"
+                                                id="emotion-anxiety"
+                                                name="emotion"
+                                                value="anxiety"
+                                                required
+                                            >
+                                            Anxiety
+                                        </label>
+                                        <label class="emotion-option" for="emotion-balance">
+                                            <input
+                                                type="radio"
+                                                id="emotion-balance"
+                                                name="emotion"
+                                                value="balance"
+                                            >
+                                            Balance
+                                        </label>
+                                        <label class="emotion-option" for="emotion-calm">
+                                            <input
+                                                type="radio"
+                                                id="emotion-calm"
+                                                name="emotion"
+                                                value="calm"
+                                            >
+                                            Calm
+                                        </label>
+                                        <label class="emotion-option" for="emotion-clarity">
+                                            <input
+                                                type="radio"
+                                                id="emotion-clarity"
+                                                name="emotion"
+                                                value="clarity"
+                                            >
+                                            Clarity
+                                        </label>
+                                        <label class="emotion-option" for="emotion-communication-issues">
+                                            <input
+                                                type="radio"
+                                                id="emotion-communication-issues"
+                                                name="emotion"
+                                                value="communication issues"
+                                            >
+                                            Communication Issues
+                                        </label>
+                                        <label class="emotion-option" for="emotion-confidence">
+                                            <input
+                                                type="radio"
+                                                id="emotion-confidence"
+                                                name="emotion"
+                                                value="confidence"
+                                            >
+                                            Confidence
+                                        </label>
+                                        <label class="emotion-option" for="emotion-courage">
+                                            <input
+                                                type="radio"
+                                                id="emotion-courage"
+                                                name="emotion"
+                                                value="courage"
+                                            >
+                                            Courage
+                                        </label>
+                                        <label class="emotion-option" for="emotion-creativity">
+                                            <input
+                                                type="radio"
+                                                id="emotion-creativity"
+                                                name="emotion"
+                                                value="creativity"
+                                            >
+                                            Creativity
+                                        </label>
+                                        <label class="emotion-option" for="emotion-emotional-balance">
+                                            <input
+                                                type="radio"
+                                                id="emotion-emotional-balance"
+                                                name="emotion"
+                                                value="emotional balance"
+                                            >
+                                            Emotional Balance
+                                        </label>
+                                        <label class="emotion-option" for="emotion-emotional-block">
+                                            <input
+                                                type="radio"
+                                                id="emotion-emotional-block"
+                                                name="emotion"
+                                                value="emotional block"
+                                            >
+                                            Emotional Block
+                                        </label>
+                                        <label class="emotion-option" for="emotion-emotional-healing">
+                                            <input
+                                                type="radio"
+                                                id="emotion-emotional-healing"
+                                                name="emotion"
+                                                value="emotional healing"
+                                            >
+                                            Emotional Healing
+                                        </label>
+                                        <label class="emotion-option" for="emotion-emotional-trauma">
+                                            <input
+                                                type="radio"
+                                                id="emotion-emotional-trauma"
+                                                name="emotion"
+                                                value="emotional trauma"
+                                            >
+                                            Emotional Trauma
+                                        </label>
+                                        <label class="emotion-option" for="emotion-energy">
+                                            <input
+                                                type="radio"
+                                                id="emotion-energy"
+                                                name="emotion"
+                                                value="energy"
+                                            >
+                                            Energy
+                                        </label>
+                                        <label class="emotion-option" for="emotion-focus">
+                                            <input
+                                                type="radio"
+                                                id="emotion-focus"
+                                                name="emotion"
+                                                value="focus"
+                                            >
+                                            Focus
+                                        </label>
+                                        <label class="emotion-option" for="emotion-for-luck">
+                                            <input
+                                                type="radio"
+                                                id="emotion-for-luck"
+                                                name="emotion"
+                                                value="for luck"
+                                            >
+                                            For Luck
+                                        </label>
+                                        <label class="emotion-option" for="emotion-grounding">
+                                            <input
+                                                type="radio"
+                                                id="emotion-grounding"
+                                                name="emotion"
+                                                value="grounding"
+                                            >
+                                            Grounding
+                                        </label>
+                                        <label class="emotion-option" for="emotion-growth">
+                                            <input
+                                                type="radio"
+                                                id="emotion-growth"
+                                                name="emotion"
+                                                value="growth"
+                                            >
+                                            Growth
+                                        </label>
+                                        <label class="emotion-option" for="emotion-healing">
+                                            <input
+                                                type="radio"
+                                                id="emotion-healing"
+                                                name="emotion"
+                                                value="healing"
+                                            >
+                                            Healing
+                                        </label>
+                                        <label class="emotion-option" for="emotion-insomnia">
+                                            <input
+                                                type="radio"
+                                                id="emotion-insomnia"
+                                                name="emotion"
+                                                value="insomnia"
+                                            >
+                                            Insomnia
+                                        </label>
+                                        <label class="emotion-option" for="emotion-intuition">
+                                            <input
+                                                type="radio"
+                                                id="emotion-intuition"
+                                                name="emotion"
+                                                value="intuition"
+                                            >
+                                            Intuition
+                                        </label>
+                                        <label class="emotion-option" for="emotion-luck">
+                                            <input
+                                                type="radio"
+                                                id="emotion-luck"
+                                                name="emotion"
+                                                value="luck"
+                                            >
+                                            Luck
+                                        </label>
+                                        <label class="emotion-option" for="emotion-mental-clarity">
+                                            <input
+                                                type="radio"
+                                                id="emotion-mental-clarity"
+                                                name="emotion"
+                                                value="mental clarity"
+                                            >
+                                            Mental Clarity
+                                        </label>
+                                        <label class="emotion-option" for="emotion-motivation">
+                                            <input
+                                                type="radio"
+                                                id="emotion-motivation"
+                                                name="emotion"
+                                                value="motivation"
+                                            >
+                                            Motivation
+                                        </label>
+                                        <label class="emotion-option" for="emotion-not-focused">
+                                            <input
+                                                type="radio"
+                                                id="emotion-not-focused"
+                                                name="emotion"
+                                                value="not focused"
+                                            >
+                                            Not Focused
+                                        </label>
+                                        <label class="emotion-option" for="emotion-protection">
+                                            <input
+                                                type="radio"
+                                                id="emotion-protection"
+                                                name="emotion"
+                                                value="protection"
+                                            >
+                                            Protection
+                                        </label>
+                                        <label class="emotion-option" for="emotion-sad">
+                                            <input
+                                                type="radio"
+                                                id="emotion-sad"
+                                                name="emotion"
+                                                value="sad"
+                                            >
+                                            Sad
+                                        </label>
+                                        <label class="emotion-option" for="emotion-self-improvement">
+                                            <input
+                                                type="radio"
+                                                id="emotion-self-improvement"
+                                                name="emotion"
+                                                value="self-improvement"
+                                            >
+                                            Self-Improvement
+                                        </label>
+                                        <label class="emotion-option" for="emotion-self-love">
+                                            <input
+                                                type="radio"
+                                                id="emotion-self-love"
+                                                name="emotion"
+                                                value="self-love"
+                                            >
+                                            Self-Love
+                                        </label>
+                                        <label class="emotion-option" for="emotion-sleep">
+                                            <input
+                                                type="radio"
+                                                id="emotion-sleep"
+                                                name="emotion"
+                                                value="sleep"
+                                            >
+                                            Sleep
+                                        </label>
+                                        <label class="emotion-option" for="emotion-spiritual-block">
+                                            <input
+                                                type="radio"
+                                                id="emotion-spiritual-block"
+                                                name="emotion"
+                                                value="spiritual block"
+                                            >
+                                            Spiritual Block
+                                        </label>
+                                        <label class="emotion-option" for="emotion-stress">
+                                            <input
+                                                type="radio"
+                                                id="emotion-stress"
+                                                name="emotion"
+                                                value="stress"
+                                            >
+                                            Stress
+                                        </label>
+                                        <label class="emotion-option" for="emotion-transformation">
+                                            <input
+                                                type="radio"
+                                                id="emotion-transformation"
+                                                name="emotion"
+                                                value="transformation"
+                                            >
+                                            Transformation
+                                        </label>
+                                        <label class="emotion-option" for="emotion-weak">
+                                            <input
+                                                type="radio"
+                                                id="emotion-weak"
+                                                name="emotion"
+                                                value="weak"
+                                            >
+                                            Weak
+                                        </label>
+                                    </div>
+                                    <!-- options will be populated from JSON OR hardcoded -->
+                                </select>
+                                <!-- Zodiac (optional) -->
+                                <label for="daily-zodiac-select">
+                                    Your zodiac sign (optional)
+                                </label>
+                                <select id="daily-zodiac-select" name="zodiac">
+                                    <option value="">Skip zodiac</option>
+                                    <option value="aries">Aries</option>
+                                    <option value="taurus">Taurus</option>
+                                    <option value="gemini">Gemini</option>
+                                    <option value="cancer">Cancer</option>
+                                    <option value="leo">Leo</option>
+                                    <option value="virgo">Virgo</option>
+                                    <option value="libra">Libra</option>
+                                    <option value="scorpio">Scorpio</option>
+                                    <option value="sagittarius">Sagittarius</option>
+                                    <option value="capricorn">Capricorn</option>
+                                    <option value="aquarius">Aquarius</option>
+                                    <option value="pisces">Pisces</option>
+                                </select>
+                                <!-- Submit -->
+                                <button class="submit-button" type="submit">
+                                    Reveal My Daily Crystal
+                                </button>
+                            </form>
+                        </div>
+                    </section>
+                    <!-- Title on the border -->
+                    <fieldset class="neon-board form-answer-container form-answer-container-numerology">
+                        <legend class="neon-board-title">
+                            <span class="neon-board-title-container">
+                                Your Crystal Match For
+                                <span id="selected-zodiac-title"></span>
+                            </span>
+                        </legend>
+                        <!-- Results container for both list and details -->
+                        <div class="form-answer-content">
+                            <!-- Details left side -->
+                            <div class="details-left-container">
+                                <!-- Left column index 1 on small screen-->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Meaning & Intention</h3>
+                                        <p data-field="meaning"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Supporting Energies</h3>
+                                        <ul data-field="subPowers"></ul>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">How to Use</h3>
+                                        <p data-field="bodyPlacement"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Ancient Wisdom</h3>
+                                        <p data-field="ancientBelief"></p>
+                                    </div>
+                                </div>
+                                <!-- Middle column index 0 on small screen-->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Crystal Name</h3>
+                                        <p data-field="name"></p>
+                                    </div>
+                                    <!-- Picture of crystal-->
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Visual Essence</h3>
+                                        <img data-field="image" alt="crystal picture">
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Core Energy</h3>
+                                        <p data-field="mainPower"></p>
+                                    </div>
+                                </div>
+                                <!-- Right column index 2 on small screen -->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Chakra Connection</h3>
+                                        <p data-field="chakra"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <img data-field="chakraImage" alt="chakra picture">
+                                    </div>
+                                    <!-- Button to open the list -->
+                                    <button
+                                        class="more-stone-btn-num"
+                                        type="button"
+                                        aria-controls="more-stones-panel"
+                                        aria-expanded="false"
+                                    >More crystals to explore</button>
+                                    <div id="more-stone-panel" class="list-left-container" hidden>
+                                        <button class="more-stones-panel-close" type="button" aria-label="Close daily insight panel">
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        </button>
+                                        <ul id="zodiac-crystal-list"></ul>
+                                    </div>
+                                    <div class="more-stones-backdrop" hidden></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </main>
+                <!-- Footer-nav -->
+                <footer>
+                    <div id="footer-container">
+                        <nav aria-label="Social media links">
+                            <ul class="social-links">
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Facebook"
+                                    >
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.instagram.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Instagram"
+                                    >
+                                        <i class="fa-brands fa-square-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.twitter.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Twitter"
+                                    >
+                                        <i class="fa-brands fa-square-x-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- License details -->
+                            <div class="footer-info">
+                                <div class="footer-info2">All rights reserved. This website is a student project created for educational purposes only.</div>
+                                <div class="footer-info2">@2025 Katarzyna Gawronska</div>
+                            </div>
+                        </nav>
+                    </div>
+                </footer>
+            </div>
+            <!-- Link to JavaScript file -->
+            <script src="assets/js/main.js"></script>
+        </body>
+    </html>
