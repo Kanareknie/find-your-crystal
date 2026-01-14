@@ -836,6 +836,10 @@ footer ul li a {
   .page-num img[data-field="chakraImage"]{
     display: none !important;
   }
+
+  .page-day img[data-field="chakraImage"]{
+    display: none !important;
+  }
 }
 
 
