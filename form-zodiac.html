@@ -84,193 +84,193 @@
                     <i class="fa-solid fa-hand-sparkles fa-beat-fade"></i>
                     Daily Insight
                 </button>
-                av class="top-nav" aria-label="Main navigation">
-                <a
-                    class="top-nav-link"
-                    href="index.html"
-                    aria-label="Home"
-                    data-label="Home"
-                >
-                    <i class="fa-solid fa-house" aria-hidden="true"></i>
-                    <span class="top-nav-text">Home</span>
-                </a>
-                <a
-                    class="top-nav-link"
-                    href="form-zodiac.html"
-                    aria-label="Zodiac filter"
-                    data-label="Zodiac filter"
-                >
-                    <i class="fa-solid fa-star" aria-hidden="true"></i>
-                    <span class="top-nav-text">Zodiac filter</span>
-                </a>
-                <a
-                    class="top-nav-link"
-                    href="num-form.html"
-                    aria-label="Numerology filter"
-                    data-label="Numerology filter"
-                >
-                    <i class="fa-solid fa-list-ol" aria-hidden="true"></i>
-                    <span class="top-nav-text">Numerology filter</span>
-                </a>
-                <a
-                    class="top-nav-link"
-                    href="day-form.html"
-                    aria-label="Crystal of the day"
-                    data-label="Crystal of the day"
-                >
-                    <i class="fa-regular fa-gem" aria-hidden="true"></i>
-                    <span class="top-nav-text">Crystal of the day</span>
-                </a>
-            </nav>
-            <div class="form-container">
-                <section class="form-question-container">
-                    <div class="form-question-title">
-                        <h1>Find Your Crystal Based on Your Zodiac Sign</h1>
-                        <p>Select your zodiac sign to discover the crystal that resonates with your energy.</p>
-                    </div>
-                    <hr class="solid">
-                    <div class="form-question-form">
-                        <form id="zodiac-form">
-                            <label for="zodiac-select">Choose your zodiac sign:</label>
-                            <select id="zodiac-select" name="zodiac-select" required>
-                                <option value="" disabled selected>Select your sign</option>
-                                <option value="aries">Aries</option>
-                                <option value="taurus">Taurus</option>
-                                <option value="gemini">Gemini</option>
-                                <option value="cancer">Cancer</option>
-                                <option value="leo">Leo</option>
-                                <option value="virgo">Virgo</option>
-                                <option value="libra">Libra</option>
-                                <option value="scorpio">Scorpio</option>
-                                <option value="sagittarius">Sagittarius</option>
-                                <option value="capricorn">Capricorn</option>
-                                <option value="aquarius">Aquarius</option>
-                                <option value="pisces">Pisces</option>
-                            </select>
-                            <button class="submit-button" type="submit">Find My Crystal</button>
-                        </form>
-                    </div>
-                </section>
-                <!-- Title on the border -->
-                <fieldset class="neon-board form-answer-container">
-                    <legend class="neon-board-title">
-                        <span class="neon-board-title-container">
-                            Your Crystal Match For
-                            <span id="selected-zodiac-title"></span>
-                        </span>
-                    </legend>
-                    <!-- Results container for both list and details -->
-                    <div class="form-answer-content">
-                        <!-- Details left side -->
-                        <div class="details-left-container">
-                            <!-- Left column index 1 on small screen-->
-                            <div class="form-main-column">
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Meaning & Intention</h3>
-                                    <p data-field="meaning"></p>
-                                </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Supporting Energies</h3>
-                                    <ul data-field="subPowers"></ul>
-                                </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">How to Use</h3>
-                                    <p data-field="bodyPlacement"></p>
-                                </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Ancient Wisdom</h3>
-                                    <p data-field="ancientBelief"></p>
-                                </div>
-                            </div>
-                            <!-- Middle column index 0 on small screen-->
-                            <div class="form-main-column">
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Crystal Name</h3>
-                                    <p data-field="name" class="crystalNameBig"></p>
-                                </div>
-                                <!-- Picture of crystal-->
-                                <div class="crystal-card">
-                                    <img data-field="image" alt="crystal picture">
-                                </div>
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Core Energy</h3>
-                                    <p data-field="mainPower" class="crystalNameBigPower"></p>
-                                </div>
-                            </div>
-                            <!-- Right column index 2 on small screen -->
-                            <div class="form-main-column">
-                                <div class="crystal-card">
-                                    <h3 class="crystal-card-title">Chakra Connection</h3>
-                                    <p data-field="chakra"></p>
-                                </div>
-                                <div class="crystal-card">
-                                    <img data-field="chakraImage" alt="chakra picture">
-                                </div>
-                                <!-- Button to open the list -->
-                                <button
-                                    class="more-stone-btn"
-                                    type="button"
-                                    aria-controls="more-stones-panel"
-                                    aria-expanded="false"
-                                >More crystals to explore</button>
-                                <div id="more-stone-panel" class="list-left-container" hidden>
-                                    <button class="more-stones-panel-close" type="button" aria-label="Close daily insight panel">
-                                        <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-                                    </button>
-                                    <ul id="zodiac-crystal-list"></ul>
-                                </div>
-                                <div class="more-stones-backdrop" hidden></div>
-                            </div>
+                <nav class="top-nav" aria-label="Main navigation">
+                    <a
+                        class="top-nav-link"
+                        href="index.html"
+                        aria-label="Home"
+                        data-label="Home"
+                    >
+                        <i class="fa-solid fa-house" aria-hidden="true"></i>
+                        <span class="top-nav-text">Home</span>
+                    </a>
+                    <a
+                        class="top-nav-link"
+                        href="form-zodiac.html"
+                        aria-label="Zodiac filter"
+                        data-label="Zodiac filter"
+                    >
+                        <i class="fa-solid fa-star" aria-hidden="true"></i>
+                        <span class="top-nav-text">Zodiac filter</span>
+                    </a>
+                    <a
+                        class="top-nav-link"
+                        href="num-form.html"
+                        aria-label="Numerology filter"
+                        data-label="Numerology filter"
+                    >
+                        <i class="fa-solid fa-list-ol" aria-hidden="true"></i>
+                        <span class="top-nav-text">Numerology filter</span>
+                    </a>
+                    <a
+                        class="top-nav-link"
+                        href="day-form.html"
+                        aria-label="Crystal of the day"
+                        data-label="Crystal of the day"
+                    >
+                        <i class="fa-regular fa-gem" aria-hidden="true"></i>
+                        <span class="top-nav-text">Crystal of the day</span>
+                    </a>
+                </nav>
+                <div class="form-container">
+                    <section class="form-question-container">
+                        <div class="form-question-title">
+                            <h1>Find Your Crystal Based on Your Zodiac Sign</h1>
+                            <p>Select your zodiac sign to discover the crystal that resonates with your energy.</p>
                         </div>
-                    </fieldset>
-                </div>
-            </main>
-            <!-- Footer-nav -->
-            <footer>
-                <div id="footer-container">
-                    <nav aria-label="Social media links">
-                        <ul class="social-links">
-                            <li>
-                                <a
-                                    href="https://www.facebook.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Visit us on Facebook"
-                                >
-                                    <i class="fa-brands fa-square-facebook"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.instagram.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Visit us on Instagram"
-                                >
-                                    <i class="fa-brands fa-square-instagram"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a
-                                    href="https://www.twitter.com"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    aria-label="Visit us on Twitter"
-                                >
-                                    <i class="fa-brands fa-square-x-twitter"></i>
-                                </a>
-                            </li>
-                        </ul>
-                        <!-- License details -->
-                        <div class="footer-info">
-                            <div class="footer-info2">All rights reserved. This website is a student project created for educational purposes only.</div>
-                            <div class="footer-info2">@2025 Katarzyna Gawronska</div>
+                        <hr class="solid">
+                        <div class="form-question-form">
+                            <form id="zodiac-form">
+                                <label for="zodiac-select">Choose your zodiac sign:</label>
+                                <select id="zodiac-select" name="zodiac-select" required>
+                                    <option value="" disabled selected>Select your sign</option>
+                                    <option value="aries">Aries</option>
+                                    <option value="taurus">Taurus</option>
+                                    <option value="gemini">Gemini</option>
+                                    <option value="cancer">Cancer</option>
+                                    <option value="leo">Leo</option>
+                                    <option value="virgo">Virgo</option>
+                                    <option value="libra">Libra</option>
+                                    <option value="scorpio">Scorpio</option>
+                                    <option value="sagittarius">Sagittarius</option>
+                                    <option value="capricorn">Capricorn</option>
+                                    <option value="aquarius">Aquarius</option>
+                                    <option value="pisces">Pisces</option>
+                                </select>
+                                <button class="submit-button" type="submit">Find My Crystal</button>
+                            </form>
                         </div>
-                    </nav>
-                </div>
-            </footer>
-        </div>
-        <!-- Link to JavaScript file -->
-        <script src="assets/js/main.js"></script>
-    </body>
-</html>
+                    </section>
+                    <!-- Title on the border -->
+                    <fieldset class="neon-board form-answer-container">
+                        <legend class="neon-board-title">
+                            <span class="neon-board-title-container">
+                                Your Crystal Match For
+                                <span id="selected-zodiac-title"></span>
+                            </span>
+                        </legend>
+                        <!-- Results container for both list and details -->
+                        <div class="form-answer-content">
+                            <!-- Details left side -->
+                            <div class="details-left-container">
+                                <!-- Left column index 1 on small screen-->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Meaning & Intention</h3>
+                                        <p data-field="meaning"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Supporting Energies</h3>
+                                        <ul data-field="subPowers"></ul>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">How to Use</h3>
+                                        <p data-field="bodyPlacement"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Ancient Wisdom</h3>
+                                        <p data-field="ancientBelief"></p>
+                                    </div>
+                                </div>
+                                <!-- Middle column index 0 on small screen-->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Crystal Name</h3>
+                                        <p data-field="name" class="crystalNameBig"></p>
+                                    </div>
+                                    <!-- Picture of crystal-->
+                                    <div class="crystal-card">
+                                        <img data-field="image" alt="crystal picture">
+                                    </div>
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Core Energy</h3>
+                                        <p data-field="mainPower" class="crystalNameBigPower"></p>
+                                    </div>
+                                </div>
+                                <!-- Right column index 2 on small screen -->
+                                <div class="form-main-column">
+                                    <div class="crystal-card">
+                                        <h3 class="crystal-card-title">Chakra Connection</h3>
+                                        <p data-field="chakra"></p>
+                                    </div>
+                                    <div class="crystal-card">
+                                        <img data-field="chakraImage" alt="chakra picture">
+                                    </div>
+                                    <!-- Button to open the list -->
+                                    <button
+                                        class="more-stone-btn"
+                                        type="button"
+                                        aria-controls="more-stones-panel"
+                                        aria-expanded="false"
+                                    >More crystals to explore</button>
+                                    <div id="more-stone-panel" class="list-left-container" hidden>
+                                        <button class="more-stones-panel-close" type="button" aria-label="Close daily insight panel">
+                                            <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+                                        </button>
+                                        <ul id="zodiac-crystal-list"></ul>
+                                    </div>
+                                    <div class="more-stones-backdrop" hidden></div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                </main>
+                <!-- Footer-nav -->
+                <footer>
+                    <div id="footer-container">
+                        <nav aria-label="Social media links">
+                            <ul class="social-links">
+                                <li>
+                                    <a
+                                        href="https://www.facebook.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Facebook"
+                                    >
+                                        <i class="fa-brands fa-square-facebook"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.instagram.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Instagram"
+                                    >
+                                        <i class="fa-brands fa-square-instagram"></i>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a
+                                        href="https://www.twitter.com"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        aria-label="Visit us on Twitter"
+                                    >
+                                        <i class="fa-brands fa-square-x-twitter"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                            <!-- License details -->
+                            <div class="footer-info">
+                                <div class="footer-info2">All rights reserved. This website is a student project created for educational purposes only.</div>
+                                <div class="footer-info2">@2025 Katarzyna Gawronska</div>
+                            </div>
+                        </nav>
+                    </div>
+                </footer>
+            </div>
+            <!-- Link to JavaScript file -->
+            <script src="assets/js/main.js"></script>
+        </body>
+    </html>
