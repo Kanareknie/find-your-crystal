@@ -697,7 +697,7 @@ footer ul li a {
 
 }
 
- .form-answer-container-day {
+.form-answer-container.form-answer-container-numerology.form-answer-container {
     
     /* border */
     border: 1px solid rgb(var(--color-blue));
