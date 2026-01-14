@@ -27,6 +27,16 @@ h3 {
     font-weight: 400;
 }
 
+/* Answer containers for all pages - day-form, form-zodiac, num-form */
+
+.crystalNameBig {
+    font-size: 2rem;
+}
+
+.crystalNameBigPower {
+    font-size: 1.5rem;
+}
+
 /* -----------------------------------INDEX PAGE ------------------------------------------ */
 /* ---- Main elements of hero page positions ---- */
 
@@ -881,3 +891,4 @@ footer ul li a {
 
     /* column 3 stays last */
 }
+
