@@ -37,6 +37,43 @@ h3 {
     font-size: 1.5rem;
 }
 
+/* Nav links */
+
+/* Top inline navigation */
+.top-nav{
+  position: absolute;  
+  top: 1.5rem;
+  right: 1.5rem;
+  z-index: 999;
+
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.top-nav-link{
+  position: relative;    
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: rgb(var(--color-text));
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 400;
+
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+}
+
+/* Subtle hover background */
+.top-nav-link:hover{
+  background: rgb(var(--color-bg) / 0.35);
+}
+
+
+
+
 /* -----------------------------------INDEX PAGE ------------------------------------------ */
 /* ---- Main elements of hero page positions ---- */
 
@@ -782,10 +819,48 @@ footer ul li a {
 
 /* -------------------------------MEDIA QUERY ---- ---------------------------------------- */
 
-/* === Media - mobile === */
-@media (max-width: 768px) {
+/* --- Icons - main pages - navigation (when it gets tight) ---  https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes */
+@media (max-width: 820px){
+  .top-nav-text{
+    display: none;      
+  }
 
-    /* Show sidebar button */
+  .top-nav-link{
+    padding: 0.45rem;     
+  }
+
+  /* Tooltip label under icon on hover/focus  https://developer.mozilla.org/en-US/docs/Web/CSS/::after and https://www.w3schools.com/css/css_tooltip.asp */
+  .top-nav-link::after{
+    content: attr(data-label);
+    position: absolute;
+    left: 50%;
+    top: calc(100% + 0.4rem);
+    transform: translateX(-50%);
+
+    white-space: nowrap;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+
+    background: rgb(var(--color-bg) / 0.9);
+    border: 1px solid rgb(var(--color-accent) / 0.5);
+    color: rgb(var(--color-text));
+    font-size: 0.8rem;
+
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .top-nav-link:hover::after,
+  .top-nav-link:focus-visible::after{
+    opacity: 1;
+  }
+}
+
+
+ /* Show sidebar button */
+
+@media (max-width: 768px) {
+   
     #sidebar-button {
         display: flex;
         position: absolute;
