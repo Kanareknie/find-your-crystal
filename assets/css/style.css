@@ -401,6 +401,7 @@ footer ul li a {
     /* never exceed column */
     height: auto;
     /* keep aspect ratio */
+    margin: 1rem;
 }
 
 
@@ -408,6 +409,11 @@ footer ul li a {
     max-width: 300px;
     overflow: hidden;
 }
+
+.crystal-card > h3 {
+    padding: 1rem;
+}
+
 
 .crystal-card img {
     border-radius: 12px;
