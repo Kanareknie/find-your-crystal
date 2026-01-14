@@ -280,7 +280,7 @@ footer ul li a {
     text-decoration: none;
     font-size: 1rem;
     font-weight: 400;
-    position: fixed;
+    position: absolute;
     gap: 0.5rem;
     top: 1.5rem;
     right: 1.5rem;
@@ -753,7 +753,7 @@ footer ul li a {
     /* Show sidebar button */
     #sidebar-button {
         display: flex;
-        position: fixed;
+        position: absolute;
         gap: 0.5rem;
         margin: 1rem;
         z-index: 3;
