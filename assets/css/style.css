@@ -136,14 +136,14 @@ footer {
     height: auto;
     margin: 0 auto 1rem;
     margin-top: 10px;
-     border-radius: 8px;
+    border-radius: 8px;
 }
 
 /* ----- Main styles for the page ----- */
 
 .page-home #hero,
 .page-home #filters {
-  border-radius: 14px;
+    border-radius: 14px;
 
 }
 
@@ -156,7 +156,7 @@ main {
     align-items: center;
     text-align: center;
     padding: 1rem;
-     border-radius: 8px;
+    border-radius: 8px;
 }
 
 main h2 {
@@ -228,9 +228,9 @@ aside hr {
 
 }
 
-.filter-button img{
-  border-radius: 14px;
-  display: block;
+.filter-button img {
+    border-radius: 14px;
+    display: block;
 }
 
 .filter-container {
@@ -343,7 +343,8 @@ footer ul li a {
     width: 15em;
 }
 
-#zodiac-form, #numerology-form {
+#zodiac-form,
+#numerology-form {
     margin-top: 1.25rem;
     display: grid;
     grid-template-rows: auto auto 1fr auto;
@@ -366,6 +367,13 @@ footer ul li a {
 
 .form-main-column {
     position: relative;
+    /* each column takes equal width */
+    flex: 1;
+    /* prevents overflow from long content */
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .form-answer-container {
@@ -410,7 +418,7 @@ footer ul li a {
     overflow: hidden;
 }
 
-.crystal-card > h3 {
+.crystal-card>h3 {
     padding: 1rem;
 }
 
@@ -440,7 +448,18 @@ footer ul li a {
     display: flex;
     flex-direction: row;
     gap: 1rem;
-    justify-content: center;
+    justify-content: flex-start;
+    width: 100%;
+    /* columns will grow vertically */
+    align-items: stretch;
+}
+
+.details-left-container>.form-main-column {
+    position: relative;
+    /* grow equally */
+    flex: 1 1 0;
+    /* prevents overflow */
+    min-width: 0;
 }
 
 .list-left-container {
@@ -472,12 +491,12 @@ footer ul li a {
     height: auto;
 }
 
-.page-zodiac img[data-field="chakraImage"]{
-  width: 45%;
-  max-width: 260px; 
-  height: auto;
-  margin: 0 auto;
-  display: block;
+.page-zodiac img[data-field="chakraImage"] {
+    width: 45%;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 /* Hidded list -- link -- https://www.w3schools.com/howto/howto_js_off-canvas.asp*/
@@ -610,7 +629,7 @@ footer ul li a {
 
 
 .form-answer-container.form-answer-container-numerology {
-    
+
     /* border */
     border: 1px solid rgb(var(--color-green));
     box-shadow:
@@ -622,12 +641,12 @@ footer ul li a {
 
 /* Chakra picture display */
 
-.page-num img[data-field="chakraImage"]{
-  width: 50%;
-  max-width: 260px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
+.page-num img[data-field="chakraImage"] {
+    width: 50%;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 /* Buttons changed colours only */
@@ -704,7 +723,7 @@ footer ul li a {
 }
 
 .form-answer-container.form-answer-container-numerology.form-answer-container {
-    
+
     /* border */
     border: 1px solid rgb(var(--color-blue));
     box-shadow:
@@ -716,12 +735,12 @@ footer ul li a {
 
 /* Chakra picture display */
 
-.page-day img[data-field="chakraImage"]{
-  width: 50%;
-  max-width: 260px;
-  height: auto;
-  margin: 0 auto;
-  display: block;
+.page-day img[data-field="chakraImage"] {
+    width: 50%;
+    max-width: 260px;
+    height: auto;
+    margin: 0 auto;
+    display: block;
 }
 
 /* Buttons changed colours only */
@@ -830,22 +849,23 @@ footer ul li a {
         opacity: 1;
         pointer-events: auto;
     }
-   .crystal-card{
+
+    .crystal-card {
         max-width: 100%;
     }
 
- /* Hide chakra picture */
-  .page-zodiac img[data-field="chakraImage"]{
-    display: none !important;
-  }
- 
-  .page-num img[data-field="chakraImage"]{
-    display: none !important;
-  }
+    /* Hide chakra picture */
+    .page-zodiac img[data-field="chakraImage"] {
+        display: none !important;
+    }
 
-  .page-day img[data-field="chakraImage"]{
-    display: none !important;
-  }
+    .page-num img[data-field="chakraImage"] {
+        display: none !important;
+    }
+
+    .page-day img[data-field="chakraImage"] {
+        display: none !important;
+    }
 }
 
 
@@ -901,4 +921,3 @@ footer ul li a {
 
     /* column 3 stays last */
 }
-
