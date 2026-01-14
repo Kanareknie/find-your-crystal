@@ -473,8 +473,8 @@ footer ul li a {
 }
 
 .page-zodiac img[data-field="chakraImage"]{
-  width: 50%;
-  max-width: 260px;   /* optional safety cap */
+  width: 45%;
+  max-width: 260px; 
   height: auto;
   margin: 0 auto;
   display: block;
