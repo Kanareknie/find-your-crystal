@@ -441,7 +441,7 @@
     {
         "name": "Bloodstone",
         "color": "Dark Green with Red",
-	"image": "assets/images/crystals/bloodstone.jpg",
+	"image": "assets/images/crystals/boodstone.jpg",
         "chakra": "Root, Heart",
         "zodiac": [
             "Aries",
@@ -1926,7 +1926,7 @@
     {
         "name": "Morganite",
         "color": "Peach Pink",
-	"image": "assets/images/crystals/morganite.jpg",
+	"image": "assets/images/crystals/morgarite.jpg",
         "chakra": "Heart",
         "zodiac": [
             "Libra",
