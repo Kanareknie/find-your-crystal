@@ -1044,8 +1044,14 @@ footer ul li a {
     radial-gradient(circle, var(--sparkle-gold-bright) 20%, transparent 20%),
     radial-gradient(circle, var(--sparkle-gold) 20%, transparent 20%),
     radial-gradient(circle, var(--sparkle-gold-bright) 20%, transparent 20%);
+    radial-gradient(circle, var(--sparkle-gold) 18%, transparent 18%),
+    radial-gradient(circle, var(--sparkle-gold-bright) 18%, transparent 18%),
+    radial-gradient(circle, var(--sparkle-gold) 14%, transparent 14%),
+    radial-gradient(circle, var(--sparkle-gold-bright) 14%, transparent 14%);
   background-size:
-    10% 10%, 20% 20%, 15% 15%, 20% 20%, 18% 18%, 10% 10%, 15% 15%, 10% 10%, 18% 18%;
+     6% 6%, 10% 10%, 8% 8%, 10% 10%, 9% 9%,
+    6% 6%, 8% 8%, 6% 6%, 9% 9%,
+    6% 6%, 6% 6%, 5% 5%, 5% 5%;
 }
 
 /* BOTTOM sparkles */
@@ -1059,8 +1065,12 @@ footer ul li a {
     radial-gradient(circle, var(--sparkle-gold-bright) 20%, transparent 20%),
     radial-gradient(circle, var(--sparkle-gold) 20%, transparent 20%),
     radial-gradient(circle, var(--sparkle-gold-bright) 20%, transparent 20%);
+     radial-gradient(circle, var(--sparkle-gold) 16%, transparent 16%),
+    radial-gradient(circle, var(--sparkle-gold-bright) 16%, transparent 16%),
+    radial-gradient(circle, var(--sparkle-gold) 14%, transparent 14%);
   background-size:
-    15% 15%, 20% 20%, 18% 18%, 20% 20%, 15% 15%, 10% 10%, 20% 20%;
+     8% 8%, 10% 10%, 9% 9%, 10% 10%, 8% 8%, 6% 6%, 10% 10%,
+    6% 6%, 6% 6%, 5% 5%;
 }
 
 /* Trigger sparkle animation */
