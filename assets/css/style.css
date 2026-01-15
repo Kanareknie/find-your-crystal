@@ -783,7 +783,7 @@ footer ul li a {
 
 .more-stones-backdrop.is-open {
     opacity: 1;
-    pointer-events: auto;
+    pointer-events: all;
 }
 
 /* List style */
@@ -1155,7 +1155,7 @@ footer ul li a {
 
     .sidebar-backdrop.is-open {
         opacity: 1;
-        pointer-events: auto;
+        pointer-events: all;
     }
 
     .crystal-card {
