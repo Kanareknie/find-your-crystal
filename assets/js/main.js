@@ -264,24 +264,297 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
     const imageEl = document.querySelector('[data-field="image"]');
 
     if (crystal.image) {
-      imageEl.src = crystal.image;
-      imageEl.alt = crystal.name;
-      imageEl.style.display = "block";
-    } else {
-      imageEl.style.display = "none";
+
+
+      if (imageEl && crystal.image) {
+        imageEl.src = crystal.image;                 // JSON image
+        imageEl.alt = `${crystal.name} crystal`;     // accessibility
+        imageEl.hidden = false;                      // SHOW
+      } else if (imageEl) {
+        imageEl.hidden = true;                       // HIDE
+        imageEl.alt = "";
+      }
+
+      // Subpowers list of results
+      const subPowersEl = document.querySelector('[data-field="subPowers"]');
+
+      subPowersEl.innerHTML = "";
+      (crystal.subPowers ?? []).forEach((p) => {
+        const li = document.createElement("li");
+        li.textContent = p;
+        subPowersEl.appendChild(li);
+      });
+
+      // Chakra pictures mapping
+      const CHAKRA_IMAGE_MAP = {
+        "Root": "assets/images/chakras/chakra-red.png",
+        "Sacral": "assets/images/chakras/chakra-orange.png",
+        "Solar Plexus": "assets/images/chakras/chakra-yellow.png",
+        "Heart": "assets/images/chakras/chakra-green.png",
+        "Throat": "assets/images/chakras/chakra-lightblue.png",
+        "Third Eye": "assets/images/chakras/chakra-darkblue.png",
+        "Crown": "assets/images/chakras/chakra-purple.png",
+        "All Chakras": "assets/images/chakras/chakras.png",
+        "Varies by color": "assets/images/chakras/chakras.png",
+      };
+
+
+      const ALL_CHAKRAS_IMAGE = "assets/images/chakras/chakras.png";
+
+      const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
+
+      const chakraRaw = (crystal.chakra || "").trim();
+
+      // Split "Heart, Throat" -> ["Heart", "Throat"]
+      const chakraList = chakraRaw
+        .split(",")
+        .map(s => s.trim())
+        .filter(Boolean);
+
+      const isMulti = chakraList.length > 1;
+      const isAll = chakraRaw === "All Chakras";
+      const isVaries = chakraRaw === "Varies by color";
+
+      let imgSrc = "";
+      let altText = "";
+
+      if (isAll || isVaries || isMulti) {
+        imgSrc = ALL_CHAKRAS_IMAGE;
+        altText = isMulti ? `Multiple chakras: ${chakraList.join(", ")}` : chakraRaw;
+      } else {
+        const single = chakraList[0];
+        imgSrc = CHAKRA_IMAGE_MAP[single] || "";
+        altText = single ? `${single} chakra symbol` : "";
+      }
+
+      if (chakraImgEl && imgSrc) {
+        chakraImgEl.src = imgSrc;
+        chakraImgEl.alt = altText;
+        chakraImgEl.style.display = "block";
+      } else if (chakraImgEl) {
+        chakraImgEl.removeAttribute("src");
+        chakraImgEl.alt = "";
+        chakraImgEl.style.display = "none";
+      }
+
     }
 
-    // Subpowers list of results
-    const subPowersEl = document.querySelector('[data-field="subPowers"]');
+  }
 
-    subPowersEl.innerHTML = "";
-    (crystal.subPowers ?? []).forEach((p) => {
-      const li = document.createElement("li");
-      li.textContent = p;
-      subPowersEl.appendChild(li);
+
+  // Slide list on form-zodiac - more crystals list -- W3Schools tutorial
+
+  // Select elements
+  const openMoreStonesBtn =
+    document.querySelector(".more-stone-btn, .more-stone-btn-num, .more-stone-btn-day");
+  const closeMoreStonesBtn = document.querySelector(".more-stones-panel-close");
+  const moreStonesPanel = document.getElementById("more-stone-panel");
+  const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
+
+  // OPEN panel
+  function openMoreStones() {
+    moreStonesPanel.hidden = false;
+    moreStonesBackdrop.hidden = false;
+
+    // allow browser to paint the CLOSED state first - the element is hidden
+    requestAnimationFrame(() => {
+      moreStonesPanel.classList.add("is-open");
+      moreStonesBackdrop.classList.add("is-open");
+      openMoreStonesBtn.setAttribute("aria-expanded", "true");
     });
+  }
 
-    // Chakra pictures mapping
+  // CLOSE panel
+  function closeMoreStones() {
+    moreStonesPanel.classList.remove("is-open");
+    moreStonesBackdrop.classList.remove("is-open");
+
+    openMoreStonesBtn.setAttribute("aria-expanded", "false");
+
+    // wait for slide-out animation to finish
+    setTimeout(() => {
+      moreStonesPanel.hidden = true;
+      moreStonesBackdrop.hidden = true;
+    }, 600);
+  }
+
+  // Event listeners
+  if (
+    openMoreStonesBtn &&
+    closeMoreStonesBtn &&
+    moreStonesPanel &&
+    moreStonesBackdrop
+  ) {
+    openMoreStonesBtn.addEventListener("click", openMoreStones);
+    closeMoreStonesBtn.addEventListener("click", closeMoreStones);
+    moreStonesBackdrop.addEventListener("click", closeMoreStones);
+  }
+
+
+  // --------------------------------------Numerology page -------------------------------
+
+  // Select numerology elements 
+  const numerologyFormEl = document.getElementById("numerology-form");
+  const numerologyDobEl = document.getElementById("dob");
+
+  const numerologyListEl = document.getElementById("zodiac-crystal-list");
+  const numerologyQuestionSection = document.querySelector(".form-question-container");
+  const numerologyAnswerSection =
+    document.querySelector(".form-answer-container-numerology") ||
+    document.querySelector(".form-answer-container");
+
+
+  const VALID_NUMEROLOGY_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44];
+
+  // Guard: only run on numerology page
+  if (
+    numerologyFormEl &&
+    numerologyDobEl &&
+    numerologyListEl &&
+    numerologyQuestionSection &&
+    numerologyAnswerSection
+  ) {
+    numerologyFormEl.addEventListener("submit", async function (event) {
+      event.preventDefault();
+
+      // 1) Read input
+      const dobValue = numerologyDobEl.value;
+
+      // 2) Validate
+      if (!dobValue) {
+        alert("Please select your date of birth.");
+        return;
+      }
+
+      // 3) Calculate numerology number
+      const numerologyNumber = calculateNumerologyFromDate_NUM(dobValue);
+
+      // Optional validation 
+      if (!VALID_NUMEROLOGY_NUMBERS.includes(numerologyNumber)) {
+        alert("Your date of birth does not resolve to a supported numerology number.");
+        return;
+      }
+
+      // 4) Set title 
+      const numerologyTitleEl =
+        document.getElementById("selected-numerology-title") ||
+        document.getElementById("selected-zodiac-title");
+
+      if (numerologyTitleEl) {
+        numerologyTitleEl.textContent = numerologyNumber;
+      }
+
+      // 5) Fetch crystals
+      const crystals = await fetchCrystalsMaster();
+
+      // 6) Match by numerology
+      const matches = findCrystalsByNumerology_NUM(crystals, numerologyNumber);
+
+      if (matches.length === 0) {
+        numerologyListEl.innerHTML = "<li>No matches found.</li>";
+        return;
+      }
+
+      // 7) Render list + first result
+      renderCrystalList_NUM(matches, numerologyListEl);
+      renderCrystalDetails_NUM(matches[0]);
+
+
+      // 8) UI switching
+      numerologyQuestionSection.style.display = "none";
+      numerologyAnswerSection.style.display = "block";
+    });
+  }
+
+
+  // ---------- NUMEROLOGY HELPERS ----------
+
+  function calculateNumerologyFromDate_NUM(dateString) {
+    const digits = dateString.replace(/\D/g, "");
+
+    let sum = digits.split("").reduce((acc, d) => acc + Number(d), 0);
+
+    while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33 && sum !== 44) {
+      sum = sum.toString().split("").reduce((acc, d) => acc + Number(d), 0);
+    }
+
+    return sum;
+  }
+
+  async function fetchCrystalsMaster() {
+    const response = await fetch("assets/data/crystals_master.json");
+    if (!response.ok) throw new Error("Failed to load crystals_master.json");
+    return await response.json();
+  }
+
+  function findCrystalsByNumerology_NUM(crystals, numerologyNumber) {
+    return crystals.filter((crystal) =>
+      Array.isArray(crystal.numerology) &&
+      crystal.numerology.includes(numerologyNumber)
+    );
+  }
+
+
+  // ---------- RENDERING (unique names, same layout) ----------
+
+  function renderCrystalList_NUM(matches, listEl) {
+    listEl.innerHTML = "";
+
+    matches.forEach((crystal) => {
+      const li = document.createElement("li");
+      const btn = document.createElement("button");
+
+      btn.type = "button";
+      btn.textContent = crystal.name;
+
+      btn.addEventListener("click", () => {
+        renderCrystalDetails_NUM(crystal);
+
+        // close panel if it exists
+        if (typeof closeMoreStones === "function") closeMoreStones();
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+
+      li.appendChild(btn);
+      listEl.appendChild(li);
+    });
+  }
+
+  function renderCrystalDetails_NUM(crystal) {
+    document.querySelector('[data-field="name"]').textContent = crystal.name ?? "";
+    document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
+    document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
+    document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
+    document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
+    document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
+
+    // Crystal image
+    const imageEl = document.querySelector('[data-field="image"]');
+
+    if (imageEl && crystal.image) {
+      imageEl.src = crystal.image;                 // JSON image
+      imageEl.alt = `${crystal.name} crystal`;     // accessibility
+      imageEl.hidden = false;                      // SHOW
+    } else if (imageEl) {
+      imageEl.hidden = true;                       // HIDE
+      imageEl.alt = "";
+    }
+
+
+    // Subpowers list
+    const subPowersEl = document.querySelector('[data-field="subPowers"]');
+    if (subPowersEl) {
+      subPowersEl.innerHTML = "";
+      (crystal.subPowers ?? []).forEach((p) => {
+        const li = document.createElement("li");
+        li.textContent = p;
+        subPowersEl.appendChild(li);
+      });
+    }
+
+
+    // Chakra pictures mapping (same logic as zodiac)
     const CHAKRA_IMAGE_MAP = {
       "Root": "assets/images/chakras/chakra-red.png",
       "Sacral": "assets/images/chakras/chakra-orange.png",
@@ -294,14 +567,10 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       "Varies by color": "assets/images/chakras/chakras.png",
     };
 
-
     const ALL_CHAKRAS_IMAGE = "assets/images/chakras/chakras.png";
-
     const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
-
     const chakraRaw = (crystal.chakra || "").trim();
 
-    // Split "Heart, Throat" -> ["Heart", "Throat"]
     const chakraList = chakraRaw
       .split(",")
       .map(s => s.trim())
@@ -335,391 +604,127 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
   }
 
-}
+
+  // -------------------------------------- Day page -------------------------------
 
 
-// Slide list on form-zodiac - more crystals list -- W3Schools tutorial
+  // Select DAY elements (unique names)
+  const dayFormEl = document.getElementById("daily-stone-form");
+  const dayEmotionEl = document.getElementById("emotion-select");       // your dropdown
+  const dayZodiacEl = document.getElementById("daily-zodiac-select");   // optional zodiac
 
-// Select elements
-const openMoreStonesBtn =
-  document.querySelector(".more-stone-btn, .more-stone-btn-num, .more-stone-btn-day");
-const closeMoreStonesBtn = document.querySelector(".more-stones-panel-close");
-const moreStonesPanel = document.getElementById("more-stone-panel");
-const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
+  const dayListEl = document.getElementById("zodiac-crystal-list");     // you reuse this id
+  const dayQuestionSection = document.querySelector(".form-question-container");
+  const dayAnswerSection =
+    document.querySelector(".form-answer-container-day") ||  // on day page you likely use this class
+    document.querySelector(".form-answer-container");
 
-// OPEN panel
-function openMoreStones() {
-  moreStonesPanel.hidden = false;
-  moreStonesBackdrop.hidden = false;
-
-  // allow browser to paint the CLOSED state first - the element is hidden
-  requestAnimationFrame(() => {
-    moreStonesPanel.classList.add("is-open");
-    moreStonesBackdrop.classList.add("is-open");
-    openMoreStonesBtn.setAttribute("aria-expanded", "true");
+  // Debug prints - text
+  console.log("DAY init:", {
+    dayFormEl,
+    dayEmotionEl,
+    dayZodiacEl,
+    dayListEl,
+    dayQuestionSection,
+    dayAnswerSection
   });
-}
 
-// CLOSE panel
-function closeMoreStones() {
-  moreStonesPanel.classList.remove("is-open");
-  moreStonesBackdrop.classList.remove("is-open");
+  // Guard: only run on day page
+  if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSection) {
+    dayFormEl.addEventListener("submit", async function (event) {
+      event.preventDefault();
 
-  openMoreStonesBtn.setAttribute("aria-expanded", "false");
+      const selectedEmotion = dayEmotionEl.value;
+      const selectedZodiac = dayZodiacEl ? dayZodiacEl.value : "";
 
-  // wait for slide-out animation to finish
-  setTimeout(() => {
-    moreStonesPanel.hidden = true;
-    moreStonesBackdrop.hidden = true;
-  }, 600);
-}
+      const dayTitleEl = document.getElementById("selected-zodiac-title");
+      if (dayTitleEl) {
 
-// Event listeners
-if (
-  openMoreStonesBtn &&
-  closeMoreStonesBtn &&
-  moreStonesPanel &&
-  moreStonesBackdrop
-) {
-  openMoreStonesBtn.addEventListener("click", openMoreStones);
-  closeMoreStonesBtn.addEventListener("click", closeMoreStones);
-  moreStonesBackdrop.addEventListener("click", closeMoreStones);
-}
-
-
-// --------------------------------------Numerology page -------------------------------
-
-// Select numerology elements 
-const numerologyFormEl = document.getElementById("numerology-form");
-const numerologyDobEl = document.getElementById("dob");
-
-const numerologyListEl = document.getElementById("zodiac-crystal-list");
-const numerologyQuestionSection = document.querySelector(".form-question-container");
-const numerologyAnswerSection =
-  document.querySelector(".form-answer-container-numerology") ||
-  document.querySelector(".form-answer-container");
-
-
-const VALID_NUMEROLOGY_NUMBERS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 22, 33, 44];
-
-// Guard: only run on numerology page
-if (
-  numerologyFormEl &&
-  numerologyDobEl &&
-  numerologyListEl &&
-  numerologyQuestionSection &&
-  numerologyAnswerSection
-) {
-  numerologyFormEl.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    // 1) Read input
-    const dobValue = numerologyDobEl.value;
-
-    // 2) Validate
-    if (!dobValue) {
-      alert("Please select your date of birth.");
-      return;
-    }
-
-    // 3) Calculate numerology number
-    const numerologyNumber = calculateNumerologyFromDate_NUM(dobValue);
-
-    // Optional validation 
-    if (!VALID_NUMEROLOGY_NUMBERS.includes(numerologyNumber)) {
-      alert("Your date of birth does not resolve to a supported numerology number.");
-      return;
-    }
-
-    // 4) Set title 
-    const numerologyTitleEl =
-      document.getElementById("selected-numerology-title") ||
-      document.getElementById("selected-zodiac-title");
-
-    if (numerologyTitleEl) {
-      numerologyTitleEl.textContent = numerologyNumber;
-    }
-
-    // 5) Fetch crystals
-    const crystals = await fetchCrystalsMaster();
-
-    // 6) Match by numerology
-    const matches = findCrystalsByNumerology_NUM(crystals, numerologyNumber);
-
-    if (matches.length === 0) {
-      numerologyListEl.innerHTML = "<li>No matches found.</li>";
-      return;
-    }
-
-    // 7) Render list + first result
-    renderCrystalList_NUM(matches, numerologyListEl);
-    renderCrystalDetails_NUM(matches[0]);
-
-
-    // 8) UI switching
-    numerologyQuestionSection.style.display = "none";
-    numerologyAnswerSection.style.display = "block";
-  });
-}
-
-
-// ---------- NUMEROLOGY HELPERS ----------
-
-function calculateNumerologyFromDate_NUM(dateString) {
-  const digits = dateString.replace(/\D/g, "");
-
-  let sum = digits.split("").reduce((acc, d) => acc + Number(d), 0);
-
-  while (sum > 9 && sum !== 11 && sum !== 22 && sum !== 33 && sum !== 44) {
-    sum = sum.toString().split("").reduce((acc, d) => acc + Number(d), 0);
-  }
-
-  return sum;
-}
-
-async function fetchCrystalsMaster() {
-  const response = await fetch("assets/data/crystals_master.json");
-  if (!response.ok) throw new Error("Failed to load crystals_master.json");
-  return await response.json();
-}
-
-function findCrystalsByNumerology_NUM(crystals, numerologyNumber) {
-  return crystals.filter((crystal) =>
-    Array.isArray(crystal.numerology) &&
-    crystal.numerology.includes(numerologyNumber)
-  );
-}
-
-
-// ---------- RENDERING (unique names, same layout) ----------
-
-function renderCrystalList_NUM(matches, listEl) {
-  listEl.innerHTML = "";
-
-  matches.forEach((crystal) => {
-    const li = document.createElement("li");
-    const btn = document.createElement("button");
-
-    btn.type = "button";
-    btn.textContent = crystal.name;
-
-    btn.addEventListener("click", () => {
-      renderCrystalDetails_NUM(crystal);
-
-      // close panel if it exists
-      if (typeof closeMoreStones === "function") closeMoreStones();
-
-      window.scrollTo({ top: 0, behavior: "smooth" });
-    });
-
-    li.appendChild(btn);
-    listEl.appendChild(li);
-  });
-}
-
-function renderCrystalDetails_NUM(crystal) {
-  document.querySelector('[data-field="name"]').textContent = crystal.name ?? "";
-  document.querySelector('[data-field="meaning"]').textContent = crystal.meaning ?? "";
-  document.querySelector('[data-field="chakra"]').textContent = crystal.chakra ?? "";
-  document.querySelector('[data-field="mainPower"]').textContent = crystal.mainPower ?? "";
-  document.querySelector('[data-field="bodyPlacement"]').textContent = crystal.bodyPlacement ?? "";
-  document.querySelector('[data-field="ancientBelief"]').textContent = crystal.ancientBelief ?? "";
-
-  // Crystal image
-  const imageEl = document.querySelector('[data-field="image"]');
-  if (imageEl) {
-    if (crystal.image) {
-      imageEl.src = crystal.image;
-      imageEl.alt = crystal.name ?? "Crystal image";
-      imageEl.style.display = "block";
-    } else {
-      imageEl.style.display = "none";
-    }
-  }
-
-  // Subpowers list
-  const subPowersEl = document.querySelector('[data-field="subPowers"]');
-  if (subPowersEl) {
-    subPowersEl.innerHTML = "";
-    (crystal.subPowers ?? []).forEach((p) => {
-      const li = document.createElement("li");
-      li.textContent = p;
-      subPowersEl.appendChild(li);
-    });
-  }
-
-
-  // Chakra pictures mapping (same logic as zodiac)
-  const CHAKRA_IMAGE_MAP = {
-    "Root": "assets/images/chakras/chakra-red.png",
-    "Sacral": "assets/images/chakras/chakra-orange.png",
-    "Solar Plexus": "assets/images/chakras/chakra-yellow.png",
-    "Heart": "assets/images/chakras/chakra-green.png",
-    "Throat": "assets/images/chakras/chakra-lightblue.png",
-    "Third Eye": "assets/images/chakras/chakra-darkblue.png",
-    "Crown": "assets/images/chakras/chakra-purple.png",
-    "All Chakras": "assets/images/chakras/chakras.png",
-    "Varies by color": "assets/images/chakras/chakras.png",
-  };
-
-  const ALL_CHAKRAS_IMAGE = "assets/images/chakras/chakras.png";
-  const chakraImgEl = document.querySelector('img[data-field="chakraImage"]');
-  const chakraRaw = (crystal.chakra || "").trim();
-
-  const chakraList = chakraRaw
-    .split(",")
-    .map(s => s.trim())
-    .filter(Boolean);
-
-  const isMulti = chakraList.length > 1;
-  const isAll = chakraRaw === "All Chakras";
-  const isVaries = chakraRaw === "Varies by color";
-
-  let imgSrc = "";
-  let altText = "";
-
-  if (isAll || isVaries || isMulti) {
-    imgSrc = ALL_CHAKRAS_IMAGE;
-    altText = isMulti ? `Multiple chakras: ${chakraList.join(", ")}` : chakraRaw;
-  } else {
-    const single = chakraList[0];
-    imgSrc = CHAKRA_IMAGE_MAP[single] || "";
-    altText = single ? `${single} chakra symbol` : "";
-  }
-
-  if (chakraImgEl && imgSrc) {
-    chakraImgEl.src = imgSrc;
-    chakraImgEl.alt = altText;
-    chakraImgEl.style.display = "block";
-  } else if (chakraImgEl) {
-    chakraImgEl.removeAttribute("src");
-    chakraImgEl.alt = "";
-    chakraImgEl.style.display = "none";
-  }
-
-}
-
-
-// -------------------------------------- Day page -------------------------------
-
-
-// Select DAY elements (unique names)
-const dayFormEl = document.getElementById("daily-stone-form");
-const dayEmotionEl = document.getElementById("emotion-select");       // your dropdown
-const dayZodiacEl = document.getElementById("daily-zodiac-select");   // optional zodiac
-
-const dayListEl = document.getElementById("zodiac-crystal-list");     // you reuse this id
-const dayQuestionSection = document.querySelector(".form-question-container");
-const dayAnswerSection =
-  document.querySelector(".form-answer-container-day") ||  // on day page you likely use this class
-  document.querySelector(".form-answer-container");
-
-// Debug prints - text
-console.log("DAY init:", {
-  dayFormEl,
-  dayEmotionEl,
-  dayZodiacEl,
-  dayListEl,
-  dayQuestionSection,
-  dayAnswerSection
-});
-
-// Guard: only run on day page
-if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSection) {
-  dayFormEl.addEventListener("submit", async function (event) {
-    event.preventDefault();
-
-    const selectedEmotion = dayEmotionEl.value;
-    const selectedZodiac = dayZodiacEl ? dayZodiacEl.value : "";
-
-    const dayTitleEl = document.getElementById("selected-zodiac-title");
-    if (dayTitleEl) {
-      
-      const label = selectedEmotion.charAt(0).toUpperCase() + selectedEmotion.slice(1);
-      dayTitleEl.textContent = label;
-    }
-
-    if (!selectedEmotion) {
-      alert("Please choose an intention / emotion.");
-      return;
-    }
-
-    console.log("Selected emotion:", selectedEmotion);
-    console.log("Selected zodiac:", selectedZodiac);
-
-    // Compute today's season
-    const todaySeason = getSeasonToday();
-    console.log("Today season:", todaySeason);
-
-
-    // 2) Fetch crystals
-    const crystals = await fetchCrystalsMaster(); // you already have this function
-    console.log("First crystal keys:", Object.keys(crystals[0]));
-    console.log("First crystal reasons:", crystals[0].reasons);
-
-    // 3) Emotion is REQUIRED: filter to only crystals that match emotion
-    const emotionMatches = crystals.filter(c =>
-      Array.isArray(c.reasons) && c.reasons.includes(selectedEmotion)
-    );
-
-    if (emotionMatches.length === 0) {
-      dayListEl.innerHTML = "<li>No matches found.</li>";
-      return;
-    }
-
-    // 4) Score each crystal
-    const scored = emotionMatches.map(crystal => {
-      let score = 0;
-
-      // Emotion match (guaranteed true because of filter)
-      score += 5;
-
-      // Season match
-      if (crystal.season === "All" || crystal.season === todaySeason) {
-        score += 3;
+        const label = selectedEmotion.charAt(0).toUpperCase() + selectedEmotion.slice(1);
+        dayTitleEl.textContent = label;
       }
 
-      // Zodiac match (only if user selected one)
-      if (selectedZodiac) {
-        const zods = Array.isArray(crystal.zodiac) ? crystal.zodiac : [];
-        const zodsLower = zods.map(z => (z || "").toLowerCase());
+      if (!selectedEmotion) {
+        alert("Please choose an intention / emotion.");
+        return;
+      }
 
-        if (zodsLower.includes("all") || zodsLower.includes(selectedZodiac.toLowerCase())) {
-          score += 2;
+      console.log("Selected emotion:", selectedEmotion);
+      console.log("Selected zodiac:", selectedZodiac);
+
+      // Compute today's season
+      const todaySeason = getSeasonToday();
+      console.log("Today season:", todaySeason);
+
+
+      // 2) Fetch crystals
+      const crystals = await fetchCrystalsMaster(); // you already have this function
+      console.log("First crystal keys:", Object.keys(crystals[0]));
+      console.log("First crystal reasons:", crystals[0].reasons);
+
+      // 3) Emotion is REQUIRED: filter to only crystals that match emotion
+      const emotionMatches = crystals.filter(c =>
+        Array.isArray(c.reasons) && c.reasons.includes(selectedEmotion)
+      );
+
+      if (emotionMatches.length === 0) {
+        dayListEl.innerHTML = "<li>No matches found.</li>";
+        return;
+      }
+
+      // 4) Score each crystal
+      const scored = emotionMatches.map(crystal => {
+        let score = 0;
+
+        // Emotion match (guaranteed true because of filter)
+        score += 5;
+
+        // Season match
+        if (crystal.season === "All" || crystal.season === todaySeason) {
+          score += 3;
         }
-      }
 
-      return { crystal, score };
+        // Zodiac match (only if user selected one)
+        if (selectedZodiac) {
+          const zods = Array.isArray(crystal.zodiac) ? crystal.zodiac : [];
+          const zodsLower = zods.map(z => (z || "").toLowerCase());
+
+          if (zodsLower.includes("all") || zodsLower.includes(selectedZodiac.toLowerCase())) {
+            score += 2;
+          }
+        }
+
+        return { crystal, score };
+      });
+
+      // 5) Sort best first
+      scored.sort((a, b) => b.score - a.score);
+
+      // 6) Extract ordered crystals
+      const matches = scored.map(s => s.crystal);
+
+      console.log("Top result score:", scored[0].score, "Crystal:", scored[0].crystal.name);
+
+      renderCrystalList_NUM(matches, dayListEl);
+      renderCrystalDetails_NUM(matches[0]);
+
+      // 8) UI switching
+      dayQuestionSection.style.display = "none";
+      dayAnswerSection.style.display = "block";
     });
 
-    // 5) Sort best first
-    scored.sort((a, b) => b.score - a.score);
+  }
 
-    // 6) Extract ordered crystals
-    const matches = scored.map(s => s.crystal);
+  //Helpers
 
-    console.log("Top result score:", scored[0].score, "Crystal:", scored[0].crystal.name);
+  // Function to get season based on todays day
+  function getSeasonToday() {
+    const now = new Date();
+    const m = now.getMonth() + 1; // 1..12
 
-    renderCrystalList_NUM(matches, dayListEl);
-    renderCrystalDetails_NUM(matches[0]);
-
-    // 8) UI switching
-    dayQuestionSection.style.display = "none";
-    dayAnswerSection.style.display = "block";
-  });
-
-}
-
-//Helpers
-
-// Function to get season based on todays day
-function getSeasonToday() {
-  const now = new Date();
-  const m = now.getMonth() + 1; // 1..12
-
-  if (m === 12 || m === 1 || m === 2) return "Winter";
-  if (m >= 3 && m <= 5) return "Spring";
-  if (m >= 6 && m <= 8) return "Summer";
-  return "Autumn";
-}
+    if (m === 12 || m === 1 || m === 2) return "Winter";
+    if (m >= 3 && m <= 5) return "Spring";
+    if (m >= 6 && m <= 8) return "Summer";
+    return "Autumn";
+  }
 
