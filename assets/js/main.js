@@ -721,16 +721,33 @@ function getSeasonToday() {
 // Updated version only to mouse hover
 var bubblyButtons = document.getElementsByClassName("bubbly-button");
 
+
 for (var i = 0; i < bubblyButtons.length; i++) {
   (function (button) {
+    var stopTimeout = null;
+    var duration = 1800; 
 
     button.addEventListener("mouseenter", function () {
+      if (stopTimeout) {
+        clearTimeout(stopTimeout);
+        stopTimeout = null;
+      }
+
+      // cancel any finishing state and loop
+      button.classList.remove("finishing");
       button.classList.add("animate");
     });
 
     button.addEventListener("mouseleave", function () {
+      // stop looping immediately, but keep visible for one last run
       button.classList.remove("animate");
-    });
+      button.classList.add("finishing");
 
+      if (stopTimeout) clearTimeout(stopTimeout);
+      stopTimeout = setTimeout(function () {
+        button.classList.remove("finishing");
+        stopTimeout = null;
+      }, duration);
+    });
   })(bubblyButtons[i]);
 }
