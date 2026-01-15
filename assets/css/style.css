@@ -1018,7 +1018,8 @@ footer ul li a {
     position: absolute;
     width: 140%;
     height: 100%;
-    left: -20%;
+    left: 0%;
+
     pointer-events: none;
     background-repeat: no-repeat;
     opacity: 0;
@@ -1076,26 +1077,26 @@ footer ul li a {
 
 /* Hover state: keep looping */
 .bubbly-button.animate::before {
-    animation: topBubbles 1.6s ease-in-out infinite;
+    animation: topBubbles 1.8s ease-in-out infinite;
 }
 
 .bubbly-button.animate::after {
-    animation: bottomBubbles 1.6s ease-in-out infinite;
+    animation: bottomBubbles 1.8s ease-in-out infinite;
 }
 
 /* When leaving: play ONE last cycle, then stop */
 .bubbly-button.finishing::before {
-    animation: topBubbles 1.6s ease-in-out 1;
+    animation: topBubbles 1.8s ease-in-out 1;
 }
 
 .bubbly-button.finishing::after {
-    animation: bottomBubbles 1.6s ease-in-out 1;
+    animation: bottomBubbles 1.8s ease-in-out 1;
 }
 
 /* Visibility control */
 .bubbly-button::before,
 .bubbly-button::after {
-    opacity: 0;
+ opacity: 0;
 }
 
 .bubbly-button.animate::before,
@@ -1104,6 +1105,7 @@ footer ul li a {
 .bubbly-button.finishing::after {
     opacity: 1;
 }
+
 
 /* Optional: subtle click feedback (does NOT change size or style much) */
 .bubbly-button:active {
@@ -1154,3 +1156,4 @@ footer ul li a {
 .bubbly-button.animate::after {
     animation-duration: 1.8s;
 }
+
