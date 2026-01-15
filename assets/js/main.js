@@ -728,3 +728,4 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
     return "Autumn";
   }
 
+}
