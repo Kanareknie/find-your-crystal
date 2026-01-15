@@ -24,7 +24,8 @@ h1,
 h2,
 h3 {
     font-family: "Cinzel", serif;
-    font-weight: 400;
+    font-weight: 500;
+    animation: lights 5s 750ms linear infinite;
 }
 
 /* Answer containers for all pages - day-form, form-zodiac, num-form */
@@ -71,7 +72,38 @@ h3 {
     background: rgb(var(--color-bg) / 0.35);
 }
 
+/* Text Animation - https://prismic.io/blog/css-text-animations */
+@keyframes lights {
+  0% {
+    color: hsl(210, 60%, 92%);
+    text-shadow:
+      0 0 0.15em hsla(0, 0%, 100%, 0.8),
+      0 0 0.4em hsla(210, 100%, 65%, 0.9),
+      0 0 0.7em hsla(210, 100%, 65%, 0.7),
+      0 0 1em hsla(140, 100%, 55%, 0.6),
+      0 0 1em hsla(270, 100%, 70%, 0.6);
+  }
 
+  50% {
+    color: hsl(210, 80%, 98%);
+    text-shadow:
+      0 0 0.2em hsla(0, 0%, 100%, 1),
+      0 0 0.6em hsla(210, 100%, 70%, 1),
+      0 0 1em hsla(210, 100%, 70%, 0.8),
+      0 0 1.4em hsla(140, 100%, 60%, 0.7),
+      0 0 1.4em hsla(270, 100%, 75%, 0.7);
+  }
+
+  100% {
+    color: hsl(210, 60%, 92%);
+    text-shadow:
+      0 0 0.15em hsla(0, 0%, 100%, 0.8),
+      0 0 0.4em hsla(210, 100%, 65%, 0.9),
+      0 0 0.7em hsla(210, 100%, 65%, 0.7),
+      0 0 1em hsla(140, 100%, 55%, 0.6),
+      0 0 1em hsla(270, 100%, 70%, 0.6);
+  }
+}
 
 
 /* -----------------------------------INDEX PAGE ------------------------------------------ */
