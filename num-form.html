@@ -80,12 +80,13 @@
                     type="button"
                     aria-controls="daily-sidebar"
                     aria-expanded="false"
+                    aria-label="Daily Insight"
                 >
-                    <i class="fa-solid fa-hand-sparkles fa-beat-fade"></i>
-                    Daily Insight
+                    <i class="fa-solid fa-hand-sparkles fa-beat-fade" aria-hidden="true"></i>
+                    <span class="sidebar-button-label">Daily Insight</span>
                 </button>
                 <!-- Home link  -->
-                 <nav class="top-nav" aria-label="Main navigation">
+                <nav class="top-nav" aria-label="Main navigation">
                     <a
                         class="top-nav-link"
                         href="index.html"
@@ -136,7 +137,9 @@
                         <hr class="solid">
                         <div class="form-question-form">
                             <form id="numerology-form">
-                                <label for="dob"><strong>Date of birth:</strong></label>
+                                <label for="dob">
+                                    <strong>Date of birth:</strong>
+                                </label>
                                 <input id="dob" type="date">
                                 <button class="submit-button-num tab" type="submit">Find My Crystal</button>
                             </form>

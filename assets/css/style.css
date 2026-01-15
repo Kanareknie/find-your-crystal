@@ -1099,15 +1099,18 @@ footer ul li a {
         position: absolute;
         gap: 0.5rem;
         margin: 1rem;
-        top: 5px;
+        top: 10px;
         left: 5px;
         background-color: transparent;
         border: none;
         color: rgb(var(--color-text));
         font-family: "Montserrat", sans-serif;
         font-weight: 400;
-
     }
+
+ #sidebar-button .sidebar-button-label {
+    display: none;
+  }
 
     #sidebar-close {
         display: block;
