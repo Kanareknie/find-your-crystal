@@ -1073,23 +1073,33 @@ footer ul li a {
     6% 6%, 6% 6%, 5% 5%;
 }
 
-/* Trigger sparkle animation */
+/* Hover state: keep looping */
+.bubbly-button.animate::before {
+  animation: topBubbles 1.6s ease-in-out infinite;
+}
+.bubbly-button.animate::after {
+  animation: bottomBubbles 1.6s ease-in-out infinite;
+}
+
+/* When leaving: play ONE last cycle, then stop */
+.bubbly-button.finishing::before {
+  animation: topBubbles 1.6s ease-in-out 1;
+}
+.bubbly-button.finishing::after {
+  animation: bottomBubbles 1.6s ease-in-out 1;
+}
+
+/* Visibility control */
 .bubbly-button::before,
 .bubbly-button::after {
   opacity: 0;
 }
 
 .bubbly-button.animate::before,
-.bubbly-button.animate::after {
+.bubbly-button.animate::after,
+.bubbly-button.finishing::before,
+.bubbly-button.finishing::after {
   opacity: 1;
-}
-
-.bubbly-button.animate::before {
-  animation: topBubbles 1.4s ease-in-out infinite;
-}
-
-.bubbly-button.animate::after {
-  animation: bottomBubbles 1.4s ease-in-out infinite;
 }
 
 /* Optional: subtle click feedback (does NOT change size or style much) */
