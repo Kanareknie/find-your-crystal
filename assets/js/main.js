@@ -720,7 +720,9 @@ function getSeasonToday() {
 /* ---------- Bubble buttons ----------------- https://prismic.io/blog/css-button-animations */
 
 var animateButton = function (e) {
-  e.preventDefault();
+
+    // If it's a link, delay navigation a bit so animation can play
+  if (href) e.preventDefault();
 
   var button = e.currentTarget;
 
