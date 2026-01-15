@@ -807,9 +807,9 @@ footer ul li a {
 /* Golden animation for the text */
 
 .crystalNameBig {
-    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    font-size: clamp(2.5rem, 6vw, 2.5rem);
     /* responsive + bigger */
-    font-weight: 800;
+    font-weight: 400;
     letter-spacing: 0.05em;
     text-transform: uppercase;
     text-shadow: 0 0 12px rgba(255, 215, 0, 0.35);
