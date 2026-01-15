@@ -1064,17 +1064,22 @@ footer ul li a {
 }
 
 /* Trigger sparkle animation */
+.bubbly-button::before,
+.bubbly-button::after {
+  opacity: 0;
+}
+
 .bubbly-button.animate::before,
 .bubbly-button.animate::after {
   opacity: 1;
 }
 
 .bubbly-button.animate::before {
-  animation: topBubbles 0.75s ease-in-out forwards;
+  animation: topBubbles 1.4s ease-in-out infinite;
 }
 
 .bubbly-button.animate::after {
-  animation: bottomBubbles 0.75s ease-in-out forwards;
+  animation: bottomBubbles 1.4s ease-in-out infinite;
 }
 
 /* Optional: subtle click feedback (does NOT change size or style much) */
