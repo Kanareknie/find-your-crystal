@@ -217,6 +217,13 @@ h3 {
     outline: none;
 }
 
+#zodiac-select option,
+#emotion-select option,
+#daily-zodiac-select option {
+    background-color: rgb(var(--color-bg));   /* darker background */
+    color: rgb(var(--color-text));              /* readable text */
+}
+
 /* Focus glow */
 #zodiac-select:focus,
 #emotion-select:focus,
@@ -231,7 +238,10 @@ h3 {
         0 0 1em hsla(270, 100%, 70%, 0.6);
 }
 
+/* Webkit - https://developer.mozilla.org/ */
+
 /* Dropdown arrow styling  */
+
 #zodiac-select,
 #emotion-select,
 #daily-zodiac-select {
