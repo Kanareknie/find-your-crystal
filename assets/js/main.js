@@ -632,6 +632,13 @@ if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSec
     const selectedEmotion = dayEmotionEl.value;
     const selectedZodiac = dayZodiacEl ? dayZodiacEl.value : "";
 
+    const dayTitleEl = document.getElementById("selected-zodiac-title");
+    if (dayTitleEl) {
+      
+      const label = selectedEmotion.charAt(0).toUpperCase() + selectedEmotion.slice(1);
+      dayTitleEl.textContent = label;
+    }
+
     if (!selectedEmotion) {
       alert("Please choose an intention / emotion.");
       return;
