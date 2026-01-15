@@ -732,13 +732,7 @@ footer ul li a {
     transition: transform 0.6s ease;
 
 
-    background: rgb(var(--color-bg) / 0.85);
-    color: rgb(var(--color-text));
-    padding: 1rem;
-    border-left: 1px solid rgb(var(--color-accent) / 0.35);
-
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
+ 
 }
 
 #more-stone-panel.is-open {
@@ -817,7 +811,7 @@ footer ul li a {
 }
 
 
-.form-answer-container.form-answer-container-numerology {
+.neon-board.form-answer-container.form-answer-container-numerology {
 
     /* border */
     border: 1px solid rgb(var(--color-green));
@@ -911,7 +905,7 @@ footer ul li a {
 
 }
 
-.form-answer-container.form-answer-container-numerology.form-answer-container {
+.neon-board.form-answer-container.form-answer-container-numerology.form-answer-container-day{
 
     /* border */
     border: 1px solid rgb(var(--color-blue));
