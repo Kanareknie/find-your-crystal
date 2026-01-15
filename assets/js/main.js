@@ -717,28 +717,20 @@ function getSeasonToday() {
 }
 
 
-/* ---------- Bubble buttons ----------------- https://prismic.io/blog/css-button-animations */
-
-var animateButton = function (e) {
-
-    // If it's a link, delay navigation a bit so animation can play
-  if (href) e.preventDefault();
-
-  var button = e.currentTarget;
-
-  // reset animation
-  button.classList.remove('animate');
-  void button.offsetWidth; // restart animation
-
-  button.classList.add('animate');
-
-  setTimeout(function () {
-    button.classList.remove('animate');
-  }, 700);
-};
-
+// ---------- Bubble buttons ----------------- https://prismic.io/blog/css-button-animations //
+// Updated version only to mouse hover
 var bubblyButtons = document.getElementsByClassName("bubbly-button");
 
 for (var i = 0; i < bubblyButtons.length; i++) {
-  bubblyButtons[i].addEventListener('click', animateButton, false);
+  (function (button) {
+
+    button.addEventListener("mouseenter", function () {
+      button.classList.add("animate");
+    });
+
+    button.addEventListener("mouseleave", function () {
+      button.classList.remove("animate");
+    });
+
+  })(bubblyButtons[i]);
 }
