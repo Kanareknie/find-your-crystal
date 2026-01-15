@@ -1131,3 +1131,9 @@ footer ul li a {
   }
 }
 
+
+/* Slower animation */
+.bubbly-button.animate::before,
+.bubbly-button.animate::after {
+  animation-duration: 1.8s;
+}
