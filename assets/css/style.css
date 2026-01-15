@@ -523,7 +523,7 @@ footer ul li a {
     gap: 0.5rem;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 999;
+    z-index: 20;
 
 }
 
@@ -1024,6 +1024,10 @@ footer ul li a {
         display: none;
     }
 
+    .top-nav {
+        z-index: 20;
+    }
+
     .top-nav-link {
         padding: 0.45rem;
     }
@@ -1055,6 +1059,36 @@ footer ul li a {
     }
 }
 
+/* Indexing the sidebar and navigation icons */
+
+@media (max-width: 768px) {
+  /* keep nav visible normally, but below overlays */
+  .top-nav {
+    z-index: 20;
+  }
+
+  /* overlays above nav */
+  .sidebar-backdrop {
+    z-index: 900;
+  }
+
+  #daily-sidebar {
+    z-index: 901;
+  }
+
+  .more-stones-backdrop {
+    z-index: 910;
+  }
+  #more-stone-panel {
+    z-index: 911;
+  }
+
+  /* close button must be above sidebar */
+  #sidebar-close {
+    z-index: 920;
+  }
+}
+
 
 /* Show sidebar button */
 
@@ -1065,7 +1099,6 @@ footer ul li a {
         position: absolute;
         gap: 0.5rem;
         margin: 1rem;
-        z-index: 3;
         top: 5px;
         left: 5px;
         background-color: transparent;
@@ -1099,7 +1132,6 @@ footer ul li a {
         /* Open the sidebar - W3Schools “Sidebar” / “Off-canvas menu”*/
         transform: translateX(-110%);
         transition: transform 0.25s ease;
-        z-index: 4;
         overflow-y: auto;
     }
 
@@ -1116,7 +1148,6 @@ footer ul li a {
         opacity: 0;
         pointer-events: none;
         transition: opacity 0.25s ease;
-        z-index: 3;
     }
 
     .sidebar-backdrop.is-open {
@@ -1152,7 +1183,6 @@ footer ul li a {
         top: 0;
         right: 0;
         width: min(85vw, 340px);
-        z-index: 50;
 
         transform: translateX(110%);
         transition: transform 0.6s ease;
