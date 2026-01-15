@@ -107,7 +107,7 @@ h3 {
 
 /* Button neon shadow - https://www.testmu.ai/blog/glowing-effects-in-css/ */
 
-
+/* Main */
      .tab:hover { box-shadow: 
        0 0 0.15em hsla(0, 0%, 100%, 0.8),
       0 0 0.4em hsla(210, 100%, 65%, 0.9),
@@ -125,7 +125,7 @@ h3 {
       0 0 1em hsla(270, 100%, 70%, 0.6);
      }
 
-
+/* Zodiac page */
      .more-stone-btn.tab:hover { box-shadow: 
        0 0 0.15em hsla(0, 0%, 100%, 0.8),
       0 0 0.4em hsla(210, 100%, 65%, 0.9),
@@ -135,6 +135,24 @@ h3 {
      }
 
      .more-stone-btn.tab:hover {box-shadow: 
+       0 0 0.15em hsla(0, 0%, 100%, 0.8),
+      0 0 0.4em hsla(210, 100%, 65%, 0.9),
+      0 0 0.7em hsla(210, 100%, 65%, 0.7),
+      0 0 1em hsla(140, 100%, 55%, 0.6),
+      0 0 1em hsla(270, 100%, 70%, 0.6);
+     }
+
+/* Numerology page  */
+
+.more-stone-btn-num.tab:hover { box-shadow: 
+       0 0 0.15em hsla(0, 0%, 100%, 0.8),
+      0 0 0.4em hsla(210, 100%, 65%, 0.9),
+      0 0 0.7em hsla(210, 100%, 65%, 0.7),
+      0 0 1em hsla(140, 100%, 55%, 0.6),
+      0 0 1em hsla(270, 100%, 70%, 0.6);
+     }
+
+     .more-stone-btn-num.tab:hover {box-shadow: 
        0 0 0.15em hsla(0, 0%, 100%, 0.8),
       0 0 0.4em hsla(210, 100%, 65%, 0.9),
       0 0 0.7em hsla(210, 100%, 65%, 0.7),
