@@ -174,6 +174,54 @@ function renderSubPowers(crystal, selector) {
 }
 
 
+  // Slide list on form-zodiac - more crystals list -- W3Schools tutorial
+
+  // Select elements
+  const openMoreStonesBtn =
+    document.querySelector(".more-stone-btn, .more-stone-btn-num, .more-stone-btn-day");
+  const closeMoreStonesBtn = document.querySelector(".more-stones-panel-close");
+  const moreStonesPanel = document.getElementById("more-stone-panel");
+  const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
+
+  // OPEN panel
+  function openMoreStones() {
+    moreStonesPanel.hidden = false;
+    moreStonesBackdrop.hidden = false;
+
+    // allow browser to paint the CLOSED state first - the element is hidden
+    requestAnimationFrame(() => {
+      moreStonesPanel.classList.add("is-open");
+      moreStonesBackdrop.classList.add("is-open");
+      openMoreStonesBtn.setAttribute("aria-expanded", "true");
+    });
+  }
+
+  // CLOSE panel
+  function closeMoreStones() {
+    moreStonesPanel.classList.remove("is-open");
+    moreStonesBackdrop.classList.remove("is-open");
+
+    openMoreStonesBtn.setAttribute("aria-expanded", "false");
+
+    // wait for slide-out animation to finish
+    setTimeout(() => {
+      moreStonesPanel.hidden = true;
+      moreStonesBackdrop.hidden = true;
+    }, 600);
+  }
+
+  // Event listeners
+  if (
+    openMoreStonesBtn &&
+    closeMoreStonesBtn &&
+    moreStonesPanel &&
+    moreStonesBackdrop
+  ) {
+    openMoreStonesBtn.addEventListener("click", openMoreStones);
+    closeMoreStonesBtn.addEventListener("click", closeMoreStones);
+    moreStonesBackdrop.addEventListener("click", closeMoreStones);
+  }
+
 // ZODIAC FORM - main function to show zodiac sign based on date input
 
 // Select elements
@@ -365,53 +413,6 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
   }
 
 
-  // Slide list on form-zodiac - more crystals list -- W3Schools tutorial
-
-  // Select elements
-  const openMoreStonesBtn =
-    document.querySelector(".more-stone-btn, .more-stone-btn-num, .more-stone-btn-day");
-  const closeMoreStonesBtn = document.querySelector(".more-stones-panel-close");
-  const moreStonesPanel = document.getElementById("more-stone-panel");
-  const moreStonesBackdrop = document.querySelector(".more-stones-backdrop");
-
-  // OPEN panel
-  function openMoreStones() {
-    moreStonesPanel.hidden = false;
-    moreStonesBackdrop.hidden = false;
-
-    // allow browser to paint the CLOSED state first - the element is hidden
-    requestAnimationFrame(() => {
-      moreStonesPanel.classList.add("is-open");
-      moreStonesBackdrop.classList.add("is-open");
-      openMoreStonesBtn.setAttribute("aria-expanded", "true");
-    });
-  }
-
-  // CLOSE panel
-  function closeMoreStones() {
-    moreStonesPanel.classList.remove("is-open");
-    moreStonesBackdrop.classList.remove("is-open");
-
-    openMoreStonesBtn.setAttribute("aria-expanded", "false");
-
-    // wait for slide-out animation to finish
-    setTimeout(() => {
-      moreStonesPanel.hidden = true;
-      moreStonesBackdrop.hidden = true;
-    }, 600);
-  }
-
-  // Event listeners
-  if (
-    openMoreStonesBtn &&
-    closeMoreStonesBtn &&
-    moreStonesPanel &&
-    moreStonesBackdrop
-  ) {
-    openMoreStonesBtn.addEventListener("click", openMoreStones);
-    closeMoreStonesBtn.addEventListener("click", closeMoreStones);
-    moreStonesBackdrop.addEventListener("click", closeMoreStones);
-  }
 
 }
 
