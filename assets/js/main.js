@@ -308,7 +308,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       // Split "Heart, Throat" -> ["Heart", "Throat"]
       const chakraList = chakraRaw
         .split(",")
-        .map(s => s.trim())
+        .map((s) => s.trim())
         .filter(Boolean);
 
       const isMulti = chakraList.length > 1;
@@ -573,7 +573,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
     const chakraList = chakraRaw
       .split(",")
-      .map(s => s.trim())
+      .map((s) => s.trim())
       .filter(Boolean);
 
     const isMulti = chakraList.length > 1;
@@ -663,7 +663,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       console.log("First crystal reasons:", crystals[0].reasons);
 
       // 3) Emotion is REQUIRED: filter to only crystals that match emotion
-      const emotionMatches = crystals.filter(c =>
+      const emotionMatches = crystals.filter((c) =>
         Array.isArray(c.reasons) && c.reasons.includes(selectedEmotion)
       );
 
@@ -673,7 +673,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       }
 
       // 4) Score each crystal
-      const scored = emotionMatches.map(crystal => {
+      const scored = emotionMatches.map((crystal) => {
         let score = 0;
 
         // Emotion match (guaranteed true because of filter)
@@ -687,7 +687,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
         // Zodiac match (only if user selected one)
         if (selectedZodiac) {
           const zods = Array.isArray(crystal.zodiac) ? crystal.zodiac : [];
-          const zodsLower = zods.map(z => (z || "").toLowerCase());
+          const zodsLower = zods.map((z) => (z || "").toLowerCase());
 
           if (zodsLower.includes("all") || zodsLower.includes(selectedZodiac.toLowerCase())) {
             score += 2;
@@ -701,7 +701,7 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
       scored.sort((a, b) => b.score - a.score);
 
       // 6) Extract ordered crystals
-      const matches = scored.map(s => s.crystal);
+      const matches = scored.map((s) => s.crystal);
 
       console.log("Top result score:", scored[0].score, "Crystal:", scored[0].crystal.name);
 
