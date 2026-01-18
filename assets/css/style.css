@@ -31,7 +31,7 @@ h3 {
 /* Answer containers for all pages - day-form, form-zodiac, num-form */
 
 .crystalNameBig {
-    font-size: 2rem;
+    font-size: 1.5rem;
 }
 
 .crystalNameBigPower {
@@ -807,7 +807,7 @@ footer ul li a {
 /* Golden animation for the text */
 
 .crystalNameBig {
-    font-size: clamp(2.5rem, 6vw, 2.5rem);
+    font-size: clamp(2rem, 5vw, 2rem);
     /* responsive + bigger */
     font-weight: 400;
     letter-spacing: 0.05em;
