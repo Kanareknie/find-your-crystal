@@ -1174,6 +1174,17 @@ footer ul li a {
     .page-day img[data-field="chakraImage"] {
         display: none !important;
     }
+
+    /* Result font */
+
+    .crystalNameBig {
+    font-size: 1rem;
+}
+
+.crystalNameBigPower {
+    font-size: 1rem;
+}
+
 }
 
 
