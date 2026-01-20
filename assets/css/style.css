@@ -1199,6 +1199,18 @@ footer ul li a {
 
 }
 
+/* Result fonts sizes for medium screen  */
+@media screen and (min-width: 769px) and (max-width: 1028px) {
+  
+        .crystalNameBig {
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+
+
+}
+
 
 /* Mobile off-canvas behavior */
 
