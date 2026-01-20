@@ -1179,14 +1179,22 @@ footer ul li a {
 
     .crystalNameBig {
     font-size: 1.25rem;
+    font-weight: 400;
 }
 
 .crystalNameBigPower {
     font-size: 1rem;
+    font-weight: 400;
 }
 
 .crystalNameBig.day-title-result {
     font-size: 1.25rem;
+    font-weight: 400;
+}
+
+.crystalNameBig.num-result-title {
+    font-size: 2rem;
+    font-weight: 400;
 }
 
 }
