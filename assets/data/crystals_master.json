@@ -1510,34 +1510,6 @@
         "ancientBelief": "In ancient China, jade symbolized purity and was believed to protect the spirit and attract long life."
     },
     {
-        "name": "Jasper (Bumblebee)",
-        "color": "Yellow, Black, Orange",
-	"image": "assets/images/crystals/jasper-bumblebee.png",
-        "chakra": "Solar Plexus, Sacral",
-        "zodiac": [
-            "Leo"
-        ],
-        "numerology": [
-            5
-        ],
-        "season": "Summer",
-        "timeOfDay": "Afternoon",
-        "reasons": [
-            "confidence",
-            "motivation",
-            "weak"
-        ],
-        "mainPower": "Empowerment",
-        "subPowers": [
-            "Creativity",
-            "Courage"
-        ],
-        "planet": "Sun",
-        "bodyPlacement": "Worn as ring or kept in pocket",
-        "meaning": "Bumblebee Jasper boosts confidence and creativity. It inspires fresh ideas and encourages courageous action. Many use it to overcome doubt and step boldly into new experiences.",
-        "ancientBelief": "Stones with bright patterns were historically used to attract vitality and courage."
-    },
-    {
         "name": "Kambaba Jasper",
         "color": "Green with Black Swirls",
 	"image": "assets/images/crystals/kambaba-jasper.png",
@@ -2273,35 +2245,6 @@
         "bodyPlacement": "Pocket stone or placed on lower abdomen",
         "meaning": "Red Jasper provides steady grounding and emotional stability. It helps strengthen endurance during stressful times. The stone encourages courage and consistent strength. Many use it to calm anxiety and restore balance.",
         "ancientBelief": "In ancient Egypt, red jasper was carved into protective amulets associated with vitality."
-    },
-    {
-        "name": "Rhodochrosite",
-        "color": "Pink",
-	"image": "assets/images/crystals/rhodochrosite.jpg",
-        "chakra": "Heart",
-        "zodiac": [
-            "Leo",
-            "Scorpio"
-        ],
-        "numerology": [
-            4
-        ],
-        "season": "Spring",
-        "timeOfDay": "Morning",
-        "reasons": [
-            "sad",
-            "self-love",
-            "emotional trauma"
-        ],
-        "mainPower": "Heart Healing",
-        "subPowers": [
-            "Compassion",
-            "Joy"
-        ],
-        "planet": "Venus",
-        "bodyPlacement": "Placed over heart or worn as pendant",
-        "meaning": "Rhodochrosite supports deep emotional healing and encourages self-love. It brings comfort during emotional pain and restores joy. Many use it to release old wounds and open the heart.",
-        "ancientBelief": "The Incas treasured pink stones like rhodochrosite as symbols of love and emotional renewal."
     },
     {
         "name": "Rhodonite",
