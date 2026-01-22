@@ -618,8 +618,7 @@ footer ul li a {
     max-width: 100%;
     /* never exceed column */
     height: auto;
-    /* keep aspect ratio */
-    margin: 1rem;
+    padding: 1 rem;
 }
 
 
