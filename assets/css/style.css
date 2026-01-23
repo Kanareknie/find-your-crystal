@@ -45,7 +45,7 @@ h3 {
     position: absolute;
     top: 1.5rem;
     right: 1.5rem;
-    z-index: 800;
+    z-index: 10;
 
     display: flex;
     align-items: center;
