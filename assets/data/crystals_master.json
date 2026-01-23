@@ -554,35 +554,6 @@
         "ancientBelief": "It was once believed that kyanite could guide travelers by aligning to the Earth's energies."
     },
     {
-        "name": "Blue Lace Agate",
-        "color": "Light Blue",
-	"image": "assets/images/crystals/blue-lace-agate.png",
-        "chakra": "Throat",
-        "zodiac": [
-            "Pisces",
-            "Gemini"
-        ],
-        "numerology": [
-            5
-        ],
-        "season": "Summer",
-        "timeOfDay": "Morning",
-        "reasons": [
-            "sad",
-            "communication",
-            "anxiety"
-        ],
-        "mainPower": "Calm Communication",
-        "subPowers": [
-            "Emotional Ease",
-            "Clarity"
-        ],
-        "planet": "Mercury",
-        "bodyPlacement": "Worn as necklace near throat",
-        "meaning": "Blue Lace Agate soothes emotional tension and supports calm, clear communication. Its soft energy helps reduce anxiety and encourages gentle self-expression. Many use it to ease stress during difficult conversations. The stone promotes emotional openness while maintaining inner peace.",
-        "ancientBelief": "Ancient cultures valued blue agates for protection and peaceful energy."
-    },
-    {
         "name": "Botswana Agate",
         "color": "Grey, Pink, White Banded",
 	"image": "assets/images/crystals/botswana-agate.png",
