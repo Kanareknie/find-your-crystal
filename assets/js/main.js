@@ -1,3 +1,4 @@
+/* jshint esversion: 11 */
 /* W3Schools “Sidebar” / “Off-canvas menu” */
 
 const button = document.getElementById("sidebar-button");
