@@ -231,13 +231,6 @@ const crystalListEl = document.getElementById("zodiac-crystal-list");
 const questionSection = document.querySelector(".form-question-container");
 const answerSection = document.querySelector(".form-answer-container");
 
-
-
-console.log(zodiacSelect);
-console.log(zodiacFormSelect);
-console.log(answerSection);
-console.log(crystalListEl);
-
 //Add a guard around the zodiac block
 
 if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answerSection) {
@@ -247,7 +240,6 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
     event.preventDefault();
 
     const selectedZodiac = zodiacSelect.value;
-    console.log("Selected zodiac:", selectedZodiac);
 
     //Add submitted zodiac to the title of result
 
@@ -270,9 +262,6 @@ if (zodiacFormSelect && zodiacSelect && crystalListEl && questionSection && answ
 
     renderCrystalList(matches);
     renderCrystalDetails(matches[0]);
-
-    console.log("Matching crystals:", matches);
-    console.log("First match:", matches[0]);
 
     // UI switching
     questionSection.style.display = "none";
@@ -636,16 +625,6 @@ const dayAnswerSection =
   document.querySelector(".form-answer-container-day") ||  // on day page you likely use this class
   document.querySelector(".form-answer-container");
 
-// Debug prints - text
-console.log("DAY init:", {
-  dayFormEl,
-  dayEmotionEl,
-  dayZodiacEl,
-  dayListEl,
-  dayQuestionSection,
-  dayAnswerSection
-});
-
 // Guard: only run on day page
 if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSection) {
   dayFormEl.addEventListener("submit", async function (event) {
@@ -666,18 +645,12 @@ if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSec
       return;
     }
 
-    console.log("Selected emotion:", selectedEmotion);
-    console.log("Selected zodiac:", selectedZodiac);
-
     // Compute today's season
     const todaySeason = getSeasonToday();
-    console.log("Today season:", todaySeason);
 
 
     // 2) Fetch crystals
     const crystals = await fetchCrystalsMaster(); // you already have this function
-    console.log("First crystal keys:", Object.keys(crystals[0]));
-    console.log("First crystal reasons:", crystals[0].reasons);
 
     // 3) Emotion is REQUIRED: filter to only crystals that match emotion
     const emotionMatches = crystals.filter((c) =>
@@ -719,8 +692,6 @@ if (dayFormEl && dayEmotionEl && dayListEl && dayQuestionSection && dayAnswerSec
 
     // 6) Extract ordered crystals
     const matches = scored.map((s) => s.crystal);
-
-    console.log("Top result score:", scored[0].score, "Crystal:", scored[0].crystal.name);
 
     renderCrystalList_NUM(matches, dayListEl);
     renderCrystalDetails_NUM(matches[0]);
